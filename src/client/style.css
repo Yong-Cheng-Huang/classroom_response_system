@@ -1,0 +1,134 @@
+:root { font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; color: #193b34; background: #f5f1e8; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1180px; margin: auto; padding: 32px 48px; }
+header { border-top: 5px solid #193b34; border-bottom: 1px solid #cbcfc2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+.eyebrow { letter-spacing: .15em; font-size: 13px; }
+.connection { font-size: 12px; color: #566b60; }
+.layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; margin: 72px 0; align-items: start; }
+.index { font-size: 12px; letter-spacing: .1em; color: #737b6d; }
+h1 { font-family: "Songti TC", "PMingLiU", serif; font-size: clamp(32px, 4vw, 46px); font-weight: 600; letter-spacing: .04em; margin: 22px 0 28px; }
+p { line-height: 1.8; }
+.lead { font-family: "Songti TC", serif; font-size: 26px; line-height: 1.8; }
+.rule { width: 48px; border-top: 2px solid #ae4d2b; margin: 40px 0 24px; }
+.quiet { font-size: 14px; color: #667267; }
+.workspace { padding: 32px; border: 1px solid #cdd1c5; background: #fffcf5; box-shadow: 6px 6px 0 #e5e4d9; min-height: 400px; }
+h2 { font-size: 23px; font-weight: 600; line-height: 1.6; margin: 16px 0 26px; }
+h3 { font-size: 16px; line-height: 1.6; }
+button,input { font: inherit; }
+button { cursor: pointer; border: 1px solid #a9b7aa; border-radius: 3px; padding: 11px 16px; background: transparent; color: #193b34; min-height: 44px; }
+button:hover:not(:disabled) { background: #e9eee4; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button:focus-visible,input:focus-visible { outline: 3px solid #b45d36; outline-offset: 3px; }
+.role-picker { display: flex; margin-bottom: 32px; border-bottom: 1px solid #cdd1c5; }
+.role-picker button { border: 0; border-radius: 0; flex: 1; padding-bottom: 16px; }
+.role-picker button[aria-pressed="true"] { border-bottom: 3px solid #193b34; font-weight: 600; }
+label { display: block; font-size: 14px; margin: 20px 0 9px; }
+input { width: 100%; min-width: 0; height: 48px; padding: 10px 12px; border: 1px solid #a9b7aa; border-radius: 3px; color: #193b34; background: #fff; }
+.name-row { display: flex; gap: 8px; }
+.name-row button { flex-shrink: 0; font-size: 13px; }
+.primary { display: block; width: 100%; background: #193b34; color: #fff; margin-top: 24px; border-color: #193b34; }
+.primary:hover:not(:disabled) { background: #2d5146; }
+.hint { font-size: 12px; color: #6e766b; margin-top: 8px; }
+.empty-state { margin-top: 32px; border-top: 1px solid #d9ddcf; padding-top: 24px; }
+.empty-state p { font-size: 14px; color: #6e766b; }
+.waiting-dot { display: block; width: 8px; height: 8px; background: #a98a45; border-radius: 50%; }
+.notice { background: #f5eadc; border-left: 3px solid #ae4d2b; color: #7e3f27; padding: 12px 16px; font-size: 14px; overflow-wrap: anywhere; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; }
+.badge { display: inline-block; font-size: 12px; letter-spacing: .1em; padding: 5px 10px; background: #e3ebdf; }
+.link-button { border: 0; text-decoration: underline; text-underline-offset: 4px; padding: 4px 0; }
+.group-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+.group { text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.group span { font-size: 12px; }
+.nickname-display { font-family: "Songti TC", serif; font-size: 30px; overflow-wrap: anywhere; }
+.members { padding: 0; list-style: none; margin: 24px 0; border-top: 1px solid #d9ddcf; }
+.members li { padding: 12px 0; border-bottom: 1px solid #d9ddcf; overflow-wrap: anywhere; }
+.members span { margin-left: 12px; font-size: 12px; color: #6e766b; }
+footer { border-top: 1px solid #cbcfc2; padding-top: 16px; color: #6e766b; font-size: 12px; }
+.activity-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.activity-timer { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-block: 1px solid #d9ddcf; padding: 12px 0; }
+.activity-timer time { font-variant-numeric: tabular-nums; font-size: 28px; color: #193b34; }
+dialog { color: #193b34; background: #fffcf5; border: 1px solid #a9b7aa; padding: 28px; max-width: min(460px,calc(100% - 40px)); }
+dialog::backdrop { background: rgb(25 59 52 / 45%); }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.dialog-actions .primary { width: auto; margin: 0; }
+.google-authorize { display: inline-block; color: #193b34; text-underline-offset: 4px; padding: 8px 0; }
+.google-connection .hint { display: block; }
+.google-connection p { overflow-wrap: anywhere; }
+select { width: 100%; min-height: 44px; font: inherit; padding: 8px; background: #fff; color: #193b34; border: 1px solid #a9b7aa; }
+.workspace form .secondary { margin-top: 16px; }
+.import-summary { font-weight: 600; }
+@media(max-width:800px) { main { padding: 20px; } .layout { grid-template-columns: 1fr; gap: 32px; margin: 36px 0; } .intro .lead,.intro .quiet,.rule { display: none; } h1 { margin-bottom: 0; } .workspace { padding: 24px; } }
+@media(prefers-reduced-motion:reduce) { * { scroll-behavior: auto; } }
+/* 學生作答沿用課堂登記簿的紙色、深綠與細線。 */
+.student-members { margin-block: 22px; }
+.student-members summary { cursor: pointer; font-size: 13px; color: #566b60; padding-block: 8px; }
+.student-members .members { margin: 8px 0 16px; }
+.student-questions,.student-results-route { margin-top: 32px; border-top: 1px solid #cdd1c5; padding-top: 22px; }
+.question-index { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 18px 24px; }
+.question-index span,.question-index button { padding: 8px 12px; border: 1px solid #cdd1c5; font-size: 13px; }
+.question-card { border-top: 2px solid #193b34; margin-top: 28px; padding-top: 12px; scroll-margin-top: 20px; }
+.question-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.question-heading h3 { font-family: "Songti TC",serif; font-size: 22px; }
+.question-kind { color: #6e766b; font-size: 12px; }
+.question-prompt { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.9; }
+textarea { width: 100%; min-height: 108px; resize: vertical; font: inherit; line-height: 1.7; padding: 12px; color: #193b34; background: #fffefa; border: 1px solid #a9b7aa; border-radius: 3px; }
+textarea:focus-visible { outline: 3px solid #b45d36; outline-offset: 3px; }
+textarea[aria-invalid="true"] { border-color: #ae4d2b; }
+textarea:disabled { background: #efeee7; color: #566b60; }
+.answer-field { margin-block: 18px; }
+.answer-field label { margin-top: 14px; }
+.field-hint,.draft-note { font-size: 12px; color: #6e766b; line-height: 1.6; margin-top: 7px; }
+.field-hint.invalid { color: #9d4028; }
+.submitted-note { color: #193b34; border-left: 3px solid #879b77; padding: 8px 12px; background: #e9eee4; overflow-wrap: anywhere; }
+.submitted-answer { white-space: pre-wrap; overflow-wrap: anywhere; border-left: 1px solid #bcc9b5; padding: 12px 16px; color: #405b4d; }
+.student-results-route p { color: #566b60; }
+@media(max-width:800px) { .question-heading { align-items: baseline; }.question-kind { text-align: right; }.question-index { gap: 6px; } }
+@media(min-width:801px) { .student-layout { grid-template-columns: .65fr 1.35fr; gap: 48px; }.student-layout .intro { position: sticky; top: 32px; } }
+/* 老師監看以排行紀錄與可展開答案呈現，保留每題所有組別。 */
+.teacher-preview,.teacher-monitor { border-top: 1px solid #cdd1c5; padding-top: 18px; margin-top: 30px; }
+.teacher-preview .question-index button[aria-expanded="true"] { background: #193b34; border-color: #193b34; color: #fff; }
+.teacher-question-preview { background: #f0f1e8; padding: 16px 20px; border-left: 3px solid #879b77; }
+.teacher-question-preview h4 { margin: 0; }
+.teacher-question-status { margin-block: 26px; border-top: 2px solid #193b34; padding-top: 8px; }
+.teacher-question-status h4 { font-family: "Songti TC",serif; font-size: 22px; margin: 16px 0; }
+.teacher-submissions { list-style: none; padding: 0; margin: 8px 0 16px; }
+.teacher-submissions>li { padding: 16px; margin-top: 12px; border: 1px solid #d9ddcf; }
+.teacher-submissions>li.winning-submission { border-left: 3px solid #879b77; background: #edf1e7; }
+.submission-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.success-label { font-size: 12px; color: #193b34; padding: 4px 8px; border: 1px solid #879b77; }
+.teacher-activity .submission-sender { color: #193b34; overflow-wrap: anywhere; margin: 12px 0 4px; }
+.teacher-activity .submission-time { margin: 0 0 12px; font-size: 12px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.teacher-answers summary { cursor: pointer; font-size: 13px; padding-block: 8px; }
+.teacher-answers dl { margin: 12px 0 0; }
+.teacher-answers dt { font-size: 12px; color: #566b60; }
+.teacher-answers dd { white-space: pre-wrap; overflow-wrap: anywhere; margin: 4px 0 18px; line-height: 1.8; }
+.unsubmitted-groups { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+.unsubmitted-groups li { font-size: 12px; color: #6e766b; border: 1px solid #d9ddcf; padding: 5px 9px; }
+.teacher-activity p.question-empty { padding: 12px 16px; background: #efeee7; color: #566b60; }
+@media(min-width:801px) { .teacher-layout { grid-template-columns: 240px minmax(0,1fr); gap: 36px; }.teacher-layout .intro { position: sticky; top: 32px; }.teacher-layout h1 { font-size: 34px; }.teacher-layout .lead { font-size: 23px; } }
+@media(max-width:800px) { .teacher-question-status .question-heading { align-items: baseline; }.teacher-question-status .question-kind { text-align: right; }.teacher-submissions>li { padding: 12px; } }
+/* 結束結果只呈現伺服器已授權的成功答案及本組結果。 */
+.student-results-route .result-score { margin-block: 22px 12px; font-variant-numeric: tabular-nums; }
+.result-score strong { font-family: "Songti TC",serif; color: #193b34; font-size: 52px; font-weight: 500; margin-right: 8px; }
+.student-question-result { border-top: 2px solid #193b34; margin-top: 28px; padding-top: 8px; scroll-margin-top: 20px; }
+.student-question-result h4 { font-family: "Songti TC",serif; font-size: 22px; margin: 16px 0; }
+.student-question-result h5 { margin: 0 0 12px; font-size: 16px; line-height: 1.7; }
+.own-result-status { display: inline-block; border: 1px solid #a9b7aa; font-size: 13px; padding: 5px 12px; }
+.own-result-status.successful-result { background: #193b34; color: #fff; border-color: #193b34; }
+.winning-result,.own-result-answers { margin-block: 14px; padding: 18px; border-left: 3px solid #879b77; background: #edf1e7; }
+.own-result-answers { background: transparent; border: 1px solid #cdd1c5; }
+.result-sender { overflow-wrap: anywhere; font-size: 14px; }
+.result-answers { margin: 12px 0 0; }
+.result-answers dt { font-size: 12px; color: #566b60; }
+.result-answers dd { white-space: pre-wrap; overflow-wrap: anywhere; margin: 5px 0 18px; line-height: 1.8; }
+.result-answers>div:last-child dd { margin-bottom: 0; }
+.no-winning-result { background: #efeee7; padding: 12px 16px; }
+@media(max-width:800px) { .student-question-result .question-heading { align-items: baseline; }.student-question-result .question-kind { text-align: right; }.winning-result,.own-result-answers { padding: 14px; } }
+
+.export-panel .export-pause { display: flex; gap: 10px; align-items: flex-start; line-height: 1.8; }
+.export-pause input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 4px; }
+.export-operations { list-style: none; padding: 0; }
+.export-operations li { border-top: 1px solid #cdd1c5; padding-block: 14px; }
+.export-operations li p { overflow-wrap: anywhere; }
+.export-recovery { display: flex; gap: 12px; flex-wrap: wrap; }
