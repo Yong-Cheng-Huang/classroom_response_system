@@ -1,0 +1,59 @@
+{
+  "name": "classroom-response-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.3 <25"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx src/server/index.ts --dev",
+    "build": "tsc -p tsconfig.server.json && vite build",
+    "start": "node --env-file-if-exists=.env dist/server/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/unit/*.test.ts tests/integration/*.test.ts",
+    "test:unit": "node --import tsx --test tests/unit/*.test.ts",
+    "test:db": "node --import tsx --test tests/integration/database.test.ts tests/integration/activity-replacement.test.ts",
+    "test:http": "node --import tsx --test tests/integration/http.test.ts tests/integration/api.test.ts tests/integration/identity.test.ts tests/integration/activity.test.ts tests/integration/google.test.ts tests/integration/imports.test.ts tests/integration/realtime.test.ts tests/integration/submissions.test.ts tests/integration/results.test.ts tests/integration/exports.test.ts",
+    "test:browser": "npm run build && playwright test",
+    "test:startup": "npm run build && node --import tsx --test tests/smoke/*.test.ts",
+    "probe:g1": "node --import tsx scripts/probes/g1.ts",
+    "probe:g1:window-name": "node --import tsx scripts/probes/g1-window-name.ts",
+    "db:migrate": "node --env-file-if-exists=.env --import tsx scripts/database.ts migrate",
+    "db:status": "node --env-file-if-exists=.env --import tsx scripts/database.ts status",
+    "db:backup": "node --env-file-if-exists=.env --import tsx scripts/database.ts backup",
+    "db:restore": "node --env-file-if-exists=.env --import tsx scripts/database.ts restore",
+    "test:realtime": "node --import tsx --test tests/unit/realtime.test.ts tests/unit/clock.test.ts tests/integration/realtime.test.ts",
+    "probe:g2": "node --import tsx scripts/probes/g2.ts",
+    "test:ranking": "node --import tsx --test tests/integration/submissions.test.ts tests/integration/submission-crash.test.ts",
+    "test:results": "node --import tsx --test tests/unit/projections.test.ts tests/integration/results.test.ts",
+    "test:exports": "node --import tsx --test tests/integration/exports.test.ts",
+    "probe:exports-live": "node --env-file-if-exists=.env --import tsx scripts/probes/exports-live.ts",
+    "probe:exports-live-boundaries": "node --env-file-if-exists=.env --import tsx scripts/probes/exports-live-boundaries.ts",
+    "audit:traceability": "python3 scripts/audit-traceability.py",
+    "test:acceptance-faults": "node --import tsx --test tests/integration/state-crash.test.ts tests/integration/export-crash.test.ts tests/integration/submission-crash.test.ts tests/integration/identity.test.ts tests/integration/upgrade-reset.test.ts",
+    "test:acceptance-security": "node --import tsx --test tests/integration/acceptance-security.test.ts tests/integration/realtime.test.ts tests/integration/results.test.ts",
+    "probe:acceptance42": "node --env-file-if-exists=.env --import tsx scripts/probes/acceptance-42.ts",
+    "probe:performance-preflight": "node --import tsx scripts/probes/performance-preflight.ts",
+    "probe:performance": "node --import tsx scripts/probes/performance-acceptance.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "13.2.0",
+    "google-auth-library": "11.3.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "ws": "8.23.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "24.19.4",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "@types/ws": "8.18.2",
+    "@vitejs/plugin-react": "6.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8"
+  }
+}

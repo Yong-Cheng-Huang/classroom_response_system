@@ -1,0 +1,96 @@
+{
+  "version": 3,
+  "datasets": {
+    "F1": {
+      "questions": 6,
+      "answerFields": 6
+    },
+    "F2": {
+      "questions": 4,
+      "answerFields": 6
+    },
+    "F3": {
+      "questions": 60,
+      "answerFields": 140,
+      "single": 20,
+      "twoPart": 20,
+      "fourPart": 20
+    }
+  },
+  "teacherTabs": 2,
+  "studentTabs": 40,
+  "groups": 20,
+  "studentsPerGroup": 2,
+  "roundsPerDataset": 20,
+  "batches": [
+    "同時加入",
+    "開始",
+    "同題40筆競爭提交",
+    "分批不同題提交",
+    "結束",
+    "40分頁重整",
+    "背景更新",
+    "短斷線恢復",
+    "停機超過30秒恢復"
+  ],
+  "measurements": [
+    "T_commit",
+    "T_apply",
+    "T_ready",
+    "T_restored"
+  ],
+  "limitsMs": {
+    "sync": 1000,
+    "timerDifference": 1000,
+    "recovery": 5000
+  },
+  "aggregation": "每筆加量測不確定度均須達標，報告最壞值與全部失敗，不以平均取代",
+  "requiredEnvironmentFields": [
+    "cpu",
+    "memory",
+    "macOS",
+    "chrome",
+    "foregroundTabs",
+    "backgroundTabs",
+    "frozenOrDiscardedTabs",
+    "powerSavingSettings"
+  ],
+  "requiredSampleFields": [
+    "dataset",
+    "round",
+    "operation",
+    "revision",
+    "tab",
+    "role",
+    "T_commit",
+    "T_apply",
+    "T_ready",
+    "T_restored",
+    "clockUncertaintyMs",
+    "outcome"
+  ],
+  "unresolved": [],
+  "note": "此為驗收設定，不是已完成效能驗收或產品容量上限。",
+  "resolved": {
+    "G1": "正式分頁雙憑證／交接已驗證，仍須整合覆核",
+    "U01": "D38已確認，仍須中斷整合覆核",
+    "U02": "D39已確認：真正凍結／丟棄／OS休眠另列暫停；一般背景維持原門檻；恢復依既有身分規則",
+    "T_apply": "D40已確認；原1／5秒門檻保持"
+  },
+  "pausedScenarios": [
+    "Chrome凍結",
+    "Chrome丟棄",
+    "macOS休眠"
+  ],
+  "appliedPolicy": {
+    "decision": "D40",
+    "T_apply": "首次正確React DOM呈現；授權HTTP讀模或WS皆可",
+    "webSocket": "revision、到達、套用分列，未取得不編造",
+    "recovery": "授權WS快照與正確DOM／計時皆恢復，5秒不變"
+  },
+  "wsMeasurements": [
+    "WS_revision",
+    "T_ws_arrival",
+    "T_ws_apply"
+  ]
+}
