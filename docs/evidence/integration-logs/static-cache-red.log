@@ -1,0 +1,31 @@
+✖ 13.3 雜湊公開程式資源可快取；首頁、API及不存在資源仍no-store (47.8435ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 392.382958
+
+✖ failing tests:
+
+test at tests/integration/static-cache.test.ts:1:325
+✖ 13.3 雜湊公開程式資源可快取；首頁、API及不存在資源仍no-store (47.8435ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'no-store'
+  - 'public, max-age=31536000, immutable'
+  
+      at TestContext.<anonymous> (/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/integration/static-cache.test.ts:12:309)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'no-store',
+    expected: 'public, max-age=31536000, immutable',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

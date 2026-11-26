@@ -1,0 +1,37 @@
+
+> classroom-response-system@0.1.0 probe:performance
+> node --import tsx scripts/probes/performance-acceptance.ts
+
+{"dataset":"F1","round":1,"operation":"同時加入","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"開始","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"同題40筆競爭提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"背景更新","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"短斷線恢復","階段":"停機恢復"}
+{"dataset":"F1","round":1,"operation":"停機超過30秒恢復","階段":"停機恢復"}
+{"dataset":"F1","round":1,"operation":"結束","階段":"量測批次"}
+{"完成":"F1 1/20","最壞同步上界ms":380.2304580000009,"最壞計時差上界ms":752,"最壞恢復上界ms":4518.675999999998}
+{"dataset":"F1","round":2,"operation":"同時加入","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"開始","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"同題40筆競爭提交","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"背景更新","階段":"量測批次"}
+{"dataset":"F1","round":2,"operation":"短斷線恢復","階段":"停機恢復"}
+{"dataset":"F1","round":2,"operation":"停機超過30秒恢復","階段":"停機恢復"}
+{"dataset":"F1","round":2,"operation":"結束","階段":"量測批次"}
+{"完成":"F1 2/20","最壞同步上界ms":623.7082079940446,"最壞計時差上界ms":752,"最壞恢復上界ms":4518.675999999998}
+{"dataset":"F1","round":3,"operation":"同時加入","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"開始","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"同題40筆競爭提交","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":3,"operation":"背景更新","階段":"量測批次"}
+{"狀態":"未通過","停止點":{"dataset":"F1","round":3,"operation":"40分頁重整","原因":"計時差未達門檻；保留本批所有樣本"},"失敗":2}

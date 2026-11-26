@@ -1,0 +1,6 @@
+{
+  "ready": true,
+  "elapsedMs": 2233.928167,
+  "exitCode": null,
+  "stderr": "sandbox_extension_issue_file_to_process failed for /tmp/crs-chrome-retail/Google Chrome.app: 1 (Operation not permitted)\n\nDevTools listening on ws://127.0.0.1:61869/devtools/browser/b5683fdd-28b5-4387-958f-4347f59d5254\n"
+}

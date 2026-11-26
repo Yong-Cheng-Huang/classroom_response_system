@@ -1,0 +1,172 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "Change": "build-local-classroom-response-system",
+  "本次完成": [
+    "12.1",
+    "12.2",
+    "12.3",
+    "12.4",
+    "12.5",
+    "12.6",
+    "12.7",
+    "12.8",
+    "12.9",
+    "12.10",
+    "12.11",
+    "12.12"
+  ],
+  "進度": {
+    "total": 85,
+    "complete": 79,
+    "remaining": 6
+  },
+  "規格統計": {
+    "能力": 10,
+    "需求": 78,
+    "情境": 120,
+    "任務": 85
+  },
+  "Node": "24.22.3",
+  "型別": "通過",
+  "建置": "通過",
+  "單元與整合": {
+    "通過": 130,
+    "失敗": 0,
+    "匯出重點": 14
+  },
+  "Chrome": {
+    "版本": "158.0.8127.37",
+    "最終完整回歸": {
+      "通過": 13,
+      "失敗": 0
+    },
+    "首輪完整回歸": {
+      "通過": 12,
+      "失敗": 1
+    },
+    "登入案例單獨重跑": "通過",
+    "首輪失敗原因": "Google測試等待老師登入按鈕逾時，失敗畫面已登入；原因未定，未宣稱修復。",
+    "證據": "export-logs/"
+  },
+  "正式啟動": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "StrictValidate": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "資料庫": {
+    "schema": 3,
+    "表數": 18,
+    "新增migration": false
+  },
+  "套件依賴變更": false,
+  "保留正式資料": {
+    "activity": [
+      {
+        "state": "ENDED",
+        "version": 3,
+        "group_count": 4
+      }
+    ],
+    "questions": {
+      "n": 4
+    },
+    "submissions": {
+      "n": 4
+    },
+    "google": {
+      "state": "CONNECTED"
+    },
+    "exports": {
+      "n": 0
+    },
+    "schema": {
+      "version": 3
+    },
+    "tables": {
+      "n": 18
+    },
+    "保留": true
+  },
+  "真實Sheets": {
+    "矩陣": "exports-live.json",
+    "邊界": "exports-live-boundaries.json",
+    "首輪失敗": "exports-live-initial-attempt.json",
+    "完整矩陣批次": 62,
+    "原始範本及使用者來源副本寫入": false,
+    "永久失權": "在真實寫入後的讀取層注入403，未真的刪表或撤銷帳戶",
+    "原生畫面": "Chrome登入後檢查隔離首輪副本：140字測試答案與emoji、完整時間附註均在擴展列內可見；單題與題組9點灰色及格式另由API核對。",
+    "PDF": "下載及文字檢查成功，高列分頁不佳，不宣稱PDF列印排版通過。"
+  },
+  "未決": [
+    "U02 瀏覽器凍結／休眠",
+    "U03 未核實範圍解除政策"
+  ],
+  "尚未完成": [
+    "13.1 執行原需求 L4～L188 逐條追蹤及 D01～D38 稽核；完成條件：全部內容列與規格情境對應實際測試／人工證據，G1／G2 與 U01／U02 如實列狀態，不以模板存在代替功能或未決政策宣稱完成。（PS08）",
+    "13.2 執行同 Chrome 2 老師＋40 學生完整流程；完成條件：20 組各 2 人完成匯入、選組、題組競爭、結束、結果與三模式匯出，記錄機器及瀏覽器版本。（RR07、PS08）",
+    "13.3 在 9、10、11 群組畫面完成後執行固定效能程序；完成條件：依 1.6 的 F1～F3 各 20 輪及固定批次，對齊 T_commit／T_apply／T_ready／T_restored 並記誤差，每次含背景分頁更新≤1秒、計時差≤1秒、恢復≤5秒，報最壞值與全部失敗；U02 未確認不刪樣本、不勾完整通過。（RR02、RR05、RR08、D37）",
+    "13.4 執行重啟與中斷故障整合；完成條件：四階段、30秒／12小時交界、密碼變更、序號落盤、題組交易、遠端寫入／本機確認與放棄換場等中斷點符合規格，無名次倒退或錯復活，G2／U01 有定案政策及證據才可勾完。（PS01、PS02、RR03、RR04、SR04、GE14、GE15）",
+    "13.5 執行跨功能權限與資料洩漏驗收；完成條件：偽造老師、他組、過期、舊活動、複製分頁與重連封包皆符合授權，學生無 Google 憑證及禁止資料。（IA03、IA08、AR01、AR02、PS06）",
+    "13.6 整理驗收報告與本機操作交付；完成條件：每個情境有通過證據或明確缺失，附啟動、密碼、Google、備份、重連、匯出與 D31 前提說明；未達標不勾整體完成。（PS08）"
+  ],
+  "受保護檔案雜湊": {
+    "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+    "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
+    "openspec/changes/build-local-classroom-response-system/proposal.md": "1fc368aa1c965940aa775c4dfdc3f253e2d80d93ed46f22ab4654779ea470e00",
+    "openspec/changes/build-local-classroom-response-system/design.md": "d415891801491a57f8c3c032e61854d2b0f4524c1a5bc91b45c56ceda5cc802d",
+    "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md": "d341472f9a1d5d0532f0824b10c7f9fbc25a5bef92d0ecc8e5d3c83e7f89a86c",
+    "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae",
+    "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md": "588d4e02d091cec7f651f04703a3e2837ddc444828cebed506bbaeb1c67dc416",
+    "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md": "0560e630233b128a0a8e5ac18a737ecbd59db0172589a91abce6948ca421f13c",
+    "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md": "094d8565f9adc0f524283f85c53cd6650b4a6988a97ff520dc0e6e7268a341b6",
+    "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md": "9ee9c5cd099c2c45d71b935eae3945ee454279d17583fe46b145b37b8661eaae",
+    "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md": "4d96e9b5ed4bd1134e3b596c92ab6568eb70944f54da9c8d61c0bbbd69b76bfc",
+    "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md": "b5cfcf22196e7cac1249c950a3f5ca9d1c3af7ecb8837f49944b347ae9d6ffc9",
+    "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md": "d6e8efc179e7bbab07ed658b57b8fc3903ca6d41d82a410e32cd736eda527792",
+    "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md": "5f73af6dc2c977f701bedad0c8e449a133a87eb00d42dc44d0ed1164772f776f"
+  },
+  "本階段主要檔案雜湊": {
+    "src/shared/exports.ts": "2de3ee24e26a5281dcb7a7dcdb2e779ae0e8000dceea487837a620b7157ddc22",
+    "src/shared/errors.ts": "e9537b9d3a2d5fcb5c045e90db313130f7cd6dde75f563801e8b4b6a90f2b6d7",
+    "src/server/exports.ts": "e33e21f2d63f637a3186fe7db5147447d24ac6ab60393eda02d1c22d18335ef7",
+    "src/server/export-plan.ts": "4d1a817d4bc5ccf2af06bcbedf32177e0843414d58243fae4da511d8be866e82",
+    "src/server/export-http.ts": "05e7f53849e8e495135fe98f217db78e7932f5c18a89a87a5e0c0b0475793222",
+    "src/server/google.ts": "f9c9a0105c3230a4e606d66073ae788cf37826692a271523eda23b6df08c1815",
+    "src/server/activity.ts": "4e4a2c3ddb356d0c78c8e69ee0cffb11667c4535fa612c9f755603d6c14447cd",
+    "src/server/activity-replacement.ts": "09aefc0e53f938a5ff07264cffc1f7de05e39a44addbe6db53f4780b0c3c40ad",
+    "src/server/imports.ts": "8b32da46da7027dfe9f4b78ecdc06ec56b0f530b5474fc5c61bb66cc4dea0a9c",
+    "src/server/import-http.ts": "320962fc5a4544549800979e5736aa797d71ce8d47c5e71cad6582b01a14f4fc",
+    "src/server/api.ts": "c8780c2c5f7e692f45daf7077210fcb2a7ba1d27e956945d21ddf3a8474bc0c2",
+    "src/server/app.ts": "6c1d2e564e3542113e8a9458a5f078cf29cecc417b1f94b44db0cf680d5aed23",
+    "src/server/index.ts": "87784efdb5410854ceabe7926fc688128e94ec2d6347c26d535bf08da72ca0e3",
+    "src/client/exports.tsx": "8a1cb2ce4a6b29e09f377740f076d22b5871ff33c2e6abe4cce5de25bc250517",
+    "src/client/imports.tsx": "69e43e5d48dae3814acdd0f98574a7014c5a111602016c136a8b7107ebaa75cb",
+    "src/client/main.tsx": "c9a8f3eeaf029ea836b93fa08ac75f55ea30380e2b877369271df4c80c4aff5d",
+    "src/client/style.css": "0e01f82c21e4bf446939f5cb914826914560427b55629583a84476baa740c40a",
+    "tests/helpers/exports.ts": "7a83377c675659d36a05aee5348646dea601c48064107975a27707da528d44f1",
+    "tests/integration/exports.test.ts": "7af9c22fbc18176eff70018eff05e36cc37a9d44e82b32303af937497db15a89",
+    "tests/browser/exports.spec.ts": "ca07c088c8aae7798198441cb8f43c707c8e867b13db4768227505455e681ee5",
+    "scripts/probes/exports-live.ts": "a81f08a24d003da173e41e65f968a7eff56ab2e3392fa76467cab29d3499093d",
+    "scripts/probes/live-google-context.ts": "f2e71269e645556796c09eab5a37ea7b5a4aac142fd76c19f50bc13e099a2436",
+    "scripts/probes/exports-live-boundaries.ts": "22474083b29d5adbfae7aa0f8f8f7287ea8c4a816728d42e9db416f30ea9f697",
+    "package.json": "cd875238275b4ca28308e3068b5f377cd0549e12490a9f10398d69fe5a281ccc",
+    "README.md": "01f6c9c53af37972edc75e62346db984b90b54340b0adf49104f27091a14a0c6",
+    "docs/guided-notes-export.md": "9f2f083a93f32d028d8f97b997b2096e2e7f7837c72bcbd8543ca3ece52d2d43",
+    "docs/backend-api-contracts.md": "3631816187f372232b57478665db59a39815eaab375c54246f4c720315bd1067",
+    "docs/database.md": "41d1ce1e835133d42b19060b76e4fec96d5aa1589a4aed06279f7ab21695d924",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "25a9cca0cac835352759cf43455080ec029dfc6708cae21dd5da6b22cd37d366"
+  }
+}

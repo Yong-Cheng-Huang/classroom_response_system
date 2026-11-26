@@ -1,0 +1,13 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "未通過",
+  "副本": [
+    {
+      "類型": "單題",
+      "連結": "https://docs.google.com/spreadsheets/d/1EHzThOH7goiCd32NL-j0d8ntGu86inJBo4jgLgi6zNQ/edit",
+      "狀態": "執行中",
+      "已完成批次": 6
+    }
+  ],
+  "錯誤": "{\"mode\":\"INLINE\",\"state\":\"UNCONFIRMED\",\"message\":\"結果待確認，原表可能已修改；請保持暫停外部編輯並再次核對，不要盲目重送。\"}\n+ actual - expected\n\n+ 'UNCONFIRMED'\n- 'COMPLETED'\n"
+}

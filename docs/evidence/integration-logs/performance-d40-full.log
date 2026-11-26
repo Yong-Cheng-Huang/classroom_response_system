@@ -1,0 +1,25 @@
+
+> classroom-response-system@0.1.0 probe:performance
+> node --import tsx scripts/probes/performance-acceptance.ts
+
+{"dataset":"F1","round":1,"operation":"同時加入","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"開始","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"同題40筆競爭提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"背景更新","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":1,"operation":"短斷線恢復","階段":"停機恢復"}
+{"dataset":"F1","round":1,"operation":"停機超過30秒恢復","階段":"停機恢復"}
+{"dataset":"F1","round":1,"operation":"結束","階段":"D40 DOM與WS分列量測"}
+{"完成":"F1 1/20","最壞同步上界ms":421.4283749940405,"最壞計時差上界ms":554.2396621093758,"最壞恢復上界ms":3428.630417005963}
+{"dataset":"F1","round":2,"operation":"同時加入","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"開始","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"同題40筆競爭提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"分批不同題提交","階段":"D40 DOM與WS分列量測"}
+{"dataset":"F1","round":2,"operation":"背景更新","階段":"D40 DOM與WS分列量測"}
+{"狀態":"未通過","停止點":{"dataset":"F1","round":2,"operation":"40分頁重整","原因":"40頁重整未達門檻"},"失敗":40}

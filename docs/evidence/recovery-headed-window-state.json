@@ -1,0 +1,48 @@
+{
+  "Chrome": "158.0.8127.89",
+  "headed": true,
+  "windows": [
+    {
+      "page": 0,
+      "visibility": "visible",
+      "window": {
+        "windowId": 1908443271,
+        "bounds": {
+          "left": 22,
+          "top": 52,
+          "width": 1200,
+          "height": 1272,
+          "windowState": "normal"
+        }
+      }
+    },
+    {
+      "page": 1,
+      "visibility": "visible",
+      "window": {
+        "windowId": 1908443271,
+        "bounds": {
+          "left": 22,
+          "top": 52,
+          "width": 1200,
+          "height": 1272,
+          "windowState": "normal"
+        }
+      }
+    },
+    {
+      "page": 2,
+      "visibility": "visible",
+      "window": {
+        "windowId": 1908443271,
+        "bounds": {
+          "left": 22,
+          "top": 52,
+          "width": 1200,
+          "height": 1272,
+          "windowState": "normal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "真實流程": [
+    "單題副本預覽：6題6欄",
+    "取消單題預覽，仍尚未匯入",
+    "題組副本預覽：4題6欄",
+    "取消題組預覽，仍尚未匯入",
+    "重新讀取單題副本，確認匯入後進入 READY"
+  ],
+  "目前活動": {
+    "state": "READY",
+    "group_count": 2
+  },
+  "資料數": {
+    "questions": 6,
+    "question_fields": 6,
+    "groups": 2,
+    "participants": 0,
+    "submissions": 0
+  },
+  "Google連結保留": true,
+  "外部寫入": "未執行；Sheets 全部使用 GET",
+  "本機來源基準": "目前活動的 sources／question_fields，隨新活動清除"
+}

@@ -1,0 +1,10 @@
+{
+  "T_before_commit": 2363.962084,
+  "T_commit": 2364.045,
+  "T_protocol": 2429.660584,
+  "revision": 2,
+  "T_ready": 2429.933459,
+  "T_snapshot": 2444.332917,
+  "範圍": "同 Node 單調時鐘；協定接收與授權快照，非 DOM T_apply／42 分頁時限驗收",
+  "恢復原組": true
+}

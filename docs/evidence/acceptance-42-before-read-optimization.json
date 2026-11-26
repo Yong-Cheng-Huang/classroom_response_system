@@ -1,0 +1,854 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "未通過",
+  "範圍": "同一原生Chrome設定檔，2老師＋40學生；真HTTP／WS／SQLite／Google Sheets",
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "kernel": "27.2.0",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "Chrome來源": "/tmp/crs-chrome-stable/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "驅動": "Playwright launch；同一context 42分頁；不作原生背景效能證據",
+    "執行模式": "原生Chrome headless；功能流程，不作有視窗背景效能證據",
+    "Chrome": "158.0.8127.88",
+    "分頁狀態": [
+      {
+        "分頁": 0,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 1,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 2,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 3,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 4,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 5,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 6,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 7,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 8,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 9,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 10,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 11,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 12,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 13,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 14,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 15,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 16,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 17,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 18,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 19,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 20,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 21,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 22,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 23,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 24,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 25,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 26,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 27,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 28,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 29,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 30,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 31,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 32,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 33,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 34,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 35,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 36,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 37,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 38,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 39,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 40,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 41,
+        "visibility": "visible",
+        "discarded": false
+      }
+    ]
+  },
+  "步驟": [
+    "老師真實Sheets題組匯入20組，第二老師同步",
+    "同一Chrome恰42分頁，20組各2名學生、同名去重與本人標示"
+  ],
+  "重用前輪隔離副本": true,
+  "測試副本": "https://docs.google.com/spreadsheets/d/1S4jgrS5F6LbxTylenwmq1WyYf6gj78xyBJsgpCR5_ww/edit#gid=989830504",
+  "加入回覆": [
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    }
+  ],
+  "失敗資料庫概況": {
+    "組員": {
+      "n": 40
+    },
+    "提交": {
+      "n": 0
+    },
+    "身分": [
+      {
+        "role": "STUDENT",
+        "lifecycle": "CONNECTED",
+        "n": 29
+      },
+      {
+        "role": "STUDENT",
+        "lifecycle": "GRACE",
+        "n": 10
+      },
+      {
+        "role": "STUDENT",
+        "lifecycle": "REVOKED",
+        "n": 1
+      },
+      {
+        "role": "TEACHER",
+        "lifecycle": "CONNECTED",
+        "n": 3
+      }
+    ],
+    "活動": {
+      "state": "RUNNING",
+      "version": 2
+    }
+  },
+  "失敗分頁診斷": [
+    {
+      "分頁": 0,
+      "標題": [
+        "老師已登入"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": false,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 1,
+      "標題": [
+        "老師已登入"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": false,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 2,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 3,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 4,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 5,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 6,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 7,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 8,
+      "標題": [
+        "先告訴我們你的名字"
+      ],
+      "暱稱欄": true,
+      "密碼欄": false,
+      "學生畫面": false,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 9,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 10,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 11,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 12,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 13,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 14,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 15,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 16,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 17,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 18,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 19,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 20,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 21,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 22,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 23,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 24,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 25,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 26,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 27,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 28,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 29,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 30,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 31,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 32,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 33,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 34,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 35,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 36,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 37,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 38,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 39,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 40,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    },
+    {
+      "分頁": 41,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "visible"
+    }
+  ],
+  "錯誤": "expect(locator).toBeVisible() failed\n\nLocator: getByRole('region', { name: '作答題目', exact: true })\nExpected: visible\nTimeout: 30000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('region', { name: '作答題目', exact: true }) with timeout 30000ms\n  - waiting for getByRole('region', { name: '作答題目', exact: true })\n",
+  "競爭已攔截請求": 0
+}

@@ -1,0 +1,112 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "變更": "build-local-classroom-response-system",
+  "Node": "v24.22.3",
+  "平台": "darwin/arm64",
+  "本次完成": [
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5"
+  ],
+  "進度": {
+    "total": 85,
+    "complete": 30,
+    "remaining": 55
+  },
+  "單元與整合": {
+    "通過": 68,
+    "失敗": 0
+  },
+  "Chrome": {
+    "無視窗": {
+      "通過": 2,
+      "失敗": 0,
+      "原始記錄": "/tmp/crs-activity-browser.log"
+    },
+    "有視窗": {
+      "統計": {
+        "startTime": "2026-11-25T19:25:28.027Z",
+        "duration": 19092.617,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "測試": [
+        {
+          "名稱": "1.4 同一Chrome context的多分頁均可載入React並連接同來源後端",
+          "結果": "expected",
+          "註記": [],
+          "執行": [
+            {
+              "結果": "passed",
+              "毫秒": 1941
+            }
+          ]
+        },
+        {
+          "名稱": "正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷",
+          "結果": "expected",
+          "註記": [
+            {
+              "type": "browser",
+              "description": "157.0.8103.80"
+            },
+            {
+              "type": "mode",
+              "description": "有視窗"
+            }
+          ],
+          "執行": [
+            {
+              "結果": "passed",
+              "毫秒": 13433
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "啟動": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "StrictValidate": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "尚待完成": [
+    "4.6 即時訂閱授權",
+    "6.1 真實 OAuth 資源及授權；第 6 群組尚未勾選",
+    "第 7～13 群組",
+    "U01／U02／U03 與 G2"
+  ],
+  "sha256": {
+    "src/server/activity.ts": "31ba7cb01c3d19d62f2990f016a048f83a61ea9f80bbc24cec6887becd10821c",
+    "src/server/api.ts": "7ff24cf5dd5c3c74a562900694260f31470ea20314f01d0681dace820e6fb77a",
+    "src/server/app.ts": "1b3689ac49f8f5855f9769ae4a5d580b6b9b85159ecc64494860b9b8a6b9750a",
+    "src/server/index.ts": "c166e7a625df0e57bd7464e42cc40d776abb544398c6aac15ddcf5f9922d991d",
+    "src/client/activity.tsx": "4a910cbad377968d6a6095bc2a447730f90442af24dfb534df129fdcff68d84e",
+    "src/client/main.tsx": "fbfaf55b7ec7648b897cb10c6fb7b8fc4216d9ee6095991e12a80ccf1a435169",
+    "src/client/session.ts": "b0223e99e12503d2dc1e6b624b30417fd2ef7d7f5a1be1e28fde57cadf3cd667",
+    "src/client/style.css": "827ee69148ca3ae6aee061d7d91b4c632e7976dbf8ebb2fe115b9f4f5a92f5f5",
+    "tests/integration/activity.test.ts": "18690c893ac62e31971720b68e98dd7a5424ab4565ac2d76d93491a68bd40fa4",
+    "tests/browser/identity.spec.ts": "548762284ed547b8697ee57635393ec540920f1da77b001497c64b6baa9ad439",
+    "package.json": "2f6dcc8545e4b74786ca65b0e3b87b92025399752c051c9ac5103f398cbd66c9",
+    "package-lock.json": "121284aafd806f2437d7d840779ffef6edbb3c6d32f378c6cdd516e44b29ccea",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "38dc5051ae3c2b9c735ab629f5de081c55b67f88ae643f6be5a9f3f1ba12b912",
+    "openspec/changes/build-local-classroom-response-system/design.md": "7682309bc084a561c463e3d0921f069a4d223bc02130d8b197f4234b7bd03f2d"
+  }
+}

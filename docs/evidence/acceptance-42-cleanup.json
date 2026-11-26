@@ -1,0 +1,9 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "首次清理": "ENOTEMPTY，發生於42分頁所有功能與三模式匯出完成後",
+  "修正": "臨時目錄rmSync使用maxRetries=10、retryDelay=100，與既有測試清理策略一致",
+  "覆核": "僅指定的隔離目錄已移除，未刪正式data或使用者Chrome設定檔",
+  "原探針退出碼": 1,
+  "原退出碼原因": "清理錯誤，不把它改寫為退出0",
+  "功能結果": "docs/evidence/acceptance-42.json：功能流程通過，三模式均COMPLETED"
+}

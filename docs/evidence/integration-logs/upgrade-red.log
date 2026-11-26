@@ -1,0 +1,41 @@
+✖ 13.4 未授權WebSocket交接遭ECONNRESET，伺服器仍存活且健康檢查可用 (269.035ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 509.287083
+
+✖ failing tests:
+
+test at tests/integration/upgrade-reset.test.ts:1:191
+✖ 13.4 未授權WebSocket交接遭ECONNRESET，伺服器仍存活且健康檢查可用 (269.035ms)
+  AssertionError [ERR_ASSERTION]: /Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/helpers/upgrade-reset.ts:8
+  app.server.prependOnceListener('upgrade',(_request,socket)=>queueMicrotask(()=>socket.emit('error',Object.assign(new Error('read ECONNRESET'),{code:'ECONNRESET'}))));
+                                                                                                                   ^
+  
+  Error: read ECONNRESET
+      at <anonymous> (/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/helpers/upgrade-reset.ts:8:114)
+  Emitted 'error' event on Socket instance at:
+      at <anonymous> (/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/helpers/upgrade-reset.ts:8:87) {
+    code: 'ECONNRESET'
+  }
+  
+  Node.js v24.22.3
+  
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/integration/upgrade-reset.test.ts:7:478)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

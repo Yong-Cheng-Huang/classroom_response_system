@@ -1,0 +1,94 @@
+{
+  "Chrome": "158.0.8127.37",
+  "targets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://admccjkmockfdflocgggjfgdacdodkdf"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf"
+    },
+    {
+      "type": "page",
+      "url": "http://127.0.0.1:57926"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome"
+    },
+    {
+      "type": "page",
+      "url": "http://127.0.0.1:57926"
+    },
+    {
+      "type": "page",
+      "url": "http://127.0.0.1:57926"
+    }
+  ],
+  "beforeActivation": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    }
+  ],
+  "CDP方法計數": {
+    "Browser.getVersion": 1,
+    "Target.setAutoAttach": 5,
+    "Runtime.runIfWaitingForDebugger": 9,
+    "Page.enable": 4,
+    "Page.getFrameTree": 4,
+    "Log.enable": 4,
+    "Page.setLifecycleEventsEnabled": 4,
+    "Runtime.enable": 7,
+    "Page.addScriptToEvaluateOnNewDocument": 4,
+    "Network.enable": 7,
+    "Inspector.enable": 1,
+    "Target.getTargetInfo": 2,
+    "Emulation.setUserAgentOverride": 3,
+    "Page.createIsolatedWorld": 4,
+    "Target.createTarget": 3,
+    "Target.detachFromTarget": 2,
+    "Page.navigate": 3,
+    "Target.closeTarget": 1,
+    "Page.bringToFront": 1,
+    "Runtime.evaluate": 3,
+    "Runtime.callFunctionOn": 6,
+    "Target.attachToBrowserTarget": 2,
+    "Target.attachToTarget": 1,
+    "Target.activateTarget": 1,
+    "Target.getTargets": 1
+  },
+  "焦點命令": [],
+  "控制": "獨立原生pipe，noDefaults；無焦點／節流／電源覆寫",
+  "states": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    }
+  ]
+}

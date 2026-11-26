@@ -1,0 +1,70 @@
+{
+  "extensions": [
+    {
+      "id": "nkeimhogjdpnpccoofpliimaahmaaome",
+      "name": "Google Hangouts",
+      "version": "1.4.5",
+      "permissions": [
+        "enterprise.hardwarePlatform",
+        "processes",
+        "system.cpu",
+        "webrtcLoggingPrivate"
+      ]
+    },
+    {
+      "id": "fignfifoniblkonapihmkfakmlgkbkcf",
+      "name": "Google Network Speech",
+      "version": "1.0",
+      "description": "Component extension providing speech via the Google network text-to-speech service.",
+      "permissions": [
+        "metricsPrivate",
+        "offscreen",
+        "systemPrivate",
+        "ttsEngine"
+      ],
+      "hostPermissions": [
+        "https://www.google.com/"
+      ]
+    },
+    {
+      "id": "admccjkmockfdflocgggjfgdacdodkdf",
+      "name": "Gemini in Chrome",
+      "version": "1.2",
+      "description": "Enables seamless transitions to gemini.google.com",
+      "permissions": [
+        "glicPrivate",
+        "glicPrivate.invoke"
+      ]
+    }
+  ],
+  "Chrome": "158.0.8127.89",
+  "範圍": "獨立Node程序／原生有視窗／noDefaults，沒有設定焦點模擬",
+  "保留初始空白頁": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "hidden",
+      "focused": false
+    },
+    {
+      "visibility": "hidden",
+      "focused": false
+    }
+  ],
+  "關閉初始空白頁": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "hidden",
+      "focused": false
+    },
+    {
+      "visibility": "hidden",
+      "focused": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+
+> classroom-response-system@0.1.0 probe:performance
+> node --import tsx scripts/probes/performance-acceptance.ts
+
+{"dataset":"F1","round":1,"operation":"同時加入","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"開始","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"同題40筆競爭提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"背景更新","階段":"量測批次"}
+{"狀態":"未通過","停止點":{"dataset":"F1","round":1,"operation":"40分頁重整","原因":"40頁重整未達門檻"},"失敗":3}

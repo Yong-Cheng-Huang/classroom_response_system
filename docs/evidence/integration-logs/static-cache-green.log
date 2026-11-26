@@ -1,0 +1,9 @@
+✔ 13.3 雜湊公開程式資源可快取；首頁、API及不存在資源仍no-store (53.2355ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 396.479791

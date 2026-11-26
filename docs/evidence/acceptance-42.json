@@ -1,0 +1,418 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "功能流程通過",
+  "範圍": "同一原生Chrome設定檔，2老師＋40學生；真HTTP／WS／SQLite／Google Sheets",
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "kernel": "27.2.0",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "Chrome來源": "/tmp/crs-chrome-retail/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "驅動": "原生Chrome CDP noDefaults",
+    "執行模式": "原生Chrome有視窗",
+    "Chrome": "158.0.8127.89",
+    "分頁狀態": [
+      {
+        "分頁": 0,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 1,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 2,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 3,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 4,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 5,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 6,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 7,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 8,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 9,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 10,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 11,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 12,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 13,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 14,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 15,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 16,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 17,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 18,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 19,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 20,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 21,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 22,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 23,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 24,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 25,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 26,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 27,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 28,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 29,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 30,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 31,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 32,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 33,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 34,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 35,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 36,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 37,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 38,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 39,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 40,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 41,
+        "visibility": "hidden",
+        "discarded": false
+      }
+    ]
+  },
+  "步驟": [
+    "老師真實Sheets題組匯入20組，第二老師同步",
+    "同一Chrome恰42分頁，20組各2名學生、同名去重與本人標示",
+    "開始後40學生分頁完整顯示全部單題及題組",
+    "40筆同題表單競爭，20成功20拒絕、每組一次、完整雙子題及唯一1～20名；學生無排名",
+    "不同題分批提交、第二老師確認結束、40學生自動轉完整結果與無人題",
+    "真實Sheets 只有答案 操作已完成",
+    "真實Sheets 答案＋組別時間欄 操作已完成",
+    "真實Sheets 答案＋格內附註行 操作已完成",
+    "42分頁保持開啟，老師真實原表三模式匯出、題組附註9點核對"
+  ],
+  "測試副本": "https://docs.google.com/spreadsheets/d/1yktcHw_5ylYVcq_q3NVaxliybs6aHRpP1PQPM5fFR6U/edit#gid=302915368",
+  "加入回覆": [
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    }
+  ],
+  "第二題輸入進度": 39,
+  "效能聲明": "此流程不是F1～F3各20輪效能證據，沒有以最終一致冒稱1／5秒通過。",
+  "匯出操作終態": [
+    {
+      "mode": "ANSWERS",
+      "state": "COMPLETED"
+    },
+    {
+      "mode": "COLUMNS",
+      "state": "COMPLETED"
+    },
+    {
+      "mode": "INLINE",
+      "state": "COMPLETED"
+    }
+  ]
+}

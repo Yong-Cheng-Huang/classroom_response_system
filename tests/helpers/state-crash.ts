@@ -1,0 +1,11 @@
+import {readFileSync,writeSync} from 'node:fs';
+import {openDatabase} from '../../src/server/database.js';
+import {IdentityService} from '../../src/server/identity.js';
+import {ActivityService} from '../../src/server/activity.js';
+import {createApplication} from '../../src/server/app.js';
+import {readConfig} from '../../src/server/config.js';
+import {readActivityModel} from '../../src/server/read-model.js';
+import {assertRequestOrigin} from '../../src/server/identity-http.js';
+const [file,time,port]=process.argv.slice(2),fixture=JSON.parse(readFileSync(file!,'utf8')),db=openDatabase(fixture.path),now=()=>Number(time),identity=new IdentityService(db,'state-crash-fixture',now,true);
+const app=createApplication(readConfig({APP_DATA_DIR:fixture.directory,TEACHER_PASSWORD:'state-crash-fixture'}),db,()=>{},{identity,activities:new ActivityService(db,identity,undefined,now),now,authenticate:r=>{assertRequestOrigin(r);return identity.principal(identity.proof(r));},beforeRead:()=>identity.sweep(),readModel:()=>readActivityModel(db,identity)});
+const address=await app.listen(Number(port));if(!address||typeof address==='string')throw new Error('隔離服務未啟動');identity.markReady();writeSync(1,JSON.stringify({ready:address.port})+'\n');

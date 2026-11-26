@@ -1,0 +1,10 @@
+import {connect} from 'node:net';
+import {once} from 'node:events';
+import {dirname} from 'node:path';
+import {openDatabase} from '../../src/server/database.js';
+import {createApplication} from '../../src/server/app.js';
+import {readConfig} from '../../src/server/config.js';
+const path=process.argv[2]!;const db=openDatabase(path),app=createApplication(readConfig({APP_DATA_DIR:dirname(path)}),db,()=>{}),address=await app.listen(0);if(!address||typeof address==='string')throw new Error('隔離服務未啟動');
+app.server.prependOnceListener('upgrade',(_request,socket)=>queueMicrotask(()=>socket.emit('error',Object.assign(new Error('read ECONNRESET'),{code:'ECONNRESET'}))));
+const client=connect(address.port,'127.0.0.1');client.on('error',()=>{});const closed=once(client,'close');await once(client,'connect');client.write(`GET /ws HTTP/1.1\r\nHost: 127.0.0.1:${address.port}\r\nConnection: Upgrade\r\nUpgrade: websocket\r\nSec-WebSocket-Version: 13\r\nSec-WebSocket-Key: MDEyMzQ1Njc4OWFiY2RlZg==\r\n\r\n`);client.resume();await closed;
+const response=await fetch(`http://127.0.0.1:${address.port}/api/health`);if(response.status!==200)throw new Error('重置後服務不可用');console.log('UPGRADE_RESET_HANDLED');await app.close();db.close();

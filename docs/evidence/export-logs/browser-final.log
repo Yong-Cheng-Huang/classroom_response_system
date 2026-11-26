@@ -1,0 +1,22 @@
+[WebServer] (node:6006) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 13 tests using 1 worker
+
+(node:6027) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/exports.spec.ts:23:1 › 12.1～12.12 老師匯出三模式、D31、預檢取消、核對及放棄後完整成功換場 (9.0s)
+  ✓   2 tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 (1.6s)
+  ✓   3 tests/browser/google.spec.ts:18:1 › Google 連結畫面：另開授權頁不丟老師身分，兩老師共用、分頁登出不解除 (5.7s)
+  ✓   4 tests/browser/identity.spec.ts:17:1 › 正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷 (18.8s)
+  ✓   5 tests/browser/ranking.spec.ts:18:1 › 8.1～8.7 同 Chrome 兩老師四學生：同組競爭、角色分流、重建後第三名及結束重送 (3.6s)
+  ✓   6 tests/browser/realtime.spec.ts:15:1 › 7.1～7.3 同 Chrome 兩老師與學生由 WS 套用快照；停用 view 輪詢仍同步 (2.2s)
+  ✓   7 tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 (46.2s)
+  ✓   8 tests/browser/results.spec.ts:19:1 › 11.1～11.4 完整學生結果：三狀態、四子題只計一題、成功公開、無人題及重啟恢復 (5.4s)
+  ✓   9 tests/browser/student.spec.ts:29:1 › 9.1～9.6 學生表單：等待、同名組員、分頁草稿、四子題、鎖定、結束與換場 (3.7s)
+  ✓  10 tests/browser/student.spec.ts:77:1 › 9.4～9.6 送出前中斷、重整及相同 requestId 重試；儲存失敗不送出 (3.0s)
+  ✓  11 tests/browser/student.spec.ts:98:1 › 9.5 伺服器欄位錯誤、他人先送出，以及換場後延遲回覆不得復活草稿 (3.9s)
+  ✓  12 tests/browser/teacher.spec.ts:21:1 › 10.2～10.4 多老師獨立預覽、完整題組監看、同毫秒名次、結束及重啟保存 (4.8s)
+  ✓  13 tests/browser/teacher.spec.ts:77:1 › 10.1 老師匯入介面：繁體驗證、2／20組、選表、跨階段限制及替換清除提醒 (5.1s)
+
+  13 passed (2.0m)

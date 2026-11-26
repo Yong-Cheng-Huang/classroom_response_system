@@ -1,0 +1,679 @@
+{
+  "執行編號": "2026-11-26T12-52-37-296Z",
+  "狀態": "未通過",
+  "設定": {
+    "version": 2,
+    "datasets": {
+      "F1": {
+        "questions": 6,
+        "answerFields": 6
+      },
+      "F2": {
+        "questions": 4,
+        "answerFields": 6
+      },
+      "F3": {
+        "questions": 60,
+        "answerFields": 140,
+        "single": 20,
+        "twoPart": 20,
+        "fourPart": 20
+      }
+    },
+    "teacherTabs": 2,
+    "studentTabs": 40,
+    "groups": 20,
+    "studentsPerGroup": 2,
+    "roundsPerDataset": 20,
+    "batches": [
+      "同時加入",
+      "開始",
+      "同題40筆競爭提交",
+      "分批不同題提交",
+      "結束",
+      "40分頁重整",
+      "背景更新",
+      "短斷線恢復",
+      "停機超過30秒恢復"
+    ],
+    "measurements": [
+      "T_commit",
+      "T_apply",
+      "T_ready",
+      "T_restored"
+    ],
+    "limitsMs": {
+      "sync": 1000,
+      "timerDifference": 1000,
+      "recovery": 5000
+    },
+    "aggregation": "每筆加量測不確定度均須達標，報告最壞值與全部失敗，不以平均取代",
+    "requiredEnvironmentFields": [
+      "cpu",
+      "memory",
+      "macOS",
+      "chrome",
+      "foregroundTabs",
+      "backgroundTabs",
+      "frozenOrDiscardedTabs",
+      "powerSavingSettings"
+    ],
+    "requiredSampleFields": [
+      "dataset",
+      "round",
+      "operation",
+      "revision",
+      "tab",
+      "role",
+      "T_commit",
+      "T_apply",
+      "T_ready",
+      "T_restored",
+      "clockUncertaintyMs",
+      "outcome"
+    ],
+    "unresolved": [],
+    "note": "此為驗收設定，不是已完成效能驗收或產品容量上限。",
+    "resolved": {
+      "G1": "正式分頁雙憑證／交接已驗證，仍須整合覆核",
+      "U01": "D38已確認，仍須中斷整合覆核",
+      "U02": "D39已確認：真正凍結／丟棄／OS休眠另列暫停；一般背景維持原門檻；恢復依既有身分規則"
+    },
+    "pausedScenarios": [
+      "Chrome凍結",
+      "Chrome丟棄",
+      "macOS休眠"
+    ]
+  },
+  "範圍": "真HTTP／WS／SQLite／React DOM，原生有視窗Chrome同一設定檔42分頁；每輪全新隔離DB；短停機1秒、長停機31秒重建服務並重開SQLite，程序SIGKILL另見13.4",
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "kernel": "27.2.0",
+    "Chrome來源": "/tmp/crs-chrome-retail/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "電源斷言": [
+      "   UserIsActive                   1",
+      "   PreventUserIdleDisplaySleep    0",
+      "   PreventUserIdleSystemSleep     1",
+      "   pid 597(powerd): [0x0002c6bf00018d08] 05:12:30 PreventUserIdleSystemSleep named: \"Powerd - Prevent sleep while display is on\"  ",
+      "   pid 654(WindowServer): [0x0002c6c400098d0f] 00:04:07 UserIsActive named: \"com.apple.iohideventsystem.queue.tickle.nxevent service:IOHIDSystem pid:3492 process:remoting_me2me_host\"  "
+    ],
+    "Chrome": "158.0.8127.89",
+    "分頁狀態": [
+      {
+        "分頁": 0,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 1,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 2,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 3,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 4,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 5,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 6,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 7,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 8,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 9,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 10,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 11,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 12,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 13,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 14,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 15,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 16,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 17,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 18,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 19,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 20,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 21,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 22,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 23,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 24,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 25,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 26,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 27,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 28,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 29,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 30,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 31,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 32,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 33,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 34,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 35,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 36,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 37,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 38,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 39,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 40,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 41,
+        "visibility": "hidden",
+        "discarded": false
+      }
+    ]
+  },
+  "完成輪次": [
+    {
+      "dataset": "F1",
+      "round": 1,
+      "題數": 6,
+      "欄位": 6,
+      "組數": 20,
+      "分頁": 42,
+      "提交數": 63,
+      "狀態": "固定批次全部通過"
+    },
+    {
+      "dataset": "F1",
+      "round": 2,
+      "題數": 6,
+      "欄位": 6,
+      "組數": 20,
+      "分頁": 42,
+      "提交數": 63,
+      "狀態": "固定批次全部通過"
+    }
+  ],
+  "失敗": [
+    {
+      "dataset": "F1",
+      "round": 3,
+      "operation": "40分頁重整",
+      "tab": 41,
+      "role": "STUDENT",
+      "timerElapsedMs": 7452,
+      "serverElapsedMs": 8185,
+      "clockUncertaintyMs": 324,
+      "upperMs": 1057,
+      "outcome": "計時差超過1秒"
+    },
+    {
+      "dataset": "F1",
+      "round": 3,
+      "operation": "40分頁重整",
+      "tab": 40,
+      "role": "STUDENT",
+      "timerElapsedMs": 7445,
+      "serverElapsedMs": 8185,
+      "clockUncertaintyMs": 324,
+      "upperMs": 1064,
+      "outcome": "計時差超過1秒"
+    }
+  ],
+  "暫停": [],
+  "有效樣本": 6924,
+  "最壞同步上界ms": 749.1475829940464,
+  "最壞計時差上界ms": 1064,
+  "最壞恢復上界ms": 4518.675999999998,
+  "停止點": {
+    "dataset": "F1",
+    "round": 3,
+    "operation": "40分頁重整",
+    "原因": "計時差未達門檻；保留本批所有樣本"
+  },
+  "分頁診斷": [
+    {
+      "分頁": 0,
+      "visibility": "visible",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 1,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 2,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 3,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 4,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 5,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 6,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 7,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 8,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 9,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 10,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 11,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 12,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 13,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 14,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 15,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 16,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 17,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 18,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 19,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 20,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 21,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 22,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 23,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 24,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 25,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 26,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 27,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 28,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 29,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 30,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 31,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 32,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 33,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 34,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 35,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 36,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 37,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 38,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 39,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 40,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    },
+    {
+      "分頁": 41,
+      "visibility": "hidden",
+      "discarded": false,
+      "lifecycle": [],
+      "連線": "本機服務已連線"
+    }
+  ],
+  "全部樣本": {
+    "檔案": "docs/evidence/performance/2026-11-26T12-52-37-296Z-samples.jsonl.gz",
+    "格式": "gzip JSONL；每筆量測保留，無答案或憑證",
+    "sha256": "b79ddda8ac7ec8c97f4913ed572d73b50a2da53c73bf5c3308a7dac3f141d210",
+    "原始位元組": 2257434
+  },
+  "結束時間": "2026-11-26T12:54:50.920Z"
+}

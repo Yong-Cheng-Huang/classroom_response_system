@@ -1,0 +1,72 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "程式及模擬測試就緒，尚待真實 Google 授權",
+  "Node": "v24.22.3",
+  "平台": "darwin/arm64",
+  "OAuthSDK": "google-auth-library 11.3.4",
+  "進度": {
+    "total": 85,
+    "complete": 30,
+    "remaining": 55
+  },
+  "單元整合": {
+    "通過": 78,
+    "失敗": 0
+  },
+  "Chrome": {
+    "通過": 3,
+    "失敗": 0,
+    "Google提供者": "測試替身，並非真實 Google 授權"
+  },
+  "建置啟動": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "StrictValidate": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "本機設定檢查": {
+    "OAuth類型": "web",
+    "回呼": "http://127.0.0.1:3000/api/google/callback",
+    "檔案權限": "600",
+    "副本數": 2,
+    "副本結構及權限": "待 OAuth 後驗證",
+    "老師密碼": "待操作者自行設定"
+  },
+  "未完成": [
+    "6.1 真實測試帳號授權",
+    "6.2 真實連結重啟驗證",
+    "6.3～6.8 Guided Notes 匯入",
+    "4.6 與後續原任務、U01／U02／U03"
+  ],
+  "sha256": {
+    "src/server/google.ts": "b7122465dfa80e47e6165843d82fd5e45198d3af40c1b4ed371c8bd7e720979d",
+    "src/server/google-vault.ts": "a5bdc5aa1cb7dca53300a33819f5677ed8a327b77e26aabcd010034ef564ac13",
+    "src/server/google-http.ts": "fb449febd9d2f7d77888ba3478fd5f4706e3beeec17b33e74034e9496725ce35",
+    "src/server/config.ts": "b45d2495ab9fa890538c40040172df7a047e83dff2bd875f5cf0132a1f097e0d",
+    "src/server/app.ts": "36e8fd3451ffac66cbec76f7b9e9dabcbc92d8765f6b2a9a4454740a24794970",
+    "src/server/api.ts": "f4b5e220d02b1be6a0b8024b9387ad62cb99f6d5c45148d0a58849f01ca2239c",
+    "src/server/index.ts": "d8f05927b640b2e5ae9d464854b1f5bafd5ed7afa8ead00f9e55581a69e2a86a",
+    "src/shared/errors.ts": "86c3ce4262e586035b0a92a76a9ad7b05dd9b9abd7521a61fbd913e56d17daaf",
+    "src/client/google.tsx": "ebf65f41292e7a8276fbc87a065d0d1467b963cc05ba14c4161cbed99489b9f7",
+    "src/client/main.tsx": "5210ba100b6da2d292b69cadb8aeb7ac29447453f5c0e5465c86e3df43ba24fb",
+    "src/client/style.css": "cb0d5a8e923a88ceb78708632905f77f849814bbf172af9b7351f0c9483c45d9",
+    "tests/integration/google.test.ts": "b66abd2c246f77b6970f7d509c95faeb510907c455fb6ce27ebfa91f4310581b",
+    "tests/browser/google.spec.ts": "51e51a8e1e01cc025146c15be43d2adf7aa5b0865a2c08136f2dcf921786f8e8",
+    "playwright.config.ts": "9634f103bf57d20a258a78111159ebce1ea5469933a5f46f1c93b00824dc030c",
+    "tests/smoke/startup.test.ts": "eb8168ea7ccd59c3ca102f2b676b84724ef2937563acaa64d6f9701870edcc14",
+    "package.json": "00ef31893d0855d9c9dac69f940492fd7a1425c515e9d8432b0c618450a0b710",
+    "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b"
+  }
+}

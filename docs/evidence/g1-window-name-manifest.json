@@ -1,0 +1,11 @@
+{
+  "purpose": "G1第二候選完成版本與原始結果對照",
+  "sha256": {
+    "scripts/probes/g1-window-name.ts": "367d9cf6c6ec06864c03149f19bee72efca0b1fb3d505c2b3a14e096c0310aa8",
+    "scripts/probes/g1-candidate-client.ts": "091b7f0d996336863dedd79d2e36cf8efb43a5aa2c423a5d45a4b31f48d4b17e",
+    "scripts/probes/g1-candidate-server.ts": "d0f6f3bc59bf38b4a10e74f3496bd11a63a55ffe77f90eae008a44568a4c4a21",
+    "package-lock.json": "121284aafd806f2437d7d840779ffef6edbb3c6d32f378c6cdd516e44b29ccea",
+    "docs/evidence/g1-window-name-headless.json": "eef96b6f29251aa0550af48d17b651cc4538c94ebe47ecd7cca6a9d68c76432a",
+    "docs/evidence/g1-window-name-headed.json": "f9ffa39b8ba3d7faff993dddc23a94cea5ffbf7d354869564715d41999df6d5a"
+  }
+}

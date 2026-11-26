@@ -1,0 +1,1402 @@
+{
+  "recordedAt": "2026-11-25T17:59:16.994Z",
+  "chrome": "157.0.8103.80",
+  "node": "v24.22.3",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "kernel": "27.2.0",
+    "headless": false
+  },
+  "rounds": 3,
+  "candidate": "window.name第二憑證＋COOP noopener-allow-popups＋SQLite交接版本與執行個體核對",
+  "method": "同一隔離Chrome設定檔；擴充功能只驅動原生複製／關閉後還原；合成身分由測試fixture建立；產品未使用擴充功能或CDP。",
+  "cases": [
+    {
+      "name": "第1輪：IA03同Chrome兩老師與不同組隔離、連續重整",
+      "outcome": "PASS",
+      "durationMs": 753.085875,
+      "details": {
+        "tabs": 4,
+        "reloadsPerTab": 3
+      }
+    },
+    {
+      "name": "第1輪：TEACHER原生副本拒絕、原頁保持有效",
+      "outcome": "PASS",
+      "durationMs": 210.7774169999998,
+      "details": {
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "6cf8d369-909f-49c9-8983-468c23e6baea",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        },
+        "forgedStatus": 403,
+        "afterOriginalClosed": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "5448b500-aa30-4861-9090-901b6640927e",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：TEACHER原頁重整交接時副本先完成",
+      "outcome": "PASS",
+      "durationMs": 184.16333300000042,
+      "details": {
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "d8c63e8a-7a55-45bf-af72-d5c280f89b32",
+            "role": "TEACHER",
+            "group": null,
+            "generation": 2
+          },
+          "instanceId": "e212f9ef-2341-4412-8443-ad21976088ed",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        },
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "1f6b7bf7-b852-412a-9b04-22b8c9c12da7",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：TEACHER副本首次腳本前重整、原頁關閉",
+      "outcome": "PASS",
+      "durationMs": 178.12345900000037,
+      "details": {
+        "firstScriptDidNotRun": true,
+        "afterReload": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "988a85da-3f0e-4a93-926e-b5f1ad8f5c19",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：STUDENT原生副本拒絕、原頁保持有效",
+      "outcome": "PASS",
+      "durationMs": 221.45787500000006,
+      "details": {
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "6870a006-b489-4174-8879-eb9cfaffbc87",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        },
+        "forgedStatus": 403,
+        "afterOriginalClosed": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "6e244006-c590-41e4-92cb-e70eb037dee2",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：STUDENT原頁重整交接時副本先完成",
+      "outcome": "PASS",
+      "durationMs": 500.9700419999999,
+      "details": {
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "82111aac-8ea9-4493-91b5-95562f7b8bc9",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 2
+          },
+          "instanceId": "435f0ea8-2b2d-4b82-8595-256ef2c078fd",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        },
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "6312b831-2a65-4f9b-a6b0-f2a4273e0c15",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：STUDENT副本首次腳本前重整、原頁關閉",
+      "outcome": "PASS",
+      "durationMs": 193.4999170000001,
+      "details": {
+        "firstScriptDidNotRun": true,
+        "afterReload": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "2ed2c69b-1cab-444d-868e-a6d2bdcd3c36",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：同源opener新頁不可取得原分頁憑證",
+      "outcome": "PASS",
+      "durationMs": 177.47320899999977,
+      "details": {
+        "openerNull": true,
+        "state": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "87eea325-5911-4edf-bcd6-93e114dbea2a",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：負對照，未設COOP時同源opener可破壞第二憑證隔離",
+      "outcome": "PASS",
+      "durationMs": 120.49654199999986,
+      "details": {
+        "control": "無COOP的故意不安全原型",
+        "openerProofAccepted": 200,
+        "originalInstanceRejected": 403
+      }
+    },
+    {
+      "name": "第1輪：原頁關閉後還原不恢復身分或草稿",
+      "outcome": "PASS",
+      "durationMs": 198.40983400000005,
+      "details": {
+        "restored": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "d74b889c-fe61-434e-a5ca-d089891e6738",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：TEACHERSQLite重啟後副本先抵達、原有效頁再恢復",
+      "outcome": "PASS",
+      "durationMs": 211.77512500000012,
+      "details": {
+        "sameOrigin": true,
+        "copyDenied": 403,
+        "noAdditionalLease": true,
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "4bcb45b8-ff4e-4998-b2cf-97f2736a2cc6",
+            "role": "TEACHER",
+            "group": null,
+            "generation": 1
+          },
+          "instanceId": "ac2391e6-2276-4420-ba40-352ca4b44979",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            },
+            {
+              "from": "OWNED",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：STUDENTSQLite重啟後副本先抵達、原有效頁再恢復",
+      "outcome": "PASS",
+      "durationMs": 228.292375,
+      "details": {
+        "sameOrigin": true,
+        "copyDenied": 403,
+        "noAdditionalLease": true,
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "f824838f-7534-4e2f-aa37-7945c48c3846",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 1
+          },
+          "instanceId": "9741b281-60c0-45e3-9a7e-67e49068e2dd",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            },
+            {
+              "from": "OWNED",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第1輪：舊世代、偽造角色及交接回覆截斷",
+      "outcome": "PASS",
+      "durationMs": 180.7168329999995,
+      "details": {
+        "staleAction": 403,
+        "staleResume": 409,
+        "recovered": {
+          "state": "OWNED",
+          "identity": {
+            "id": "90cf41fb-8907-48a3-851e-f74cd6bd7519",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 4
+          },
+          "instanceId": "ed592be7-024c-41b6-934c-6afd9bf00120",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：IA03同Chrome兩老師與不同組隔離、連續重整",
+      "outcome": "PASS",
+      "durationMs": 605.3117499999998,
+      "details": {
+        "tabs": 4,
+        "reloadsPerTab": 3
+      }
+    },
+    {
+      "name": "第2輪：TEACHER原生副本拒絕、原頁保持有效",
+      "outcome": "PASS",
+      "durationMs": 186.32650000000012,
+      "details": {
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "56e43a73-97cb-49a5-bf1c-f5717cdf72d7",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        },
+        "forgedStatus": 403,
+        "afterOriginalClosed": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "9ed4be5c-1495-4a4e-b75e-18bf6431d585",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：TEACHER原頁重整交接時副本先完成",
+      "outcome": "PASS",
+      "durationMs": 176.04683300000033,
+      "details": {
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "a1ff2190-a47e-4425-a209-c8051f7fdb24",
+            "role": "TEACHER",
+            "group": null,
+            "generation": 2
+          },
+          "instanceId": "93544c19-9ab0-45b9-9735-789cff095036",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        },
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "a25286d4-c8f4-431d-be62-f8fb6e5b7fb4",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：TEACHER副本首次腳本前重整、原頁關閉",
+      "outcome": "PASS",
+      "durationMs": 177.79004200000054,
+      "details": {
+        "firstScriptDidNotRun": true,
+        "afterReload": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "25d967f7-3881-4018-b84c-4e9210956d1b",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：STUDENT原生副本拒絕、原頁保持有效",
+      "outcome": "PASS",
+      "durationMs": 186.85716700000012,
+      "details": {
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "f0a38b20-bbc3-426a-a006-0393b2184cca",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        },
+        "forgedStatus": 403,
+        "afterOriginalClosed": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "e2b0a2cd-f115-45af-a45e-06639d762fb5",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：STUDENT原頁重整交接時副本先完成",
+      "outcome": "PASS",
+      "durationMs": 180.57729199999994,
+      "details": {
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "1420d096-8572-40e4-97bb-ff889324af4d",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 2
+          },
+          "instanceId": "618e3433-c983-42dd-8dc8-9a3a5cb93a55",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        },
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "df008faa-3e4c-4546-8b1b-945f2e7d96be",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：STUDENT副本首次腳本前重整、原頁關閉",
+      "outcome": "PASS",
+      "durationMs": 206.26983399999972,
+      "details": {
+        "firstScriptDidNotRun": true,
+        "afterReload": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "f3ce77ad-458c-42ca-9fbc-81000192cc91",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：同源opener新頁不可取得原分頁憑證",
+      "outcome": "PASS",
+      "durationMs": 161.32924999999977,
+      "details": {
+        "openerNull": true,
+        "state": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "81a957f6-d6d6-4465-82c7-8597990a6620",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：負對照，未設COOP時同源opener可破壞第二憑證隔離",
+      "outcome": "PASS",
+      "durationMs": 120.89470799999981,
+      "details": {
+        "control": "無COOP的故意不安全原型",
+        "openerProofAccepted": 200,
+        "originalInstanceRejected": 403
+      }
+    },
+    {
+      "name": "第2輪：原頁關閉後還原不恢復身分或草稿",
+      "outcome": "PASS",
+      "durationMs": 191.58541700000023,
+      "details": {
+        "restored": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "eb60dbea-736d-41b6-8cfb-2c0902179c98",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：TEACHERSQLite重啟後副本先抵達、原有效頁再恢復",
+      "outcome": "PASS",
+      "durationMs": 190.31637499999943,
+      "details": {
+        "sameOrigin": true,
+        "copyDenied": 403,
+        "noAdditionalLease": true,
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "37e4d367-2c87-42d5-b10b-d93450a8b893",
+            "role": "TEACHER",
+            "group": null,
+            "generation": 1
+          },
+          "instanceId": "ad01a6af-189e-4b30-8efb-fc6f0fb0f64e",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            },
+            {
+              "from": "OWNED",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：STUDENTSQLite重啟後副本先抵達、原有效頁再恢復",
+      "outcome": "PASS",
+      "durationMs": 188.08449999999903,
+      "details": {
+        "sameOrigin": true,
+        "copyDenied": 403,
+        "noAdditionalLease": true,
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "27536f68-19d0-4239-ab09-29d1696a7f88",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 1
+          },
+          "instanceId": "e398da29-2b0b-4cf7-9f8e-4734d450b134",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            },
+            {
+              "from": "OWNED",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第2輪：舊世代、偽造角色及交接回覆截斷",
+      "outcome": "PASS",
+      "durationMs": 165.10625000000073,
+      "details": {
+        "staleAction": 403,
+        "staleResume": 409,
+        "recovered": {
+          "state": "OWNED",
+          "identity": {
+            "id": "ef765355-8c7a-4c24-b89d-50fcd7bac280",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 4
+          },
+          "instanceId": "a34a47e2-8b14-41a8-a40f-c6f35724e72f",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：IA03同Chrome兩老師與不同組隔離、連續重整",
+      "outcome": "PASS",
+      "durationMs": 557.6996670000008,
+      "details": {
+        "tabs": 4,
+        "reloadsPerTab": 3
+      }
+    },
+    {
+      "name": "第3輪：TEACHER原生副本拒絕、原頁保持有效",
+      "outcome": "PASS",
+      "durationMs": 177.8959589999995,
+      "details": {
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "7d385baf-e1a7-4255-923e-9d52af139e20",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        },
+        "forgedStatus": 403,
+        "afterOriginalClosed": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "54b5bc5f-9ad3-412f-84fa-c3fe26f0dd56",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：TEACHER原頁重整交接時副本先完成",
+      "outcome": "PASS",
+      "durationMs": 178.65687499999876,
+      "details": {
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "1c2981dd-1d8b-4238-90ee-7765edc31036",
+            "role": "TEACHER",
+            "group": null,
+            "generation": 2
+          },
+          "instanceId": "552c4f16-737e-44e5-a983-896742b41b52",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        },
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "c8d84195-0897-43c1-bca9-c8f36178ad55",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：TEACHER副本首次腳本前重整、原頁關閉",
+      "outcome": "PASS",
+      "durationMs": 156.49454100000003,
+      "details": {
+        "firstScriptDidNotRun": true,
+        "afterReload": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "47172d3e-6805-45fc-a8b3-1eb52e6f4f9d",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：STUDENT原生副本拒絕、原頁保持有效",
+      "outcome": "PASS",
+      "durationMs": 182.92212499999914,
+      "details": {
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "5c586d70-8c2c-41fa-a0dc-bd6d8cc4cb7c",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        },
+        "forgedStatus": 403,
+        "afterOriginalClosed": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "f39912c9-6bfd-422a-a40c-59d777d1267d",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：STUDENT原頁重整交接時副本先完成",
+      "outcome": "PASS",
+      "durationMs": 179.63574999999946,
+      "details": {
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "9fdb7ca7-8f63-479f-8a51-2952f9a616f3",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 2
+          },
+          "instanceId": "1380ed1a-8dcf-47fa-b4f9-5c5625a71cc7",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        },
+        "copy": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "5979f932-d97d-4c9f-ba98-ea6d3dfde408",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：STUDENT副本首次腳本前重整、原頁關閉",
+      "outcome": "PASS",
+      "durationMs": 179.137999999999,
+      "details": {
+        "firstScriptDidNotRun": true,
+        "afterReload": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "3296b7ec-fab3-4f18-bfbc-8edb24523625",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：同源opener新頁不可取得原分頁憑證",
+      "outcome": "PASS",
+      "durationMs": 150.0165420000012,
+      "details": {
+        "openerNull": true,
+        "state": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "a16adacd-6081-4b13-857a-a952c9296bf2",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：負對照，未設COOP時同源opener可破壞第二憑證隔離",
+      "outcome": "PASS",
+      "durationMs": 122.46700000000055,
+      "details": {
+        "control": "無COOP的故意不安全原型",
+        "openerProofAccepted": 200,
+        "originalInstanceRejected": 403
+      }
+    },
+    {
+      "name": "第3輪：原頁關閉後還原不恢復身分或草稿",
+      "outcome": "PASS",
+      "durationMs": 178.84312500000124,
+      "details": {
+        "restored": {
+          "state": "NEW",
+          "identity": null,
+          "instanceId": "133f27d4-0242-4715-9673-fb0d59cb6ca7",
+          "hasCapability": true,
+          "hasCredential": false,
+          "draft": null,
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "DUPLICATE"
+            },
+            {
+              "from": "DUPLICATE",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：TEACHERSQLite重啟後副本先抵達、原有效頁再恢復",
+      "outcome": "PASS",
+      "durationMs": 186.1026669999992,
+      "details": {
+        "sameOrigin": true,
+        "copyDenied": 403,
+        "noAdditionalLease": true,
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "99328610-de28-4d54-859a-437e08642d66",
+            "role": "TEACHER",
+            "group": null,
+            "generation": 1
+          },
+          "instanceId": "fcd13b57-5898-495e-9094-248b44721a7b",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            },
+            {
+              "from": "OWNED",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：STUDENTSQLite重啟後副本先抵達、原有效頁再恢復",
+      "outcome": "PASS",
+      "durationMs": 212.30324999999903,
+      "details": {
+        "sameOrigin": true,
+        "copyDenied": 403,
+        "noAdditionalLease": true,
+        "restored": {
+          "state": "OWNED",
+          "identity": {
+            "id": "399af328-4359-47a2-8cb5-8e3b034cf2f2",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 1
+          },
+          "instanceId": "2df2b846-4c48-4fc7-8b35-2e3dd068d113",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "NEW"
+            },
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            },
+            {
+              "from": "OWNED",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "第3輪：舊世代、偽造角色及交接回覆截斷",
+      "outcome": "PASS",
+      "durationMs": 170.01633299999958,
+      "details": {
+        "staleAction": 403,
+        "staleResume": 409,
+        "recovered": {
+          "state": "OWNED",
+          "identity": {
+            "id": "93564b61-023c-4bb5-ad43-bb73d570f715",
+            "role": "STUDENT",
+            "group": 1,
+            "generation": 4
+          },
+          "instanceId": "580030f7-8a79-47a6-9734-b0f7122939f6",
+          "hasCapability": true,
+          "hasCredential": true,
+          "draft": "合成未提交草稿",
+          "transitions": [
+            {
+              "from": "NEW",
+              "to": "RELOAD_HANDOFF"
+            },
+            {
+              "from": "RELOAD_HANDOFF",
+              "to": "OWNED"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "gate": "CANDIDATE_PASSED",
+  "limitations": [
+    "這是G1隔離原型，不是4.2正式實作或全系統驗收。",
+    "未裁定U01強制中斷寬限、U02凍結休眠或U03未核實範圍。",
+    "未實作WebSocket、Google OAuth或固定負載效能驗收。"
+  ]
+}

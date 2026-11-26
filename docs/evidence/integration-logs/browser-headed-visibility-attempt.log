@@ -1,0 +1,71 @@
+
+> classroom-response-system@0.1.0 test:browser
+> npm run build && playwright test
+
+
+> classroom-response-system@0.1.0 build
+> tsc -p tsconfig.server.json && vite build
+
+vite v8.3.8 building client environment for production...
+transforming...
+✓ 30 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                   0.37 kB │ gzip:  0.29 kB
+dist/client/assets/index-5bPlEnyy.css   10.20 kB │ gzip:  2.68 kB
+dist/client/assets/index-Zk4zDyvu.js   270.69 kB │ gzip: 84.35 kB
+
+✓ built in 157ms
+[WebServer] (node:1455) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+(node:1478) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/clock-pulse.spec.ts:16:1 › 13.3 頁面interval停止時，授權伺服器脈衝仍更新計時DOM (7.3s)
+  ✓   2 tests/browser/exports.spec.ts:23:1 › 12.1～12.12 老師匯出三模式、D31、預檢取消、核對及放棄後完整成功換場 (8.5s)
+  ✓   3 tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 (2.4s)
+  ✓   4 tests/browser/google.spec.ts:18:1 › Google 連結畫面：另開授權頁不丟老師身分，兩老師共用、分頁登出不解除 (8.9s)
+  ✓   5 tests/browser/identity.spec.ts:17:1 › 正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷 (11.1s)
+  ✓   6 tests/browser/measurement-http.spec.ts:16:1 › 13.3 診斷器保留HTTP已呈現的React DOM時刻，與稍後WS快照分開 (699ms)
+  ✓   7 tests/browser/measurement.spec.ts:16:1 › 13.3 觀測器在真Chrome無序列化helper錯誤，React commit後才記錄實際狀態與DOM (727ms)
+  ✓   8 tests/browser/pause.spec.ts:15:1 › D39 真Chrome受控凍結另列暫停，恢復正確結果；12小時已到期不得復活 (891ms)
+  ✓   9 tests/browser/ranking.spec.ts:18:1 › 8.1～8.7 同 Chrome 兩老師四學生：同組競爭、角色分流、重建後第三名及結束重送 (4.0s)
+  ✓  10 tests/browser/realtime.spec.ts:15:1 › 7.1～7.3 同 Chrome 兩老師與學生由 WS 套用快照；停用 view 輪詢仍同步 (7.2s)
+  ✓  11 tests/browser/recovery-queue.spec.ts:16:1 › 13.3 有效授權票證排隊1.8秒不遭短watchdog反覆中止，仍於5秒內恢復 (5.9s)
+  ✘  12 tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 (10.3s)
+(node:3017) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 tests/browser/results.spec.ts:19:1 › 11.1～11.4 完整學生結果：三狀態、四子題只計一題、成功公開、無人題及重啟恢復 (5.7s)
+  ✓  14 tests/browser/student.spec.ts:29:1 › 9.1～9.6 學生表單：等待、同名組員、分頁草稿、四子題、鎖定、結束與換場 (5.3s)
+  ✓  15 tests/browser/student.spec.ts:77:1 › 9.4～9.6 送出前中斷、重整及相同 requestId 重試；儲存失敗不送出 (4.2s)
+  ✓  16 tests/browser/student.spec.ts:98:1 › 9.5 伺服器欄位錯誤、他人先送出，以及換場後延遲回覆不得復活草稿 (7.1s)
+  ✓  17 tests/browser/teacher.spec.ts:21:1 › 10.2～10.4 多老師獨立預覽、完整題組監看、同毫秒名次、結束及重啟保存 (3.0s)
+  ✓  18 tests/browser/teacher.spec.ts:77:1 › 10.1 老師匯入介面：繁體驗證、2／20組、選表、跨階段限制及替換清除提醒 (7.4s)
+
+
+  1) tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 ────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "hidden"
+    Received: "visible"
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      36 |     const original=database.prepare('SELECT id,session_id,nickname FROM participants ORDER BY id').all();
+      37 |     const expiry=database.prepare('SELECT id,created_at,expires_at FROM sessions ORDER BY id').all();
+    > 38 |     await teacher.bringToFront();await expect.poll(()=>student.evaluate(()=>document.visibilityState)).toBe('hidden');
+         |                                                                                                        ^
+      39 |     const background:string[]=[];student.on('websocket',socket=>socket.on('framereceived',frame=>background.push(String(frame.payload))));
+      40 |     // 等待超過 pong 判定窗口，沒有停用 Chrome 背景節流來使測試過關。
+      41 |     await new Promise(resolve=>setTimeout(resolve,7500));
+        at /Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/browser/recovery.spec.ts:38:104
+
+    Error Context: test-results/recovery-7-4～7-7-同-Chrome--2f36b-30-秒移除、正常及-D38-重建自動恢復、結束與校時/error-context.md
+
+  1 failed
+    tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 ─────
+  17 passed (1.9m)

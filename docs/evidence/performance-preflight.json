@@ -1,0 +1,1200 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "工具預檢通過",
+  "程序": "F3單輪測量工具預檢；不是F1～F3各20輪完整驗收",
+  "資料集": "F3",
+  "輪次": 1,
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "Chrome": "158.0.8127.89",
+    "分頁": [
+      {
+        "分頁": 0,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 1,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 2,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 3,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 4,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 5,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 6,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 7,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 8,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 9,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 10,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 11,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 12,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 13,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 14,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 15,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 16,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 17,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 18,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 19,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 20,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 21,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 22,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 23,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 24,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 25,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 26,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 27,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 28,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 29,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 30,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 31,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 32,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 33,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 34,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 35,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 36,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 37,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 38,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 39,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 40,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 41,
+        "visibility": "hidden",
+        "discarded": false
+      }
+    ]
+  },
+  "量測": [
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 43,
+      "tab": 0,
+      "role": "TEACHER",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23941.517729488078,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.7649375000019063,
+      "visibility": "visible",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 22.796416988077908,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 42,
+      "tab": 1,
+      "role": "TEACHER",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23957.10085450596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6346045000027516,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 38.24920900596044,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 34,
+      "tab": 2,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23978.54543748808,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6308125000032305,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 59.68999998808067,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 31,
+      "tab": 3,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23983.3549585,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.764416500001971,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 64.63312500000029,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 27,
+      "tab": 4,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24028.608854482118,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6319375000020955,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 109.7545419821181,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 33,
+      "tab": 5,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23978.61412547616,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.637541500002044,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 59.76541697616085,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 26,
+      "tab": 8,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24044.733437505958,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.805312500002401,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 126.05250000595879,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 30,
+      "tab": 6,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23986.177250499997,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6194165000033536,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 67.31041699999878,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 32,
+      "tab": 7,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23982.31418800596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.661104000002524,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 63.48904200596007,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 28,
+      "tab": 9,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23993.90460450596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.8641455000015412,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 75.28250000595835,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 25,
+      "tab": 10,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24034.20581300596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.7252710000029765,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 115.44483400596073,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 24,
+      "tab": 12,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24037.5824795,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.67597950000345,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 118.77220900000248,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 22,
+      "tab": 14,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24069.4052295,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.84785450000345,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 150.76683400000184,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 21,
+      "tab": 16,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24076.777396494042,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6324375000021973,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 157.92358399404293,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 18,
+      "tab": 19,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24085.97643749404,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.605687500003114,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 167.09587499404006,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 23,
+      "tab": 13,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24052.25175051192,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.80604150000363,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 133.57154201192316,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 11,
+      "tab": 24,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24375.37408349404,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.733791500002553,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 456.62162499404076,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 16,
+      "tab": 17,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24094.83658349404,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6154165000025387,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 175.9657499940422,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 19,
+      "tab": 15,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24120.22535450596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.725937500003056,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 201.46504200596246,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 12,
+      "tab": 22,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24321.17620899404,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6456250000028376,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 402.33558399403955,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 15,
+      "tab": 20,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24116.17222949404,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6434375000026193,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 197.32941699404182,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 13,
+      "tab": 23,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24258.08660448808,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6736875000024156,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 339.27404198807926,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 29,
+      "tab": 11,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 23983.14424998212,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6321250000019063,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 64.29012498212069,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 17,
+      "tab": 18,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24087.92543750596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6385625000039,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 169.07775000596303,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 14,
+      "tab": 21,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24152.866917017884,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.5973750000030122,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 233.97804201788495,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 10,
+      "tab": 25,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24381.23660448808,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6583955000023707,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 462.4087499880807,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 9,
+      "tab": 26,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24375.818750017883,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6303750000024593,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 456.96287501788356,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 7,
+      "tab": 28,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24413.02164648808,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.662937500002954,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 494.1983339880808,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 8,
+      "tab": 27,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24379.693604511922,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6760625000024447,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 460.8834170119226,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 5,
+      "tab": 29,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24420.434020982117,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.683396000002176,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 501.63116698211707,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 6,
+      "tab": 30,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24417.629896488077,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.649562500004322,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 498.79320898807964,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 31,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24416.28775001192,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.627250000001368,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 497.4287500119208,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 33,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24428.441688005958,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.900396000002729,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 509.85583400595897,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 4,
+      "tab": 32,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24413.07712550596,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.9389585000026273,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 494.52983400595986,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 34,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24448.942645988078,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6421040000022913,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 530.0984999880784,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 35,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24453.30279201788,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.650708000002851,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 534.4672500178804,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 36,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24448.84958351192,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.5983335000018997,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 529.9616670119212,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 37,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24467.12581299404,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6371040000012727,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 548.2766669940393,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 38,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24479.069083988077,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.604250000002139,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 560.1870839880776,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 39,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24473.544354482117,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.629937500003507,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 554.6880419821191,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 41,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24484.125812982118,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6196040000031644,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 565.2591669821195,
+      "outcome": "通過"
+    },
+    {
+      "dataset": "F3",
+      "round": 1,
+      "operation": "開始",
+      "revision": 2,
+      "tab": 40,
+      "role": "STUDENT",
+      "T_commit": 23921.48625,
+      "T_commitLower": 23919.041875,
+      "T_apply": 24496.72120901192,
+      "T_ready": null,
+      "T_restored": null,
+      "clockUncertaintyMs": 2.6947500000023865,
+      "visibility": "hidden",
+      "domQuestions": 60,
+      "questions": 60,
+      "delayUpperMs": 577.9297090119217,
+      "outcome": "通過"
+    }
+  ],
+  "失敗": [],
+  "無效": [],
+  "校準": [
+    {
+      "offset": 8254.71772950596,
+      "uncertainty": 0.32056249999914144
+    },
+    {
+      "offset": 8269.30085452384,
+      "uncertainty": 0.19022949999998673
+    },
+    {
+      "offset": 8271.3454375,
+      "uncertainty": 0.18643750000046566
+    },
+    {
+      "offset": 8272.654958511921,
+      "uncertainty": 0.3200414999992063
+    },
+    {
+      "offset": 8526.408854494039,
+      "uncertainty": 0.1875624999993306
+    },
+    {
+      "offset": 8529.214125500002,
+      "uncertainty": 0.19316649999927904
+    },
+    {
+      "offset": 8532.677250499997,
+      "uncertainty": 0.1750415000005887
+    },
+    {
+      "offset": 8535.71418801192,
+      "uncertainty": 0.21672899999975925
+    },
+    {
+      "offset": 8875.033437488077,
+      "uncertainty": 0.3609374999996362
+    },
+    {
+      "offset": 8877.004604499998,
+      "uncertainty": 0.41977049999877636
+    },
+    {
+      "offset": 8879.805812999999,
+      "uncertainty": 0.28089600000021164
+    },
+    {
+      "offset": 8883.344250000002,
+      "uncertainty": 0.18774999999914144
+    },
+    {
+      "offset": 9079.382479511922,
+      "uncertainty": 0.23160450000068522
+    },
+    {
+      "offset": 9081.35175050596,
+      "uncertainty": 0.3616665000008652
+    },
+    {
+      "offset": 9085.80522950596,
+      "uncertainty": 0.4034795000006852
+    },
+    {
+      "offset": 9088.92535449404,
+      "uncertainty": 0.28156250000029104
+    },
+    {
+      "offset": 9393.677396500003,
+      "uncertainty": 0.18806249999943248
+    },
+    {
+      "offset": 9396.936583488081,
+      "uncertainty": 0.1710414999997738
+    },
+    {
+      "offset": 9401.5254375,
+      "uncertainty": 0.19418750000113505
+    },
+    {
+      "offset": 9404.976437494039,
+      "uncertainty": 0.16131250000034925
+    },
+    {
+      "offset": 9810.472229505962,
+      "uncertainty": 0.19906249999985448
+    },
+    {
+      "offset": 9813.266917023844,
+      "uncertainty": 0.15300000000024738
+    },
+    {
+      "offset": 9815.576208999999,
+      "uncertainty": 0.20125000000007276
+    },
+    {
+      "offset": 9819.186604482118,
+      "uncertainty": 0.22931249999965075
+    },
+    {
+      "offset": 10134.7740835,
+      "uncertainty": 0.28941649999978836
+    },
+    {
+      "offset": 10137.436604505961,
+      "uncertainty": 0.21402049999960582
+    },
+    {
+      "offset": 10140.218750023843,
+      "uncertainty": 0.1859999999996944
+    },
+    {
+      "offset": 10144.09360448808,
+      "uncertainty": 0.23168749999967986
+    },
+    {
+      "offset": 11132.92164649404,
+      "uncertainty": 0.21856250000018917
+    },
+    {
+      "offset": 11139.534020976156,
+      "uncertainty": 0.2390209999994113
+    },
+    {
+      "offset": 11143.729896511919,
+      "uncertainty": 0.20518750000155705
+    },
+    {
+      "offset": 11147.58774999404,
+      "uncertainty": 0.18287499999860302
+    },
+    {
+      "offset": 11773.87712551788,
+      "uncertainty": 0.4945834999998624
+    },
+    {
+      "offset": 11776.941688005958,
+      "uncertainty": 0.45602099999996426
+    },
+    {
+      "offset": 11780.742645999999,
+      "uncertainty": 0.19772899999952642
+    },
+    {
+      "offset": 11783.002792005958,
+      "uncertainty": 0.20633300000008603
+    },
+    {
+      "offset": 12119.0495835,
+      "uncertainty": 0.1539584999991348
+    },
+    {
+      "offset": 12121.92581300596,
+      "uncertainty": 0.1927289999985078
+    },
+    {
+      "offset": 12125.869083999998,
+      "uncertainty": 0.15987499999937427
+    },
+    {
+      "offset": 12128.644354476157,
+      "uncertainty": 0.18556250000074215
+    },
+    {
+      "offset": 12522.12120898808,
+      "uncertainty": 0.25037499999962165
+    },
+    {
+      "offset": 12527.625812982118,
+      "uncertainty": 0.17522900000039954
+    }
+  ],
+  "最壞同步上界ms": 577.9297090119217,
+  "後續": "未執行20輪或其他固定批次，不得以單輪預檢宣告RR08完成。"
+}

@@ -1,0 +1,30 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "通過",
+  "副本": [
+    {
+      "類型": "單題",
+      "連結": "https://docs.google.com/spreadsheets/d/1lJncXLLFA0mwMEBe05WdT-UYR2vG8TS0iTvbA20Y4BY/edit",
+      "狀態": "通過",
+      "已完成批次": 31,
+      "灰色9點與純文字": true,
+      "PDF預覽HTTP": 200,
+      "PDF預覽": "test-results/export-live-1.pdf",
+      "真實寫入後注入回覆遺失核對不重送": true,
+      "未選工作表不變": true,
+      "三乘三切換與重複一致": true
+    },
+    {
+      "類型": "題組",
+      "連結": "https://docs.google.com/spreadsheets/d/1HLeHYQ6W2rxZSwRGHVtcQ3vI6hb1a6UesR9M7XH6oNQ/edit",
+      "狀態": "通過",
+      "已完成批次": 62,
+      "灰色9點與純文字": true,
+      "PDF預覽HTTP": 200,
+      "PDF預覽": "test-results/export-live-2.pdf",
+      "真實寫入後注入回覆遺失核對不重送": true,
+      "未選工作表不變": true,
+      "三乘三切換與重複一致": true
+    }
+  ]
+}

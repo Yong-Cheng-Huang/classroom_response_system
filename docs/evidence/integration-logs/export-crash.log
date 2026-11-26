@@ -1,0 +1,14 @@
+✔ 13.4 真SIGKILL匯出／放棄邊界 PREPARING (868.843625ms)
+✔ 13.4 真SIGKILL匯出／放棄邊界 BEFORE_SEND (695.758041ms)
+✔ 13.4 真SIGKILL匯出／放棄邊界 AFTER_REMOTE (519.973458ms)
+✔ 13.4 真SIGKILL匯出／放棄邊界 COMPLETED (484.005958ms)
+✔ 13.4 真SIGKILL匯出／放棄邊界 ABANDON_BEFORE (467.647ms)
+✔ 13.4 真SIGKILL匯出／放棄邊界 ABANDON_AFTER (522.596416ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4372.551417

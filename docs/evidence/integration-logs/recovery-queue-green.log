@@ -1,0 +1,10 @@
+[WebServer] (node:35231) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:35271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/browser/recovery-queue.spec.ts:16:1 › 13.3 有效授權票證排隊1.8秒不遭短watchdog反覆中止，仍於5秒內恢復 (5.3s)
+
+  1 passed (18.4s)

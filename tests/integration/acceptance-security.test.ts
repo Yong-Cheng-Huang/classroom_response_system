@@ -1,0 +1,25 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {exportFixture} from '../helpers/exports.js';
+import {rankingHeaders,freshProof} from '../helpers/ranking.js';
+import {createApplication} from '../../src/server/app.js';
+import {readConfig} from '../../src/server/config.js';
+import {assertRequestOrigin} from '../../src/server/identity-http.js';
+import {ImportService} from '../../src/server/imports.js';
+import {SubmissionService} from '../../src/server/submissions.js';
+import {readActivityModel} from '../../src/server/read-model.js';
+import type {TabProof} from '../../src/shared/session.js';
+
+test('13.5 完整服務HTTP跨功能拒絕匿名、學生偽造老師與錯分頁證明；安全DTO及資料不變',async t=>{
+ const f=await exportFixture(t),op=await f.run('ANSWERS'),logs:unknown[]=[];const imports=new ImportService(f.database,f.identity,f.google,f.activities,f.now,()=>f.memory.read());const intent=imports.begin(f.teacher,'https://docs.google.com/spreadsheets/d/fixture-copy/edit',2);
+ const app=createApplication(readConfig({APP_DATA_DIR:f.directory,TEACHER_PASSWORD:'exports-isolated-fixture'}),f.database,x=>logs.push(x),{identity:f.identity,activities:f.activities,google:f.google,exports:f.service,imports,submissions:new SubmissionService(f.database,f.identity),now:f.now,authenticate:r=>{assertRequestOrigin(r);return f.identity.principal(f.identity.proof(r));},beforeRead:()=>f.identity.sweep(),readModel:()=>readActivityModel(f.database,f.identity)});
+ const address=await app.listen(0);assert.ok(address&&typeof address==='object');t.after(()=>app.close());const base='http://127.0.0.1:'+address.port,id=f.activityId,token=intent.token;
+ const routes:[string,string,unknown?][]=[['POST',`/api/activities/${id}/start`,{expectedVersion:3}],['POST',`/api/activities/${id}/end`,{expectedVersion:3,confirmed:true}],['POST','/api/imports/inspect',{url:'https://docs.google.com/spreadsheets/d/fixture-copy/edit',groupCount:2}],['POST',`/api/imports/${token}/select`,{sheetId:'1'}],['POST',`/api/imports/${token}/commit`,{confirmed:true}],['POST',`/api/imports/${token}/cancel`,{}],['GET',`/api/activities/${id}/exports`],['POST',`/api/activities/${id}/exports`,{requestId:'forged',mode:'ANSWERS',paused:true,expectedVersion:3}],['GET',`/api/operations/${op.id}`],['POST',`/api/operations/${op.id}/reconcile`,{}],['POST',`/api/operations/${op.id}/cancel`,{}],['POST',`/api/operations/${op.id}/abandon-confirmation`,{confirmed:true,expectedVersion:3}],['GET','/api/google/status'],['POST','/api/google/connect',{}],['DELETE','/api/google/connection',{}]];
+ async function call(method:string,path:string,proof:TabProof,body?:unknown,extra:Record<string,string>={}){const r=await fetch(base+path,{method,headers:{...rankingHeaders(proof),...extra,...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body)});return{status:r.status,value:await r.json()};}
+ const before={activity:f.database.prepare('SELECT * FROM activities').all(),submissions:f.database.prepare('SELECT * FROM submissions').all(),answers:f.database.prepare('SELECT * FROM submission_answers').all(),google:f.database.prepare('SELECT * FROM google_connection').all(),operations:f.database.prepare('SELECT * FROM export_operations').all(),management:f.database.prepare('SELECT * FROM document_output_management').all()},writes=f.memory.writes;
+ for(const principal of [freshProof(),f.student,{...f.teacher,secret:freshProof().secret}])for(const [method,path,body]of routes){const r=await call(method,path,principal,body,{'X-Role':'TEACHER','X-Group-Id':'forged'});assert.ok([401,403].includes(r.status),method+' '+path+' '+r.status);assert.equal(r.value.ok,false);assert.doesNotMatch(JSON.stringify(r.value),/exports-fixture-access|exports-fixture-refresh|recovery_plan_json|credential_reference|stack|sqlite|SELECT /);}
+ assert.deepEqual({activity:f.database.prepare('SELECT * FROM activities').all(),submissions:f.database.prepare('SELECT * FROM submissions').all(),answers:f.database.prepare('SELECT * FROM submission_answers').all(),google:f.database.prepare('SELECT * FROM google_connection').all(),operations:f.database.prepare('SELECT * FROM export_operations').all(),management:f.database.prepare('SELECT * FROM document_output_management').all()},before);assert.equal(f.memory.writes,writes);
+ for(const [path,proof]of [[`/api/activities/current/view?groupId=forged`,f.student],[`/api/activities/${id}/results?role=TEACHER`,f.student],[`/api/activities/old/results`,f.student],[`/api/operations/${op.id}?role=TEACHER`,f.teacher]] as const){const r=await call('GET',path,proof);assert.ok([400,401,403,409].includes(r.status));}
+ const view=await call('GET','/api/activities/current/view',f.student);assert.equal(view.status,200);assert.doesNotMatch(JSON.stringify(view.value),/receivedAt|receiveOrder|credential_reference|recovery_plan|request_hash/);
+ assert.doesNotMatch(JSON.stringify(logs),new RegExp([f.teacher.token,f.student.token,'exports-fixture-access','exports-fixture-refresh'].join('|')));
+});

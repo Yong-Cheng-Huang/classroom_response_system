@@ -1,0 +1,17 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "未通過",
+  "程序": "F3單輪測量工具預檢；不是F1～F3各20輪完整驗收",
+  "資料集": "F3",
+  "輪次": 1,
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n"
+  },
+  "量測": [],
+  "失敗": [],
+  "無效": [],
+  "錯誤": "非正常中斷後的身分恢復資格尚待確認，資料已保留。"
+}

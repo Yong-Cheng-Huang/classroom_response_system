@@ -1,0 +1,32 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "通過",
+  "測試副本": [
+    "https://docs.google.com/spreadsheets/d/1lJncXLLFA0mwMEBe05WdT-UYR2vG8TS0iTvbA20Y4BY/edit",
+    "https://docs.google.com/spreadsheets/d/1HLeHYQ6W2rxZSwRGHVtcQ3vI6hb1a6UesR9M7XH6oNQ/edit"
+  ],
+  "案例": [
+    "無關標題修改保留且可匯出",
+    "無人題原答案不變",
+    "最後一題敘述改動整次零寫入",
+    "無人題標記遺失整次零寫入",
+    "答案人工修改整次零寫入",
+    "非系統I欄內容衝突整次零寫入",
+    "真實寫入後注入回覆遺失與永久讀取失權，不盲重送",
+    "放棄後新匯入失敗仍保留原場與核對資料",
+    "永久失權時成功換場、舊操作拒絕與最少未核實資訊保存"
+  ],
+  "未核實資訊": [
+    {
+      "spreadsheet_id": "1lJncXLLFA0mwMEBe05WdT-UYR2vG8TS0iTvbA20Y4BY",
+      "sheet_id": "487222270",
+      "range_key": "G5",
+      "verification": "UNVERIFIED",
+      "content_hash": "56debf4824760a2bd001de127254096aa77615761dd98863cae5cf71d94a5f78",
+      "annotation_start": 140,
+      "original_format_json": "{\"format\":{\"borders\":{\"bottom\":{\"style\":\"SOLID\",\"width\":1,\"color\":{},\"colorStyle\":{\"rgbColor\":{}}},\"left\":{\"style\":\"SOLID\",\"width\":1,\"color\":{},\"colorStyle\":{\"rgbColor\":{}}},\"right\":{\"style\":\"SOLID_THICK\",\"width\":3,\"color\":{},\"colorStyle\":{\"rgbColor\":{}}}},\"verticalAlignment\":\"MIDDLE\",\"textFormat\":{\"foregroundColor\":{},\"fontFamily\":\"Arial\",\"fontSize\":11,\"foregroundColorStyle\":{\"rgbColor\":{}}}},\"runs\":[],\"row\":4,\"column\":6,\"rowSize\":112,\"wrap\":null,\"font\":{\"foregroundColor\":{},\"fontFamily\":\"Arial\",\"fontSize\":11,\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"foregroundColorStyle\":{\"rgbColor\":{}}},\"columns\":[119,119]}",
+      "expected_format_hash": "4d95294899be76dcd2ff387d21b9e62c26f90e0832df4f69ddfc46055d500735"
+    }
+  ],
+  "故障注入說明": "人工修改是對真實隔離副本使用Google API；回覆遺失是在真實批次完成後注入本機例外，永久失權由讀取層注入403，沒有刪除文件或撤銷使用者授權。"
+}

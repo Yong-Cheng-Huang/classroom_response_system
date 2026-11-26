@@ -1,0 +1,106 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "Change": "build-local-classroom-response-system",
+  "本次完成": [
+    "7.4",
+    "7.5",
+    "7.6",
+    "7.7"
+  ],
+  "進度": {
+    "total": 85,
+    "complete": 46,
+    "remaining": 39
+  },
+  "規格統計": {
+    "需求": 78,
+    "情境": 120,
+    "任務": 85
+  },
+  "已確認政策": {
+    "決策": "D38",
+    "使用者選擇": "A：採最後已提交狀態恢復",
+    "代價": "可能恢復已到寬限但撤銷未 COMMIT 者；已撤銷、固定到期、舊活動及原分頁證明優先"
+  },
+  "Node": "24.22.3",
+  "套件與Schema": "依賴未更換；Schema 3／18 張表",
+  "型別與建置": "通過",
+  "單元與整合": {
+    "通過": 101,
+    "失敗": 0
+  },
+  "最後通道回歸": {
+    "通過": 10,
+    "失敗": 0
+  },
+  "Chrome完整流程": {
+    "通過": 5,
+    "失敗": 0
+  },
+  "加強後有視窗恢復": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "G2隔離故障": {
+    "模式數": 5,
+    "結果": "D38_BOUNDARY_PASS：依已確認最後已提交狀態政策恢復；歷史截止前後仍不可精確區分",
+    "時鐘": "注入；真 SIGKILL／SQLite，非牆鐘30秒"
+  },
+  "啟動": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "StrictValidate": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "證據": [
+    "docs/evidence/recovery-browser-headed.json",
+    "docs/evidence/recovery-browser-headless.json",
+    "docs/evidence/g2-recovery-probe.json",
+    "docs/evidence/g2-confirmed-recovery-probe.json",
+    "docs/evidence/recovery-protocol.json",
+    "docs/evidence/recovery-local-runtime.json"
+  ],
+  "仍未完成": [
+    "第8～13群組",
+    "42分頁／F1～F3各20輪／完整跨功能故障驗收",
+    "U02凍結／丟棄／休眠分類",
+    "U03未核實範圍再次處理"
+  ],
+  "sha256": {
+    "src/server/identity.ts": "03069385abbdb96653ebfa9ffb6d5106da91e3d1dc797fdffa082e992b42d971",
+    "src/server/realtime.ts": "8134ac0dc99a451fa752cd4247008e0c0d21f47104b9a873bb1763a1fdfc4bc0",
+    "src/server/app.ts": "a89990f8b76c7f438a2fffd3b161d5b72c2b99a0c0d4992f9303c0b91fb54cc0",
+    "src/client/realtime.ts": "655b991e4338ec0a4cb00d15da413b38992c397bd38b8f5fc537bcb4fdea9183",
+    "src/client/clock.ts": "7102b6d4464c7480d7c2d98f10ec61af7da02871a11741b4be84b87341a123e9",
+    "src/client/session.ts": "8933290e2f9fa77a3744f00380afc578cfe0d32dbedb81b62f49b99abe680b51",
+    "src/client/main.tsx": "ece7e16116d95eb4cf5036cf02c0ce9d324110a4dd6148d0ac41117e44983711",
+    "src/client/activity.tsx": "944f89da6977b1ba77e06a8b5f425067c199dd871735567f32248d5a80734531",
+    "scripts/probes/g2.ts": "ca330faa1f664b9fac38f749d76a5384d01aa7ce8e4330c4a5ecb062afb70b06",
+    "scripts/probes/g2-worker.ts": "fc8dc4a77a6974ea129439c59c481faa5329458783188cf9a6da9904692acffd",
+    "tests/integration/identity.test.ts": "6020f0dec643c57255e4ddbaa4e941c00d15ef3851d2662d2ca643427b5afc6d",
+    "tests/integration/realtime.test.ts": "61e35dbb07bf98cdb65449750ea8bece0351b9511fcb66acb0eb4191e4598ed1",
+    "tests/unit/clock.test.ts": "db1f233ab77673b97bdab59176c0689cf52710fd6492c6609e8e67fb907f3360",
+    "tests/browser/recovery.spec.ts": "825be377c4807ff5fe5915bd8fe6320a8ace523486271a7549c01c54c137c7f9",
+    "tests/helpers/native-chrome.ts": "8e61aa94126d2034f86e750a9313a376a9042b109a2b378a372f58e5646da256",
+    "package.json": "10840e2ccbd6da77ec604ffc200b4cc8ef9e788cc83bc151c9b1d0f50f1db0b3",
+    "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+    "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
+    "openspec/changes/build-local-classroom-response-system/proposal.md": "1fc368aa1c965940aa775c4dfdc3f253e2d80d93ed46f22ab4654779ea470e00",
+    "openspec/changes/build-local-classroom-response-system/design.md": "d415891801491a57f8c3c032e61854d2b0f4524c1a5bc91b45c56ceda5cc802d",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "1f87cbd48fca0845e1de5519cb540460b924f45627669f3a8d33fb439483c56c",
+    "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md": "b5cfcf22196e7cac1249c950a3f5ca9d1c3af7ecb8837f49944b347ae9d6ffc9",
+    "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae"
+  }
+}

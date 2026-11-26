@@ -1,0 +1,405 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "未通過",
+  "程序": "F3單輪測量工具預檢；不是F1～F3各20輪完整驗收",
+  "資料集": "F3",
+  "輪次": 1,
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "Chrome": "158.0.8127.89",
+    "分頁": [
+      {
+        "分頁": 0,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 1,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 2,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 3,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 4,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 5,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 6,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 7,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 8,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 9,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 10,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 11,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 12,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 13,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 14,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 15,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 16,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 17,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 18,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 19,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 20,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 21,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 22,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 23,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 24,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 25,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 26,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 27,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 28,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 29,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 30,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 31,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 32,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 33,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 34,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 35,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 36,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 37,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 38,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 39,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 40,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 41,
+        "visibility": "hidden",
+        "discarded": false
+      }
+    ]
+  },
+  "量測": [],
+  "失敗": [],
+  "無效": [
+    {
+      "階段": "建立量測或套用前置",
+      "原因": "expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 30000ms exceeded while waiting on the predicate"
+    }
+  ],
+  "校準": [
+    {
+      "offset": 6209.129063005959,
+      "uncertainty": 0.26060400000096706
+    },
+    {
+      "offset": 6222.666375023844,
+      "uncertainty": 0.22462500000074215
+    },
+    {
+      "offset": 6224.779583988078,
+      "uncertainty": 0.18850000000020373
+    },
+    {
+      "offset": 6226.311104505963,
+      "uncertainty": 0.18902049999996962
+    },
+    {
+      "offset": 6465.046917023843,
+      "uncertainty": 0.22920800000065356
+    },
+    {
+      "offset": 6474.7868130119205,
+      "uncertainty": 0.22522899999967194
+    },
+    {
+      "offset": 6480.579979499998,
+      "uncertainty": 0.20131249999940337
+    },
+    {
+      "offset": 6492.955312982118,
+      "uncertainty": 0.28027099999962957
+    },
+    {
+      "offset": 6817.594708976158,
+      "uncertainty": 0.27387499999895226
+    },
+    {
+      "offset": 6820.3573335,
+      "uncertainty": 0.2430835000013758
+    },
+    {
+      "offset": 6823.481646476161,
+      "uncertainty": 0.22231250000004366
+    },
+    {
+      "offset": 6825.329208488081,
+      "uncertainty": 0.21545850000075006
+    },
+    {
+      "offset": 7099.839333488078,
+      "uncertainty": 0.22108350000053179
+    },
+    {
+      "offset": 7103.143646,
+      "uncertainty": 0.22747900000103982
+    },
+    {
+      "offset": 7111.33585450596,
+      "uncertainty": 0.21606249999967986
+    },
+    {
+      "offset": 7116.809479511921,
+      "uncertainty": 0.23822949999885168
+    },
+    {
+      "offset": 7485.19466701788,
+      "uncertainty": 0.28520799999932933
+    },
+    {
+      "offset": 7488.389687988078,
+      "uncertainty": 0.20064599999932398
+    },
+    {
+      "offset": 7490.080291982122,
+      "uncertainty": 0.37995799999953306
+    },
+    {
+      "offset": 7492.032354476156,
+      "uncertainty": 0.3851044999992155
+    },
+    {
+      "offset": 7783.59295848808,
+      "uncertainty": 0.22991650000039954
+    },
+    {
+      "offset": 7787.121666999999,
+      "uncertainty": 0.2226250000003347
+    },
+    {
+      "offset": 7791.966354494041,
+      "uncertainty": 0.19152049999865994
+    },
+    {
+      "offset": 7795.9007505119225,
+      "uncertainty": 0.20595850000063365
+    },
+    {
+      "offset": 7989.54054199404,
+      "uncertainty": 0.2672920000004524
+    },
+    {
+      "offset": 7992.701688000001,
+      "uncertainty": 0.22852099999909115
+    },
+    {
+      "offset": 7996.8761875119235,
+      "uncertainty": 0.18768749999981083
+    },
+    {
+      "offset": 8003.222875488078,
+      "uncertainty": 0.4281664999998611
+    },
+    {
+      "offset": 8370.866604499999,
+      "uncertainty": 0.24506250000013097
+    },
+    {
+      "offset": 8373.471583982118,
+      "uncertainty": 0.18000000000029104
+    },
+    {
+      "offset": 8376.9765835,
+      "uncertainty": 0.16045849999864004
+    },
+    {
+      "offset": 8379.7747295,
+      "uncertainty": 0.1679375000003347
+    },
+    {
+      "offset": 8800.421583488082,
+      "uncertainty": 0.18770849999964412
+    },
+    {
+      "offset": 8809.158354523843,
+      "uncertainty": 0.1532294999997248
+    },
+    {
+      "offset": 8816.7860625,
+      "uncertainty": 0.1804374999992433
+    },
+    {
+      "offset": 8818.697750494037,
+      "uncertainty": 0.18558350000057544
+    },
+    {
+      "offset": 9238.796416994039,
+      "uncertainty": 0.16125000000101863
+    },
+    {
+      "offset": 9241.100354517883,
+      "uncertainty": 0.16006250000100408
+    },
+    {
+      "offset": 9242.5377085,
+      "uncertainty": 0.15554150000025402
+    },
+    {
+      "offset": 9243.82018798808,
+      "uncertainty": 0.16864600000008068
+    },
+    {
+      "offset": 9651.072770982119,
+      "uncertainty": 0.14847899999949732
+    },
+    {
+      "offset": 9669.44306299404,
+      "uncertainty": 0.20352099999945494
+    }
+  ],
+  "錯誤": "expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\nCall Log:\n- Timeout 30000ms exceeded while waiting on the predicate"
+}

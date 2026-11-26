@@ -1,0 +1,128 @@
+{
+  "執行編號": "2026-11-26T16-01-40-337Z",
+  "狀態": "未通過",
+  "設定": {
+    "version": 2,
+    "datasets": {
+      "F1": {
+        "questions": 6,
+        "answerFields": 6
+      },
+      "F2": {
+        "questions": 4,
+        "answerFields": 6
+      },
+      "F3": {
+        "questions": 60,
+        "answerFields": 140,
+        "single": 20,
+        "twoPart": 20,
+        "fourPart": 20
+      }
+    },
+    "teacherTabs": 2,
+    "studentTabs": 40,
+    "groups": 20,
+    "studentsPerGroup": 2,
+    "roundsPerDataset": 20,
+    "batches": [
+      "同時加入",
+      "開始",
+      "同題40筆競爭提交",
+      "分批不同題提交",
+      "結束",
+      "40分頁重整",
+      "背景更新",
+      "短斷線恢復",
+      "停機超過30秒恢復"
+    ],
+    "measurements": [
+      "T_commit",
+      "T_apply",
+      "T_ready",
+      "T_restored"
+    ],
+    "limitsMs": {
+      "sync": 1000,
+      "timerDifference": 1000,
+      "recovery": 5000
+    },
+    "aggregation": "每筆加量測不確定度均須達標，報告最壞值與全部失敗，不以平均取代",
+    "requiredEnvironmentFields": [
+      "cpu",
+      "memory",
+      "macOS",
+      "chrome",
+      "foregroundTabs",
+      "backgroundTabs",
+      "frozenOrDiscardedTabs",
+      "powerSavingSettings"
+    ],
+    "requiredSampleFields": [
+      "dataset",
+      "round",
+      "operation",
+      "revision",
+      "tab",
+      "role",
+      "T_commit",
+      "T_apply",
+      "T_ready",
+      "T_restored",
+      "clockUncertaintyMs",
+      "outcome"
+    ],
+    "unresolved": [],
+    "note": "此為驗收設定，不是已完成效能驗收或產品容量上限。",
+    "resolved": {
+      "G1": "正式分頁雙憑證／交接已驗證，仍須整合覆核",
+      "U01": "D38已確認，仍須中斷整合覆核",
+      "U02": "D39已確認：真正凍結／丟棄／OS休眠另列暫停；一般背景維持原門檻；恢復依既有身分規則"
+    },
+    "pausedScenarios": [
+      "Chrome凍結",
+      "Chrome丟棄",
+      "macOS休眠"
+    ]
+  },
+  "範圍": "真HTTP／WS／SQLite／React DOM，原生有視窗Chrome同一設定檔42分頁；每輪全新隔離DB；短停機1秒、長停機31秒重建服務並重開SQLite，程序SIGKILL另見13.4",
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "kernel": "27.2.0",
+    "Chrome來源": "/tmp/crs-chrome-retail/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "電源斷言": [
+      "   UserIsActive                   1",
+      "   PreventUserIdleDisplaySleep    0",
+      "   PreventUserIdleSystemSleep     1",
+      "   pid 647(bluetoothd): [0x000330150001885c] 00:52:07 PreventUserIdleSystemSleep named: \"com.apple.BTStack\"  ",
+      "   pid 647(bluetoothd): [0x000330040009884d] 00:52:24 UserIsActive named: \"Bluetooth LE HID Activity\"  ",
+      "   pid 1088(sharingd): [0x00033bcd00018e1f] 00:02:07 PreventUserIdleSystemSleep named: \"Handoff\"  ",
+      "   pid 597(powerd): [0x00031e660001845e] 02:07:34 PreventUserIdleSystemSleep named: \"Powerd - Prevent sleep while display is on\"  ",
+      "   pid 654(WindowServer): [0x00031e650009845b] 00:01:38 UserIsActive named: \"com.apple.iohideventsystem.queue.tickle serviceID:10000ee31 service:AppleUserHIDEventService product:USB Receiver eventType:17\"  "
+    ]
+  },
+  "完成輪次": [],
+  "失敗": [],
+  "暫停": [],
+  "有效樣本": 0,
+  "最壞同步上界ms": 0,
+  "最壞計時差上界ms": 0,
+  "最壞恢復上界ms": 0,
+  "停止點": {
+    "dataset": "",
+    "round": 0,
+    "operation": "準備",
+    "原因": "隔離 Chrome 未能啟動，請檢查測試執行檔設定。"
+  },
+  "React完整時間線": {
+    "檔案": "docs/evidence/performance/2026-11-26T16-01-40-337Z-react-timeline.json.gz",
+    "sha256": "1922d833f5d406d0cfa38f72fd8c246799beab465212df4207736c60af2666fc"
+  },
+  "全部樣本": {
+    "樣本數": 0
+  },
+  "結束時間": "2026-11-26T16:01:54.267Z"
+}

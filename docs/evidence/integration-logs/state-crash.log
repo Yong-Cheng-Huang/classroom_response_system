@@ -1,0 +1,12 @@
+✔ 13.4 真HTTP程序SIGKILL與跨60秒重啟 EMPTY (859.287834ms)
+✔ 13.4 真HTTP程序SIGKILL與跨60秒重啟 READY (872.088083ms)
+✔ 13.4 真HTTP程序SIGKILL與跨60秒重啟 RUNNING (615.727667ms)
+✔ 13.4 真HTTP程序SIGKILL與跨60秒重啟 ENDED (660.290334ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3332.808958

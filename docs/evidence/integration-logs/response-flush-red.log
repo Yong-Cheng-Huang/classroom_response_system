@@ -1,0 +1,29 @@
+✖ 13.3 靜態資源及唯讀回覆不觸發全通道推送掃描；寫入回覆仍即時通知 (63.077417ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 419.188083
+
+✖ failing tests:
+
+test at tests/integration/response-flush.test.ts:1:383
+✖ 13.3 靜態資源及唯讀回覆不觸發全通道推送掃描；寫入回覆仍即時通知 (63.077417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  4 !== 0
+  
+      at TestContext.<anonymous> (/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/integration/response-flush.test.ts:15:146)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

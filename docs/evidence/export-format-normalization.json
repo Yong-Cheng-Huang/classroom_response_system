@@ -1,0 +1,78 @@
+{
+  "sheetId": 437268134,
+  "format": {
+    "borders": {
+      "bottom": {
+        "style": "SOLID",
+        "width": 1,
+        "color": {},
+        "colorStyle": {
+          "rgbColor": {}
+        }
+      },
+      "left": {
+        "style": "SOLID",
+        "width": 1,
+        "color": {},
+        "colorStyle": {
+          "rgbColor": {}
+        }
+      },
+      "right": {
+        "style": "SOLID_THICK",
+        "width": 3,
+        "color": {},
+        "colorStyle": {
+          "rgbColor": {}
+        }
+      }
+    },
+    "verticalAlignment": "MIDDLE",
+    "wrapStrategy": "WRAP",
+    "textFormat": {
+      "foregroundColor": {},
+      "fontFamily": "Arial",
+      "fontSize": 11,
+      "foregroundColorStyle": {
+        "rgbColor": {}
+      }
+    }
+  },
+  "runs": [
+    {
+      "format": {
+        "foregroundColor": {},
+        "fontFamily": "Arial",
+        "fontSize": 11,
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "foregroundColorStyle": {
+          "rgbColor": {}
+        }
+      }
+    },
+    {
+      "startIndex": 160,
+      "format": {
+        "foregroundColor": {
+          "red": 0.49803922,
+          "green": 0.49803922,
+          "blue": 0.49803922
+        },
+        "fontFamily": "Arial",
+        "fontSize": 9,
+        "foregroundColorStyle": {
+          "rgbColor": {
+            "red": 0.49803922,
+            "green": 0.49803922,
+            "blue": 0.49803922
+          }
+        }
+      }
+    }
+  ],
+  "rowSize": 437,
+  "textLength": 231
+}

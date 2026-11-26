@@ -1,0 +1,14 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "Chrome": "158.0.8127.37",
+  "三模式": true,
+  "D31必須確認": true,
+  "預檢取消不寫入": true,
+  "未知結果不新寫入": true,
+  "再次核對不重送": true,
+  "放棄確認與取消": true,
+  "完整換場才清除": true,
+  "未核實範圍保留": true,
+  "390px無溢出": true,
+  "範圍": "真Chrome／HTTP／SQLite；Sheets為隔離記憶體替身，真Google另驗"
+}

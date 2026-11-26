@@ -1,0 +1,23 @@
+{
+  "主題": "T_apply觀測界線更正",
+  "原始數據": "所有歷史JSON及gzip樣本保留，不覆寫數值",
+  "已重現": "受控暫緩WS票證時，HTTP完整讀模已在React DOM正確呈現，舊觀測器尚無對應WS套用紀錄",
+  "結論界線": "舊樣本可證明WS關聯套用時刻較晚，不能單獨證明實際畫面較晚；尚不能一概將歷史未達標歸因產品或工具",
+  "正式測點": "使用者已確認D40：首次正確DOM，WS時刻另列，1／5秒不變；仍待完整同版驗收",
+  "測試": "tests/browser/measurement-http.spec.ts",
+  "對照": [
+    "docs/evidence/integration-logs/",
+    "/tmp/crs-phase13-http-measurement-red.log",
+    "/tmp/crs-phase13-http-measurement-green.log"
+  ],
+  "此前狀態": "已詢問使用者，尚未答覆前不更改正式判定或勾選13.3",
+  "逐頁恢復測點更正": {
+    "發現": "舊程序以全部重整／校準後的timerCheck讀取時間與逐頁WS套用時間取最大值；全體核對等待被錯算進已先恢復的分頁",
+    "原始證據": "docs/evidence/performance/2026-11-26T17-54-50-059Z.json",
+    "界線": "不能將該次40筆超時全當真實逐頁超時；其中最慢實際WS／DOM套用仍約5594ms，未達5000ms。",
+    "修正": "逐頁React commit同時保存DOM計時值與觀測區間，對齊伺服器基準核對當時的計時誤差；全體timerCheck另列持續正確性，不延後個別T_restored。",
+    "回歸測試": "tests/unit/restoration-measurement.test.ts",
+    "修正後基準": "docs/evidence/performance/2026-11-26T18-12-52-201Z.json",
+    "修正後結果": "F1重整分段診斷仍9頁超過5000ms，最壞5268.13ms；保留真實超時，非完整60輪。"
+  }
+}

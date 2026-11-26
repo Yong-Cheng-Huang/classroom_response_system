@@ -1,0 +1,6 @@
+
+> classroom-response-system@0.1.0 probe:performance
+> node --import tsx scripts/probes/performance-acceptance.ts
+
+{"dataset":"F1","round":1,"operation":"同時加入","階段":"D40 DOM與WS分列量測"}
+{"狀態":"未通過","停止點":{"dataset":"F1","round":1,"operation":"同時加入","原因":"D40 DOM同步未達門檻；保留本批全部樣本"},"失敗":105}

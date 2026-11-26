@@ -1,0 +1,17 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "未通過",
+  "範圍": "同一原生Chrome設定檔，2老師＋40學生；真HTTP／WS／SQLite／Google Sheets",
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "kernel": "27.2.0",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "Chrome來源": "/tmp/crs-chrome-stable/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "Chrome": "158.0.8127.88"
+  },
+  "步驟": [],
+  "測試副本": "https://docs.google.com/spreadsheets/d/16Cb2P-CGDyaK3SYDKml0ddE8iZws6fXNGk2B6TwJorw/edit#gid=1812726776",
+  "錯誤": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '老師登入', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button aria-pressed=\"false\">老師登入</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+}

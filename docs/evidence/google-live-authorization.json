@@ -1,0 +1,28 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "真實授權": "使用者自行在 Google 頁面同意；原老師頁顯示已連結",
+  "回呼": "http://127.0.0.1:3000/api/google/callback",
+  "實際授權範圍": [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "openid"
+  ],
+  "程序重啟": "本次啟動之 Node 後端正常 SIGTERM 停止後重新啟動，原老師頁維持登入及已連結",
+  "副本": [
+    {
+      "副本": 1,
+      "重啟後授權讀取成功": true,
+      "工作表數": 1
+    },
+    {
+      "副本": 2,
+      "重啟後授權讀取成功": true,
+      "工作表數": 1
+    }
+  ],
+  "限制": [
+    "唯讀 GET，未測外部寫入權限",
+    "多老師／解除／故障仍以自動測試提供者驗證，未撤銷使用者的實際連結",
+    "無 token／帳號信箱／secret 存於本報告"
+  ]
+}

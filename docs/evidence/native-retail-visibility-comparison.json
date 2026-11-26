@@ -1,0 +1,68 @@
+{
+  "Chrome": "158.0.8127.89",
+  "targets": [
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://nkeimhogjdpnpccoofpliimaahmaaome"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://admccjkmockfdflocgggjfgdacdodkdf"
+    },
+    {
+      "type": "service_worker",
+      "url": "chrome-extension://fignfifoniblkonapihmkfakmlgkbkcf"
+    },
+    {
+      "type": "page",
+      "url": "http://127.0.0.1:57923"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome"
+    },
+    {
+      "type": "browser_ui",
+      "url": "chrome://omnibox-popup.top-chrome"
+    },
+    {
+      "type": "page",
+      "url": "http://127.0.0.1:57923"
+    },
+    {
+      "type": "page",
+      "url": "http://127.0.0.1:57923"
+    }
+  ],
+  "beforeActivation": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    }
+  ],
+  "states": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    }
+  ],
+  "focus": [],
+  "capture": 0,
+  "screenshot": 0
+}

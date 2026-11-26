@@ -1,0 +1,33 @@
+[WebServer] (node:6913) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:6934) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 (10.4s)
+
+
+  1) tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 ────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "hidden"
+    Received: "visible"
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      40 |     const windows=await Promise.all([teacher,student,closing].map(async(page,index)=>{const session=await context!.newCDPSession(page);try{return{page:index,visibility:await page.evaluate(()=>document.visibilityState),window:await session.send('Browser.getWindowForTarget')};}finally{await session.detach();}}));
+      41 |     writeFileSync('test-results/recovery-window-state.json',JSON.stringify({Chrome:native.browser.version(),headed:!!process.env.CRS_HEADED,windows},null,2)+'\n');
+    > 42 |     await expect.poll(()=>student.evaluate(()=>document.visibilityState)).toBe('hidden');
+         |                                                                           ^
+      43 |     const background:string[]=[];student.on('websocket',socket=>socket.on('framereceived',frame=>background.push(String(frame.payload))));
+      44 |     // 等待超過 pong 判定窗口，沒有停用 Chrome 背景節流來使測試過關。
+      45 |     await new Promise(resolve=>setTimeout(resolve,7500));
+        at /Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/browser/recovery.spec.ts:42:75
+
+    Error Context: test-results/recovery-7-4～7-7-同-Chrome--2f36b-30-秒移除、正常及-D38-重建自動恢復、結束與校時/error-context.md
+
+  1 failed
+    tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 ─────

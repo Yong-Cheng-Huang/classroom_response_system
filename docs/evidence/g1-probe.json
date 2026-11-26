@@ -1,0 +1,134 @@
+{
+  "recordedAt": "2026-11-25T17:43:52.170Z",
+  "chrome": "157.0.8103.80",
+  "node": "v24.22.3",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "release": "27.2.0",
+    "headless": true
+  },
+  "method": "隔離設定檔；測試擴充功能只觸發 Chrome 原生 tabs.duplicate，產品不使用擴充功能或 CDP。",
+  "observations": {
+    "originalReload": {
+      "navigationType": "reload",
+      "key": "e860114d-1261-4d5d-ab84-07eee4bf4018",
+      "entryId": "f60fe4dd-35b4-4806-8e82-f8a4ebd440aa",
+      "instanceId": "37c04ec1-f420-426a-8067-5fcadda5a921",
+      "storage": {
+        "token": "g1-不是正式憑證",
+        "tabId": "g1-合成分頁識別",
+        "draft": "g1-合成草稿",
+        "sessionId": "g1-合成學生身分"
+      },
+      "historyState": {
+        "handoffVersion": 1
+      },
+      "windowName": "g1-分頁名稱",
+      "lockHeld": true
+    },
+    "nativeCopy": {
+      "navigationType": "back_forward",
+      "key": "e860114d-1261-4d5d-ab84-07eee4bf4018",
+      "entryId": "f60fe4dd-35b4-4806-8e82-f8a4ebd440aa",
+      "instanceId": "89b6a2fa-f07c-45c7-a8ca-16280fe6771f",
+      "storage": {
+        "token": "g1-不是正式憑證",
+        "tabId": "g1-合成分頁識別",
+        "draft": "g1-合成草稿",
+        "sessionId": "g1-合成學生身分"
+      },
+      "historyState": {
+        "handoffVersion": 1
+      },
+      "windowName": "",
+      "lockHeld": false
+    },
+    "copyReload": {
+      "navigationType": "reload",
+      "key": "e860114d-1261-4d5d-ab84-07eee4bf4018",
+      "entryId": "f60fe4dd-35b4-4806-8e82-f8a4ebd440aa",
+      "instanceId": "902d9793-85a5-462d-bab4-000eeccbd8db",
+      "storage": {
+        "token": "g1-不是正式憑證",
+        "tabId": "g1-合成分頁識別",
+        "draft": "g1-合成草稿",
+        "sessionId": "g1-合成學生身分"
+      },
+      "historyState": {
+        "handoffVersion": 1
+      },
+      "windowName": "",
+      "lockHeld": false
+    },
+    "copyAfterOriginalClosed": {
+      "navigationType": "reload",
+      "key": "e860114d-1261-4d5d-ab84-07eee4bf4018",
+      "entryId": "f60fe4dd-35b4-4806-8e82-f8a4ebd440aa",
+      "instanceId": "c0253609-b439-48a1-b54f-abd227c75ec2",
+      "storage": {
+        "token": "g1-不是正式憑證",
+        "tabId": "g1-合成分頁識別",
+        "draft": "g1-合成草稿",
+        "sessionId": "g1-合成學生身分"
+      },
+      "historyState": {
+        "handoffVersion": 1
+      },
+      "windowName": "",
+      "lockHeld": true
+    },
+    "sourceBeforeRace": {
+      "navigationType": "reload",
+      "key": "7ca915c2-2fff-4a27-b2ab-08a6f72c5bd7",
+      "entryId": "36a65242-fa99-4482-9d07-06b67a88d747",
+      "instanceId": "ab11a03b-2c92-4179-b823-8f2a5507a333",
+      "storage": {
+        "token": "g1-不是正式老師憑證",
+        "sessionId": "g1-合成老師身分"
+      },
+      "historyState": {
+        "handoffVersion": 2
+      },
+      "windowName": "g1-第二個原頁名稱",
+      "lockHeld": true
+    },
+    "copyBeforeFirstScript": {
+      "key": "7ca915c2-2fff-4a27-b2ab-08a6f72c5bd7",
+      "storage": {
+        "token": "g1-不是正式老師憑證",
+        "sessionId": "g1-合成老師身分"
+      },
+      "applicationScriptExecuted": false
+    },
+    "copyReloadWithoutFirstScript": {
+      "navigationType": "reload",
+      "key": "7ca915c2-2fff-4a27-b2ab-08a6f72c5bd7",
+      "entryId": "36a65242-fa99-4482-9d07-06b67a88d747",
+      "instanceId": "62afbcac-9051-4f11-9709-77f8940992c5",
+      "storage": {
+        "token": "g1-不是正式老師憑證",
+        "sessionId": "g1-合成老師身分"
+      },
+      "historyState": {
+        "handoffVersion": 2
+      },
+      "windowName": "",
+      "lockHeld": true
+    }
+  },
+  "findings": {
+    "copiedSessionStorage": true,
+    "copiedHistoryState": true,
+    "copiedNavigationKey": true,
+    "nativeCopyHasEmptyWindowName": true,
+    "copyCanClaimReload": true,
+    "copyCanAcquireLockAfterOriginalClosed": true,
+    "originalAndCopyHaveDifferentMemoryInstances": true,
+    "firstScriptBypassRetainsOriginalStorage": true,
+    "firstScriptBypassHasSameKey": true,
+    "firstScriptBypassCanClaimReloadAndLock": true
+  },
+  "gate": "NOT_PROVEN",
+  "note": "這些是觀測結果，不是所有可行方案皆不可能的證明，也不是 IA03 全部情境通過。"
+}

@@ -1,0 +1,47 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "通過",
+  "本階段新增真SIGKILL": {
+    "四階段HTTP程序": [
+      "EMPTY",
+      "READY",
+      "RUNNING",
+      "ENDED"
+    ],
+    "停機時鐘": "可控伺服器時鐘跨60秒；不是牆鐘停機60秒",
+    "匯出與放棄": [
+      "PREPARING",
+      "BEFORE_SEND",
+      "AFTER_REMOTE",
+      "COMPLETED",
+      "ABANDON_BEFORE",
+      "ABANDON_AFTER"
+    ],
+    "遠端媒介": "隔離JSON文件模擬外部已提交；不是對真Google程序實施SIGKILL",
+    "通過數": 10
+  },
+  "既有邊界覆核": [
+    "tests/integration/identity.test.ts：固定12小時、30秒邊界、密碼變更及D38",
+    "tests/integration/submission-crash.test.ts：題組COMMIT前後真SIGKILL，原順位與重送",
+    "tests/integration/activity-replacement.test.ts：替換交易SIGKILL、回滾及提交後恢復"
+  ],
+  "G2": "docs/evidence/g2-confirmed-recovery-probe.json",
+  "G2結果": "D38_BOUNDARY_PASS",
+  "U01": "依最後已提交狀態恢復，已撤銷、12小時及舊活動優先；不聲稱歷史截止前後可精確區分",
+  "測試檔": [
+    "tests/integration/state-crash.test.ts",
+    "tests/integration/export-crash.test.ts"
+  ],
+  "其他真Sheets證據": [
+    "docs/evidence/exports-live.json",
+    "docs/evidence/exports-live-boundaries.json"
+  ],
+  "HTTP交接錯誤": {
+    "測試": "tests/integration/upgrade-reset.test.ts",
+    "結果": "真HTTP子程序收到ECONNRESET仍可健康檢查；未放寬升級授權"
+  },
+  "突發回覆回歸": {
+    "測試": "tests/integration/response-flush.test.ts",
+    "結果": "唯讀及靜態回覆不掃描全通道，五個突發POST於25ms合併為一次；100ms授權與狀態檢查保持"
+  }
+}

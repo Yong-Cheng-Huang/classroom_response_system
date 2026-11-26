@@ -1,0 +1,36 @@
+✖ 13.3 單次同步共用同版權威模型，逐通道仍驗權限且下一次變更即時可見 (585.23ms)
+ℹ 7通道單次flush：{"models":1,"presence":7,"checks":7}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2221.055667
+
+✖ failing tests:
+
+test at tests/integration/realtime.test.ts:1:16354
+✖ 13.3 單次同步共用同版權威模型，逐通道仍驗權限且下一次變更即時可見 (585.23ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      checks: 7,
+      models: 1,
+  +   presence: 7
+  -   presence: 1
+    }
+  
+      at TestContext.<anonymous> (/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/integration/realtime.test.ts:183:153)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { models: 1, presence: 7, checks: 7 },
+    expected: { models: 1, presence: 1, checks: 7 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

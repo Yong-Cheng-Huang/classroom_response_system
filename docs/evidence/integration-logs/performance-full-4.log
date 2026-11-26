@@ -1,0 +1,15 @@
+
+> classroom-response-system@0.1.0 probe:performance
+> node --import tsx scripts/probes/performance-acceptance.ts
+
+{"dataset":"F1","round":1,"operation":"同時加入","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"開始","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"同題40筆競爭提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"分批不同題提交","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"背景更新","階段":"量測批次"}
+{"dataset":"F1","round":1,"operation":"短斷線恢復","階段":"停機恢復"}
+{"dataset":"F1","round":1,"operation":"停機超過30秒恢復","階段":"停機恢復"}
+{"狀態":"未通過","停止點":{"dataset":"F1","round":1,"operation":"停機超過30秒恢復","原因":"等待實際React commit逾時：恢復完整授權畫面"},"失敗":0}

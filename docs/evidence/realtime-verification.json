@@ -1,0 +1,89 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "Change": "build-local-classroom-response-system",
+  "本次完成": [
+    "7.1",
+    "4.6",
+    "7.2",
+    "7.3"
+  ],
+  "進度": {
+    "total": 85,
+    "complete": 42,
+    "remaining": 43
+  },
+  "Node": "24.22.3",
+  "套件與Schema": "未更換依賴；Schema 3／18 張表",
+  "型別與建置": "通過",
+  "單元與整合": {
+    "通過": 96,
+    "失敗": 0
+  },
+  "Chrome": {
+    "通過": 4,
+    "失敗": 0,
+    "範圍": "同 Chrome 兩老師／學生 WS 快照；Google 替身匯入；原生副本與交接；非 42 分頁效能驗收"
+  },
+  "建置啟動": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "StrictValidate": {
+    "items": [
+      {
+        "id": "build-local-classroom-response-system",
+        "type": "change",
+        "valid": true,
+        "issues": [],
+        "durationMs": 58
+      }
+    ],
+    "summary": {
+      "totals": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "byType": {
+        "change": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        }
+      }
+    },
+    "version": "1.0",
+    "root": {
+      "path": "/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system",
+      "source": "nearest"
+    }
+  },
+  "停止點": "7.4／G2／U01；未自行裁定未知強制中斷資格",
+  "仍未完成": [
+    "7.4",
+    "7.5",
+    "7.6",
+    "7.7",
+    "第 8～13 群組",
+    "U01／U02／U03"
+  ],
+  "實際服務": "已正常重啟；health 成功、未授權 ticket 被拒；目前活動見 realtime-local-restart.json",
+  "sha256": {
+    "src/server/realtime.ts": "7097fe403b107d44cebfc0e75c26e5d36f7b0c895883798a233e0c84372a13a7",
+    "src/server/app.ts": "a89990f8b76c7f438a2fffd3b161d5b72c2b99a0c0d4992f9303c0b91fb54cc0",
+    "src/shared/realtime.ts": "02613d45b9090228c6d232d7e4df2946385f694975b61eb92a1a618da28dc299",
+    "src/client/realtime.ts": "95eb3357faba19d4be32f2796201a6c45111edcb199b72645af14657fe4770b6",
+    "src/client/main.tsx": "3715ad90bbaebd7fa675cd64854222c710aa91be8ddcd95a7c8cdf3f0d2af3d3",
+    "tests/unit/realtime.test.ts": "2df87fa2cdbfb3ec308580bf725d0379adeeaa8fb067fc37d9aa021e927e53d3",
+    "tests/integration/realtime.test.ts": "d312413fc8b28a77a82c053d7c7722b468b8fb5c0be69e8cd30545d990232e28",
+    "tests/browser/realtime.spec.ts": "8da037d2b1734d23bf5ac12d9ca49f541547e500bc23c4b62bb165b28cefd4eb",
+    "package.json": "3ecef3e64cab708a9431fa6ca921961f8a06a4bc9a5c82352fea57a80454f646",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "35a142be191cf0f5b62b22cecca7983161d5131bdefb37ab2c13bc5472ddfca0",
+    "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413"
+  },
+  "最後關閉資源修正回歸": {
+    "通道測試": "6／6",
+    "型別與建置": "通過",
+    "說明": "服務關閉時包含已進入關閉流程的 socket；未更改授權及快照契約"
+  }
+}

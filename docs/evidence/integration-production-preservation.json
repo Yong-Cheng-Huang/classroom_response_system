@@ -1,0 +1,101 @@
+{
+  "停止方式": "確認原PID5833、cwd與固定來源後SIGTERM正常停止，沒有SIGKILL",
+  "啟動": "npm run dev；固定127.0.0.1:3000健康檢查通過",
+  "前": {
+    "at": "2026-11-26T13:15:13.176Z",
+    "tables": {
+      "activities": {
+        "rows": 1,
+        "sha256": "437cda5352b3bb2dba023c1710d95476cfcf8daa574aac3d27742d1c1ad84178"
+      },
+      "sources": {
+        "rows": 1,
+        "sha256": "0bc84c505f7f1479cbf4128fc67e0d826fcbc0fc2534101edb2bb34ff941dfb5"
+      },
+      "groups": {
+        "rows": 2,
+        "sha256": "6894db9e32f337327ef747a048ffe63225c3b5e8019c80b240fb264b385f92a2"
+      },
+      "questions": {
+        "rows": 4,
+        "sha256": "b686fbeac5aa67cc1738ff8de9ddb0d38025e3b15748a30c7a8ee53c4c2030c1"
+      },
+      "question_fields": {
+        "rows": 6,
+        "sha256": "646af0ef647e1308d3297380af7c5cb25cc509164834288e1aebba3942e05959"
+      },
+      "submissions": {
+        "rows": 4,
+        "sha256": "31e35170279f4bcca28c6facba12ed3d62895775e13eb6b57360275ad45f51ef"
+      },
+      "submission_answers": {
+        "rows": 8,
+        "sha256": "461ad1ccfd3aa0a2e5e00560de973eadd32a991edfa678ea2562aaacc9dddf0f"
+      },
+      "google_connection": {
+        "rows": 1,
+        "sha256": "eb0bb9d4b1a846b11f42cdf17c4dcf5c709e39628bca3996a457cbd99d9570ce"
+      },
+      "document_output_management": {
+        "rows": 27,
+        "sha256": "7959547dba465bf881f60e01f103d1586c323d96ab007c49042ec7624abf2637"
+      },
+      "export_operations": {
+        "rows": 3,
+        "sha256": "6a90a4943d585156b9f5e6413c78df0f8de65fa28d0333b9a3d33568c37a4473"
+      }
+    },
+    "receiveHighWater": 317,
+    "SQLiteUserVersion": 0
+  },
+  "後": {
+    "at": "2026-11-26T13:15:39.171Z",
+    "tables": {
+      "activities": {
+        "rows": 1,
+        "sha256": "437cda5352b3bb2dba023c1710d95476cfcf8daa574aac3d27742d1c1ad84178"
+      },
+      "sources": {
+        "rows": 1,
+        "sha256": "0bc84c505f7f1479cbf4128fc67e0d826fcbc0fc2534101edb2bb34ff941dfb5"
+      },
+      "groups": {
+        "rows": 2,
+        "sha256": "6894db9e32f337327ef747a048ffe63225c3b5e8019c80b240fb264b385f92a2"
+      },
+      "questions": {
+        "rows": 4,
+        "sha256": "b686fbeac5aa67cc1738ff8de9ddb0d38025e3b15748a30c7a8ee53c4c2030c1"
+      },
+      "question_fields": {
+        "rows": 6,
+        "sha256": "646af0ef647e1308d3297380af7c5cb25cc509164834288e1aebba3942e05959"
+      },
+      "submissions": {
+        "rows": 4,
+        "sha256": "31e35170279f4bcca28c6facba12ed3d62895775e13eb6b57360275ad45f51ef"
+      },
+      "submission_answers": {
+        "rows": 8,
+        "sha256": "461ad1ccfd3aa0a2e5e00560de973eadd32a991edfa678ea2562aaacc9dddf0f"
+      },
+      "google_connection": {
+        "rows": 1,
+        "sha256": "eb0bb9d4b1a846b11f42cdf17c4dcf5c709e39628bca3996a457cbd99d9570ce"
+      },
+      "document_output_management": {
+        "rows": 27,
+        "sha256": "7959547dba465bf881f60e01f103d1586c323d96ab007c49042ec7624abf2637"
+      },
+      "export_operations": {
+        "rows": 3,
+        "sha256": "6a90a4943d585156b9f5e6413c78df0f8de65fa28d0333b9a3d33568c37a4473"
+      }
+    },
+    "receiveHighWater": 320,
+    "SQLiteUserVersion": 0
+  },
+  "結果": "10個活動／題目／答案／名次／Google及匯出資料表逐表內容雜湊相同，接收序號未倒退",
+  "界線": "身分依原D38及固定期限正常裁定；不以runtime/session欄位必須逐字相同作恢復條件，未修改外部Sheets",
+  "目前服務schemaVersion": 3
+}

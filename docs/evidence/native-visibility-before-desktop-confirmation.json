@@ -1,0 +1,32 @@
+{
+  "Chrome": "158.0.8127.89",
+  "範圍": "獨立Node程序／原生有視窗／noDefaults，沒有設定焦點模擬",
+  "保留初始空白頁": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    }
+  ],
+  "關閉初始空白頁": [
+    {
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "visibility": "visible",
+      "focused": false
+    }
+  ]
+}

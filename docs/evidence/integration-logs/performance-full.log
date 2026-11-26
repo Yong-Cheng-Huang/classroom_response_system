@@ -1,0 +1,5 @@
+
+> classroom-response-system@0.1.0 probe:performance
+> node --import tsx scripts/probes/performance-acceptance.ts
+
+{"狀態":"未通過","停止點":{"dataset":"F1","round":1,"operation":"40分頁重整","原因":"40頁重整未達門檻"},"失敗":22}

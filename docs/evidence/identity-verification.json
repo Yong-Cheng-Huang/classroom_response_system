@@ -1,0 +1,147 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "變更": "build-local-classroom-response-system",
+  "Node": "v24.22.3",
+  "平台": "darwin/arm64",
+  "完成任務": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.7"
+  ],
+  "進度": {
+    "完成": 25,
+    "總數": 85
+  },
+  "檢查": {
+    "型別": "通過",
+    "單元與整合": {
+      "通過": 59,
+      "失敗": 0
+    },
+    "建置啟動": {
+      "通過": 1,
+      "失敗": 0
+    }
+  },
+  "瀏覽器": {
+    "headless": {
+      "統計": {
+        "startTime": "2026-11-25T19:09:50.184Z",
+        "duration": 15542.763,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "測試": [
+        {
+          "名稱": "1.4 同一Chrome context的多分頁均可載入React並連接同來源後端",
+          "結果": "expected",
+          "註記": [],
+          "執行": [
+            {
+              "結果": "passed",
+              "毫秒": 1539
+            }
+          ]
+        },
+        {
+          "名稱": "正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷",
+          "結果": "expected",
+          "註記": [
+            {
+              "type": "browser",
+              "description": "157.0.8103.80"
+            },
+            {
+              "type": "mode",
+              "description": "無視窗"
+            }
+          ],
+          "執行": [
+            {
+              "結果": "passed",
+              "毫秒": 10333
+            }
+          ]
+        }
+      ]
+    },
+    "headed": {
+      "統計": {
+        "startTime": "2026-11-25T19:10:24.139Z",
+        "duration": 14682.279,
+        "expected": 2,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "測試": [
+        {
+          "名稱": "1.4 同一Chrome context的多分頁均可載入React並連接同來源後端",
+          "結果": "expected",
+          "註記": [],
+          "執行": [
+            {
+              "結果": "passed",
+              "毫秒": 1210
+            }
+          ]
+        },
+        {
+          "名稱": "正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷",
+          "結果": "expected",
+          "註記": [
+            {
+              "type": "browser",
+              "description": "157.0.8103.80"
+            },
+            {
+              "type": "mode",
+              "description": "有視窗"
+            }
+          ],
+          "執行": [
+            {
+              "結果": "passed",
+              "毫秒": 10923
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "限制": [
+    "4.6 尚未完成",
+    "G2／U01、U02、U03 尚未定案",
+    "未驗收 42 分頁效能",
+    "測試使用臨時資料與設定檔，無正式種子活動",
+    "原始 Playwright 報告位於本次執行的 /tmp；本檔保留去除設定內容的統計與結果"
+  ],
+  "sha256": {
+    "src/shared/errors.ts": "72ccc5a115e72555d8e4358e9da75065c38102a1d3adfc3cb421843b837a81f4",
+    "src/shared/session.ts": "fa88637e7bf5c47e9b085fa128870a71d48327738edcedcf52cffb998bd3529d",
+    "src/shared/validation.ts": "daf35ad6c6a8b4db21e843bc8dec79b9a1fda3830364cedf1b2aee28ee7faca9",
+    "src/server/identity.ts": "d12b221b47b513e38899bf3f535f7a34c358a0a1bd4b72de1eeb6a664ba9cd9c",
+    "src/server/identity-http.ts": "a7c05ec1a79233767c6db083aad2283173a0332456e70323af9578a37b352c1d",
+    "src/server/http-body.ts": "c5129fc8b41757f8ed210b962f70b0b57c2b6492b34abba8470f75ee4a62d06c",
+    "src/server/read-model.ts": "f6b69b75de91f10e18d3befe4484ee556772483ed1cc130f8ba6a974e9ac0dab",
+    "src/server/api.ts": "85b1920c2b9f73878db549f8868dc4e3dc2c58decf653cbdeca9ab6e27af6987",
+    "src/server/app.ts": "2648b726186a7cee4dd4fd6e235d23eb9671d4ca5c799eef06b0fdf062bbb7b1",
+    "src/server/index.ts": "3b40f21873564bfd8c4f1ee5874605b3536f5677cfda9287c0cc34a3e96f3e74",
+    "src/server/command-queue.ts": "c95bfb5b9476cabfbb3dd99ce3629e5b5eea2bc59767257b606d04c76759a6b1",
+    "src/server/storage.ts": "1fdee5cafe773f692b109951ebdb86d4c814f295ab9e547d69aa92a7fe931410",
+    "src/client/session.ts": "20036802c5efaf76a0ac4bc56d93397d78d3f52678846b0c32b1412cb809afa5",
+    "src/client/main.tsx": "fab37945a9edb63c3f1891974fceec33e526f619405396a8d09633b80e17b700",
+    "src/client/style.css": "f88a8268ccddb33f83a5d9148ed40600452e89128b98c75ff679d13771228e7d",
+    "database/migrations/003_identity.sql": "362728f79f12127f09a688adfa9f2328cba2f9f6f58a606ee54e529775b27bb4",
+    "tests/unit/validation.test.ts": "6bd7caa0bdc6c2fbeff13f714e55aaf36bded071ae15c81640ff2321f626f918",
+    "tests/integration/identity.test.ts": "3683147aa300b3450390724a33fd677e60562037ebbb813a33665fe9d06e656f",
+    "tests/browser/identity.spec.ts": "1524abfc71081260fb650003ec2eb2e8b968fead3ba1b136293e7ebbe73b1b03",
+    "package.json": "0bf4d6899d53422f786d9fb8c6d7c1fcf2793b22c582aed0a642b2980b17a4b7",
+    "package-lock.json": "121284aafd806f2437d7d840779ffef6edbb3c6d32f378c6cdd516e44b29ccea"
+  }
+}

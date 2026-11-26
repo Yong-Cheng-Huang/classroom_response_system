@@ -1,0 +1,978 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "狀態": "舊版試跑未完成／未通過",
+  "範圍": "同一原生Chrome設定檔，2老師＋40學生；真HTTP／WS／SQLite／Google Sheets",
+  "環境": {
+    "cpu": "Apple M2",
+    "memory": 8589934592,
+    "macOS": "27.2.1",
+    "kernel": "27.2.0",
+    "powerSavingSettings": "Battery Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 0\n networkoversleep     0\n sleep                1\n lessbright           1\n tcpkeepalive         1\n disksleep            10\nAC Power:\n Sleep On Power Button 1\n lowpowermode         0\n standby              1\n ttyskeepawake        1\n hibernatemode        3\n powernap             1\n hibernatefile        /var/vm/sleepimage\n displaysleep         60\n womp                 1\n networkoversleep     0\n sleep                1\n tcpkeepalive         1\n disksleep            10\n",
+    "Chrome來源": "/tmp/crs-chrome-retail/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "驅動": "原生Chrome CDP noDefaults",
+    "執行模式": "原生Chrome有視窗",
+    "Chrome": "158.0.8127.89",
+    "分頁狀態": [
+      {
+        "分頁": 0,
+        "visibility": "visible",
+        "discarded": false
+      },
+      {
+        "分頁": 1,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 2,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 3,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 4,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 5,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 6,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 7,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 8,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 9,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 10,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 11,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 12,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 13,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 14,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 15,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 16,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 17,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 18,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 19,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 20,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 21,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 22,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 23,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 24,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 25,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 26,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 27,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 28,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 29,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 30,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 31,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 32,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 33,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 34,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 35,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 36,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 37,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 38,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 39,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 40,
+        "visibility": "hidden",
+        "discarded": false
+      },
+      {
+        "分頁": 41,
+        "visibility": "hidden",
+        "discarded": false
+      }
+    ]
+  },
+  "步驟": [
+    "老師真實Sheets題組匯入20組，第二老師同步",
+    "同一Chrome恰42分頁，20組各2名學生、同名去重與本人標示",
+    "開始後40學生分頁完整顯示全部單題及題組",
+    "40筆同題表單競爭，20成功20拒絕、每組一次、完整雙子題及唯一1～20名；學生無排名",
+    "不同題分批提交、第二老師確認結束、40學生自動轉完整結果與無人題"
+  ],
+  "重用前輪隔離副本": true,
+  "測試副本": "https://docs.google.com/spreadsheets/d/1S4jgrS5F6LbxTylenwmq1WyYf6gj78xyBJsgpCR5_ww/edit#gid=989830504",
+  "加入回覆": [
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    },
+    {
+      "status": 200,
+      "code": "OK"
+    }
+  ],
+  "第二題輸入進度": 39,
+  "錯誤": "The input did not match the regular expression /組別：第/. Input:\n\n'組員5 答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答答\\n' +\n  '👨‍👩‍👧‍👦'\n",
+  "失敗資料庫概況": {
+    "組員": {
+      "n": 40
+    },
+    "提交": {
+      "n": 40
+    },
+    "身分": [
+      {
+        "role": "STUDENT",
+        "lifecycle": "CONNECTED",
+        "n": 40
+      },
+      {
+        "role": "TEACHER",
+        "lifecycle": "CONNECTED",
+        "n": 3
+      }
+    ],
+    "活動": {
+      "state": "ENDED",
+      "version": 3
+    }
+  },
+  "失敗分頁診斷": [
+    {
+      "分頁": 0,
+      "標題": [
+        "老師已登入"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": false,
+      "visibility": "visible",
+      "提示": [
+        "本機服務已連線",
+        "匯入完成，活動目前待開始。"
+      ]
+    },
+    {
+      "分頁": 1,
+      "標題": [
+        "老師已登入"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": false,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 2,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 3,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 4,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 5,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 6,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 7,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 8,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 9,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 10,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 11,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 12,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 13,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 14,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 15,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 16,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 17,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 18,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 19,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 20,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 21,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 22,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 23,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 24,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 25,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 26,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 27,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 28,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 29,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 30,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 31,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 32,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 33,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 34,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 35,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 36,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 37,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 38,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 39,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 40,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    },
+    {
+      "分頁": 41,
+      "標題": [
+        "已加入組別"
+      ],
+      "暱稱欄": false,
+      "密碼欄": false,
+      "學生畫面": true,
+      "visibility": "hidden",
+      "提示": [
+        "本機服務已連線"
+      ]
+    }
+  ],
+  "競爭已攔截請求": 40,
+  "中止原因": "此程序仍執行逐通道重做beforeRead的舊模組，已由紅／綠回歸驗證修正；保存原有部分成功，不宣稱完整通過。",
+  "外部匯出": "中止前只到RUNNING／20筆提交，沒有匯出操作",
+  "處理說明": "此舊程序在嘗試停止其隔離Chrome前已結束，沒有送出停止信號；後續由新程序載入固定次數beforeRead修正。"
+}

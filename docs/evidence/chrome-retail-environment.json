@@ -1,0 +1,11 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "來源": "https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg",
+  "版本": "158.0.8127.89",
+  "簽章": "Developer ID Application: Google LLC (EQHXZ8M8AV)",
+  "BundleID": "com.google.Chrome",
+  "InstallerSHA256": "b7b8c9169275631c1065b865ba2e64bf0f620fa4e507b72c1b5abb5383d2b0f1",
+  "位置": "/tmp/crs-chrome-retail/Google Chrome.app",
+  "安裝行為": "只解開至臨時目錄；未覆寫Applications中的Chrome，掛載已卸載",
+  "說明": "Google當前Stable安裝程式實際版本；不是Chrome for Testing，也不把不同分批發布群組的最大版本號冒稱為本機安裝版本。"
+}

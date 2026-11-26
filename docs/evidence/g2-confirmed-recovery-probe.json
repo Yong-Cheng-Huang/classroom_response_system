@@ -1,0 +1,176 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "環境": {
+    "node": "v24.22.3",
+    "os": "darwin",
+    "release": "27.2.0",
+    "arch": "arm64"
+  },
+  "範圍": "真子程序 SIGKILL＋真 SQLite；截止 31000ms 與停機時間使用注入時鐘，不是牆鐘 30 秒／正式 WS 或 Chrome 驗收",
+  "結論": "D38_BOUNDARY_PASS：依已確認最後已提交狀態政策恢復；歷史截止前後仍不可精確區分",
+  "相同紀錄比較": true,
+  "案例": [
+    {
+      "模式": "before-deadline",
+      "注入點": {
+        "boundary": "截止前，未進撤銷交易",
+        "logicalNow": 30999
+      },
+      "重啟前": {
+        "lifecycle": "GRACE",
+        "revoked_reason": null,
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 2,
+        "shutdown_evidence_json": "{\"kind\":\"LIVE\"}",
+        "membership_state": "JOINED",
+        "running": 1
+      },
+      "重啟後": {
+        "lifecycle": "GRACE",
+        "revoked_reason": null,
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 60000,
+        "grace_deadline": 90000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"COMMITTED_STATE_RESTORED\",\"policy\":\"D38\",\"restoredAt\":60000}",
+        "membership_state": "JOINED",
+        "running": 1
+      },
+      "授權結果": "AUTHORIZED",
+      "到期優先結果": "SESSION_EXPIRED"
+    },
+    {
+      "模式": "rollback-revocation",
+      "注入點": {
+        "boundary": "截止時，撤銷交易尚未 COMMIT",
+        "logicalNow": 31000
+      },
+      "重啟前": {
+        "lifecycle": "GRACE",
+        "revoked_reason": null,
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 2,
+        "shutdown_evidence_json": "{\"kind\":\"LIVE\"}",
+        "membership_state": "JOINED",
+        "running": 1
+      },
+      "重啟後": {
+        "lifecycle": "GRACE",
+        "revoked_reason": null,
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 60000,
+        "grace_deadline": 90000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"COMMITTED_STATE_RESTORED\",\"policy\":\"D38\",\"restoredAt\":60000}",
+        "membership_state": "JOINED",
+        "running": 1
+      },
+      "授權結果": "AUTHORIZED",
+      "到期優先結果": "SESSION_EXPIRED"
+    },
+    {
+      "模式": "committed-revocation",
+      "注入點": {
+        "boundary": "截止時，撤銷及移除已 COMMIT",
+        "logicalNow": 31000
+      },
+      "重啟前": {
+        "lifecycle": "REVOKED",
+        "revoked_reason": "DISCONNECTED",
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"LIVE\"}",
+        "membership_state": "INVALID",
+        "running": 1
+      },
+      "重啟後": {
+        "lifecycle": "REVOKED",
+        "revoked_reason": "DISCONNECTED",
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"LIVE\"}",
+        "membership_state": "INVALID",
+        "running": 1
+      },
+      "授權結果": "SESSION_DISCONNECTED"
+    },
+    {
+      "模式": "clean-before",
+      "注入點": {
+        "boundary": "截止前，正常關機檢查點已 COMMIT",
+        "logicalNow": 30999
+      },
+      "重啟前": {
+        "lifecycle": "GRACE",
+        "revoked_reason": null,
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 2,
+        "shutdown_evidence_json": "{\"kind\":\"CLEAN_SHUTDOWN\",\"at\":30999,\"stateVersion\":2}",
+        "membership_state": "JOINED",
+        "running": 0
+      },
+      "重啟後": {
+        "lifecycle": "GRACE",
+        "revoked_reason": null,
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 60000,
+        "grace_deadline": 90000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"CLEAN_RESTORED\",\"policy\":\"D38\",\"restoredAt\":60000}",
+        "membership_state": "JOINED",
+        "running": 1
+      },
+      "授權結果": "AUTHORIZED"
+    },
+    {
+      "模式": "clean-expired",
+      "注入點": {
+        "boundary": "截止時，正常關機已保存失效",
+        "logicalNow": 31000
+      },
+      "重啟前": {
+        "lifecycle": "REVOKED",
+        "revoked_reason": "DISCONNECTED",
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"LIVE\"}",
+        "membership_state": "INVALID",
+        "running": 0
+      },
+      "重啟後": {
+        "lifecycle": "REVOKED",
+        "revoked_reason": "DISCONNECTED",
+        "created_at": 1000,
+        "expires_at": 43201000,
+        "grace_started_at": 1000,
+        "grace_deadline": 31000,
+        "state_version": 3,
+        "shutdown_evidence_json": "{\"kind\":\"LIVE\"}",
+        "membership_state": "INVALID",
+        "running": 1
+      },
+      "授權結果": "SESSION_DISCONNECTED"
+    }
+  ]
+}

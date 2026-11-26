@@ -1,0 +1,146 @@
+{
+  "時間UTC": "2026-11-26T18:22:11.995538+00:00",
+  "Change": "build-local-classroom-response-system",
+  "任務": {
+    "總數": 85,
+    "完成": 84,
+    "未完成": [
+      "13.3 固定效能"
+    ],
+    "本階段完成": [
+      "13.1",
+      "13.2",
+      "13.4",
+      "13.5",
+      "13.6"
+    ],
+    "本次最後完成": [
+      "13.6"
+    ],
+    "CLI核對": "勾選前83／85，勾選後84／85；sourcePath／line／任務原文逐字核對；13.3仍false"
+  },
+  "規格": {
+    "需求": 78,
+    "情境": 122,
+    "決策": 40,
+    "原文內容列": 152,
+    "未對應原文": 0,
+    "StrictValidate": "通過1／1，無issues；不是實作Verify"
+  },
+  "測試": {
+    "型別檢查": {
+      "exitCode": 0,
+      "日誌": "docs/evidence/integration-logs/typecheck.log"
+    },
+    "單元與整合": {
+      "通過": 149,
+      "失敗": 0,
+      "exitCode": 0,
+      "日誌": "docs/evidence/integration-logs/unit-integration.log"
+    },
+    "Chrome完整回歸": {
+      "通過": 18,
+      "失敗": 0,
+      "exitCode": 0,
+      "瀏覽器": "零售Chrome 158.0.8127.89，headless，1 worker",
+      "日誌": "docs/evidence/integration-logs/browser.log",
+      "限制": "headless功能回歸不取代原生headed42頁固定效能；有視窗補充另列"
+    },
+    "有視窗補充恢復": {
+      "通過": 1,
+      "證據": "docs/evidence/recovery-headed-d40.json",
+      "限制": "同設定檔三頁，實際hidden；非42頁60輪"
+    },
+    "正式啟動": {
+      "通過": 1,
+      "失敗": 0,
+      "exitCode": 0,
+      "日誌": "docs/evidence/integration-logs/startup.log"
+    },
+    "真Google42分頁功能": {
+      "功能通過": true,
+      "證據": "docs/evidence/acceptance-42.json",
+      "命令exitCode": 1,
+      "清理更正": "docs/evidence/acceptance-42-cleanup.json"
+    },
+    "固定效能": {
+      "通過": false,
+      "任務": "13.3保留未完成",
+      "完整60輪": false,
+      "證據": "docs/evidence/performance-attempts.json",
+      "測點更正": "docs/evidence/performance-measurement-errata.json",
+      "修正後F1重整診斷": {
+        "超過5秒": 9,
+        "最壞上界ms": 5268.125874976151
+      },
+      "首頁快取實驗": "未走到重整，入組105筆>1秒；無法歸因，產品試驗已撤回"
+    },
+    "G2": {
+      "證據": "docs/evidence/g2-confirmed-recovery-probe.json",
+      "狀態": "D38_BOUNDARY_PASS",
+      "案例": 5
+    }
+  },
+  "重要界線": [
+    "不宣告完整驗收通過，不勾13.3，不合併不同版本單輪成功",
+    "已保留D39／D40使用者確認，原1秒與5秒門檻不變",
+    "真正丟棄與OS休眠未主動實測；普通hidden未被排除為暫停",
+    "U03解除未核實範圍政策仍未確認，保護隔離有效",
+    "未執行Verify、Sync或Archive"
+  ],
+  "正式服務": {
+    "啟動": "npm run dev",
+    "位址": "http://127.0.0.1:3000",
+    "健康檢查": "成功，schemaVersion 3",
+    "資料保存證據": "docs/evidence/integration-production-current.json",
+    "與修正測點後診斷的全部runtime檔案相同": true,
+    "限制": "本次不宣稱快取試驗已部署；該修改已撤回。測量工具與文件不影響正式服務。"
+  },
+  "套件": {
+    "新增": [],
+    "dependencies": {
+      "better-sqlite3": "13.2.0",
+      "google-auth-library": "11.3.4",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "ws": "8.23.0"
+    },
+    "devDependencies": {
+      "@playwright/test": "1.65.1",
+      "@types/better-sqlite3": "9.6.0",
+      "@types/node": "24.19.4",
+      "@types/react": "19.3.3",
+      "@types/react-dom": "19.3.0",
+      "@types/ws": "8.18.2",
+      "@vitejs/plugin-react": "6.3.0",
+      "tsx": "4.23.15",
+      "typescript": "7.0.2",
+      "vite": "8.3.8"
+    }
+  },
+  "資料庫": {
+    "schemaVersion": 3,
+    "資料表": 18,
+    "新增migration": false
+  },
+  "SHA256": {
+    "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
+    "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+    "tests/helpers/restoration-measurement.ts": "b827d78269d89e72af6309d5d2d5296fe25cefa9e7c433143b4f83821f422c50",
+    "tests/helpers/react-measurement.browser.js": "8c4b59136fbeede211b1c545b389b5e3b52cde02f8c65823f7f61040bee4726e",
+    "scripts/probes/performance-acceptance.ts": "8cd4f07ee664a054bf610e941e58ce871788aac995026ac138fbfa3b6076a74d",
+    "docs/integration-acceptance.md": "6573a70ac81f5581bb5ce71dd5f374a446d85423ba1835bf520cbd24ec1bb9ec",
+    "docs/local-operation-guide.md": "ecbc51e519d7579c19f398beafa1a9f4d32bf423cd4fdfa71548a34e9077544e",
+    "docs/performance-measurement.md": "2bbe922a557efd2c353a4335e2913af48bc1aaea576e0682d76274c253cee3ea",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "d65c1c1e110a162f65f2e900f11359da17fee408b5125adf373aaa4633589009"
+  },
+  "交付": [
+    "docs/integration-acceptance.md",
+    "docs/integration-traceability.md",
+    "docs/evidence/integration-traceability.json",
+    "docs/local-operation-guide.md",
+    "docs/performance-measurement.md",
+    "docs/evidence/performance-diagnosis.json"
+  ],
+  "文件完成界線": "122個情境均列證據與狀態；固定時限及未實驗的暫停情境明列缺失；13.6文件交付完成，整體85項未完成。"
+}

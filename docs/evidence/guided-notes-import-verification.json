@@ -1,0 +1,83 @@
+{
+  "日期": "2026-11-26 Asia/Taipei",
+  "變更": "build-local-classroom-response-system",
+  "Node": "v24.22.3",
+  "平台": "darwin/arm64",
+  "本次完成": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6",
+    "6.7",
+    "6.8"
+  ],
+  "進度": {
+    "total": 85,
+    "complete": 38,
+    "remaining": 47
+  },
+  "型別及建置": "通過",
+  "單元整合": {
+    "通過": 90,
+    "失敗": 0
+  },
+  "Chrome": {
+    "通過": 3,
+    "失敗": 0,
+    "來源": "自動測試的 Google 提供者及文件為替身，SQLite／HTTP／瀏覽器為真實"
+  },
+  "建置啟動": {
+    "通過": 1,
+    "失敗": 0
+  },
+  "StrictValidate": {
+    "totals": {
+      "items": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "真實證據": [
+    "docs/evidence/google-live-authorization.json",
+    "docs/evidence/guided-notes-live-import.json"
+  ],
+  "仍未完成": [
+    "4.6",
+    "第 7～13 群組",
+    "G2／U01、U02、U03",
+    "外部寫入權限及三模式匯出驗收"
+  ],
+  "sha256": {
+    "src/server/guided-notes.ts": "d2ac4a5382c9efd78e7d722e6915c316c110c683b4aa7c9ba28e04f8dbb80562",
+    "src/server/imports.ts": "d324777293395dd24b1d0af2890c5e387f8926624512e0d9cbf304a319bec165",
+    "src/server/import-http.ts": "12b6cda07650d6cef04a425ae53885f7dbb33de7fce5a211181dad65f415aff0",
+    "src/server/google.ts": "bd733014c1d2e05afd431c6b0d4d8e752ff6779d8a93d532189445507381273e",
+    "src/server/app.ts": "9d7d077468d7fd4b0fa83def7fdf263b40fa7f4fa8d8f38eb87904ce4bf3a379",
+    "src/server/api.ts": "56d52d85f0062b537f035ac3c6adf785d4bde2887e0939a7524d24e97beb400e",
+    "src/server/index.ts": "a038e5653c2561d03e230fd6f4862e748db2272c99db18c31bc02f794f765918",
+    "src/shared/imports.ts": "4934c20ef4fbe38984eea2b32f6856b1f1478921cc9462c795577c41daccb9fb",
+    "src/shared/errors.ts": "3f1f6e5fe5a4b50496519f9df354135dce9b1be4d76e2c889343bcf7204cde97",
+    "src/client/imports.tsx": "13fc07a7e1098cbe77060460c605f9e5f03539af5260d8a39dbb1acdcb2f6790",
+    "src/client/google.tsx": "2d208ce9c140dc731a7ee7890b9f7817a9b2c135d1a083fd3fd927c5c8573239",
+    "src/client/main.tsx": "e4b90df21e5547602e13d43633c5a20e30ea99846b28f17b2284870b9259766f",
+    "src/client/style.css": "31fba503f3e68a1ad6c3b4df8ab5c729dea3d356ba8285fab8cc1a8222c58f94",
+    "src/client/env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "tests/helpers/sheets.ts": "8265bbd785b0c4dda23d7e632e8d53ecd2c0e2ed615fcbd09c135c0b73a9ed19",
+    "tests/unit/guided-notes.test.ts": "c6cb7f427d5ff9eff6d4bf2b2bb53e01036bd5e8e1b2d5853dbf23e0dcf53bae",
+    "tests/integration/imports.test.ts": "4a270a2663b29e0520bb6f923a7ee029dea4c538c37c4c3e20f4487a4b83afd2",
+    "tests/integration/google.test.ts": "debbfb8a460a10cffbeb3a9c32ae0b73b999ef32bfa188b196267984b9761917",
+    "tests/browser/google.spec.ts": "ef7db822feb03cdd2fa6d47cb90aa526fbe72ade9cb6583fd66fc70314b41e0c",
+    "package.json": "7aac29f92b3a403bf1935d762e90ac0d7c11ce5608bd56d06980d4bc069463e5",
+    "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "296b665026cea4204cd1cbe1c8973bf802f4ba00fa23a934e3040770ec85b9ec"
+  }
+}
