@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readConfig} from '../../src/server/config.js';
-import {PublicSheetsReader} from '../../src/server/public-sheets.js';
+import {PublicSheetsReader} from '../../scripts/probes/helpers/public-sheets.js';
 import {publicError} from '../../src/shared/errors.js';
 import {sheetFixture} from '../helpers/sheets.js';
 import {f1} from '../fixtures/catalog.js';
 const key='PUBLIC_KEY_CANARY';
-test('公開金鑰可選；缺值與空值不影響其他啟動配置',()=>{
- for(const env of [{},{GOOGLE_SHEETS_API_KEY:''},{GOOGLE_SHEETS_API_KEY:'  '}])assert.equal(readConfig(env).googleSheetsApiKey,undefined);
- assert.equal(readConfig({GOOGLE_SHEETS_API_KEY:' '+key+' '}).googleSheetsApiKey,key);
+test('公開金鑰已退出產品配置，缺值或舊值不影響啟動',()=>{
+ for(const env of [{},{GOOGLE_SHEETS_API_KEY:''},{GOOGLE_SHEETS_API_KEY:'  '}])assert.equal(Object.hasOwn(readConfig(env),'googleSheetsApiKey'),false);
+ assert.equal(Object.hasOwn(readConfig({GOOGLE_SHEETS_API_KEY:key}),'googleSheetsApiKey'),false);
  assert.equal(readConfig({}).port,3000);
 });
 test('公開 reader 固定端點、header 金鑰、無 OAuth，完整格式不遺失',async()=>{

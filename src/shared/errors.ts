@@ -37,7 +37,7 @@ export const errorCatalog = {
   SERVICE_ACCOUNT_INVALID:{status:503,message:'服務帳戶憑證無效或已失效，請管理者檢查本機服務帳戶設定，不需連結個人Google。'},
   SERVICE_ACCOUNT_FORBIDDEN:{status:403,message:'服務帳戶無法讀取此文件，請將原始試算表共用給頁面顯示的服務帳戶Email。'},
   SERVICE_ACCOUNT_WRITE_FORBIDDEN:{status:403,message:'服務帳戶沒有目標範圍的編輯權限，請檢查試算表共用及保護範圍；本次整批寫入已被拒絕。'},
-  SHEETS_ACCESS_MODE_REQUIRED:{status:400,message:'請更新畫面並明確選擇公開讀取或服務帳戶；不再支援個人Google授權。'},
+  SHEETS_ACCESS_MODE_REQUIRED:{status:400,message:'目前只支援服務帳戶存取，請重新整理頁面後再試。'},
   CREDENTIAL_CHANGE_CONFIRMATION_REQUIRED:{status:409,message:'此操作的原存取身分已變更，請確認以目前服務帳戶僅讀核對，系統不會重新送出寫入。'},
   GOOGLE_NOT_CONFIGURED:{status:503,message:'尚未完成本機 Google OAuth 設定，請先配置授權檔案。'},
   INVALID_SHEETS_URL:{status:400,message:'請提供有效的 Google Sheets 網址，並檢查工作表 gid。'},

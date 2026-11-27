@@ -1,6 +1,6 @@
 # Google服務帳戶設定
 
-新版改用服務帳戶，老師不需要連結個人Google或加入OAuth測試人員。公開匯入仍可只用原API key；私有匯入與所有Sheets寫回使用服務帳戶。此JSON不是原OAuth client JSON，也不是API key。
+新版改用服務帳戶，老師不需要連結個人Google或加入OAuth測試人員。所有匯入與Sheets寫回只使用服務帳戶，不需要公開API key或選擇存取方式。此JSON不是原OAuth client JSON，也不是API key。
 
 ## 管理者設定
 
@@ -8,7 +8,7 @@
 2. 在「IAM與管理→服務帳戶」建立服務帳戶。只為共用試算表存取不需另加Cloud專案管理者角色，也不需網域全權委派。
 3. 進入服務帳戶「金鑰→新增金鑰→建立新金鑰→JSON」，將檔案保存至本機專案的 `data/google-service-account.json`。不要貼上聊天或提交Git。若組織禁止建立金鑰／共用給外部帳戶，請先由管理者處理限制，不要自行開放原始文件。
 4. 如使用其他安全路徑，在忽略版控的 `.env` 設定 `GOOGLE_SERVICE_ACCOUNT_FILE=完整路徑`。不可放在src、dist、node_modules或其symlink目標；後端限制檔案權限0600。
-5. 重新啟動服務。檔案缺少／格式錯誤只停用服務帳戶，不清除活動，也不影響有效公開讀取、結果或CSV。
+5. 重新啟動服務。檔案缺少／格式錯誤只停用服務帳戶，不清除活動，也不影響既有活動、結果或CSV；匯入與Sheets寫回停用。
 
 JSON只在啟動載入；輪替同服務帳戶金鑰後需重啟，舊金鑰撤銷由管理者另外操作。token只在後端記憶體快取與更新，不存前端或SQLite。舊OAuth JSON、vault及資料表不再使用，但不會自動刪除；如需清理由管理者自行處理，程式不代為撤銷遠端授權。
 
@@ -16,7 +16,7 @@ JSON只在啟動載入；輪替同服務帳戶金鑰後需重啟，舊金鑰撤�
 
 在老師頁面取得服務帳戶Email，於原試算表「共用」加入該Email：只匯入可給檢視者；需要寫回請給編輯者，並確認作答範圍未受額外保護。私有文件不必公開，公開可編輯也不代表API匿名可寫。
 
-明確選「服務帳戶」匯入；若使用公開方式，原表仍須設「知道連結的任何人可查看」，並配置原公開API key。兩種方式失敗不自動互相替代，有預覽須取消後重選。活動結束後才可寫回，仍須確認老師與協作者自預檢到完成暫停編輯（D31），保持全部定位核對、三模式與整批寫入。
+直接填學習單網址與2～20組數後按「讀取學習單」，多張工作表時再選表，核對預覽後確認匯入。沒有存取方式選單，讀取失敗也不切換其他身分。舊公開key可保留在本機，但產品不再讀取它。活動結束後才可寫回，仍須確認老師與協作者自預檢到完成暫停編輯（D31），保持全部定位核對、三模式與整批寫入。
 
 ## 舊操作與錯誤
 
@@ -30,9 +30,9 @@ JSON只在啟動載入；輪替同服務帳戶金鑰後需重啟，舊金鑰撤�
 
 ## HTTP升級契約
 
-老師需帶正式token及分頁proof，host／origin與輸入白名單不變。`GET /api/sheets/status`僅回configured與accountEmail；`GET /api/imports/options`回publicConfigured及serviceAccountConfigured，不保證任意文件權限。
+老師需帶正式token及分頁proof，host／origin與輸入白名單不變。`GET /api/sheets/status`僅回configured與accountEmail；`GET /api/imports/options`僅回serviceAccountConfigured，不保證任意文件權限。
 
-`POST /api/imports/inspect`必填`accessMode: PUBLIC | SERVICE_ACCOUNT`，其餘url／groupCount／abandonmentToken不變；select／commit不能改方式。`POST /api/activities/:id/exports`必填`accessMode: SERVICE_ACCOUNT`，保留requestId／mode／paused／expectedVersion，目標只取活動原始來源。OAUTH與舊缺方式請求明確拒絕，請更新頁面重新選擇，不靜默換身分。
+`POST /api/imports/inspect`省略accessMode即固定服務帳戶；明確`accessMode: SERVICE_ACCOUNT`亦相容，其餘url／groupCount／abandonmentToken不變；select／commit不能改方式。`POST /api/activities/:id/exports`必填`accessMode: SERVICE_ACCOUNT`，保留requestId／mode／paused／expectedVersion，目標只取活動原始來源。PUBLIC、OAUTH、null及其他非法方式明確拒絕，請重新整理使用單一流程；不靜默換身分。
 
 新操作在原恢復JSON保存服務帳戶方式及Email，取消／失敗／未知／完成均保持；同requestId不得偷換帳戶或模式。`POST /api/operations/:id/reconcile`對原帳戶用空JSON即可；舊OAuth記錄或換帳戶時須明確`acknowledgeCredentialChange: true`，僅GET原表核對，不新增寫入。缺恢復計畫或內容不符仍未知。舊`/api/google/status`、`connect`、`connection`、`callback`路由已移除，回404，不解讀授權回呼。
 
@@ -47,3 +47,7 @@ npm run probe:service-account-live
 ```
 
 此指令會實際寫入兩份指定副本的測試答案與附註，三模式加重複合計12個成功批次，必須使用另備的測試副本並暫停協作者編輯。檢視者副本只做讀取／匯入及預期被拒絕的空寫入批次，不改儲存格；原始範本禁止作寫入目標。每輪請準備乾淨的測試副本，不能清除未核實標記以盲目重跑。證據在`docs/evidence/service-account-live.json`，不含私鑰或token。
+
+## 單一匯入唯讀驗證
+
+`GOOGLE_SHEETS_API_KEY='' npm run probe:single-import-live` 使用既有三份已授權副本與隔離SQLite，只GET試算表、預覽並在臨時本機資料庫確認；不寫回、不改分享、不碰正式活動。證據見 [單一匯入驗證](single-import-validation.md)。上方三模式寫回探針屬獨立驗證，不是本輪唯讀測試。

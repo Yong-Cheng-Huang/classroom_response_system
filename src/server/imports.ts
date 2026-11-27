@@ -7,28 +7,25 @@ import type { TabProof } from '../shared/session.js';
 import type { PreparedActivity,ReplacementExpectation } from './activity-replacement.js';
 import { parseGuidedNotes,parseSheetsUrl,type Spreadsheet } from './guided-notes.js';
 import { AppError } from '../shared/errors.js';
-import { PublicSheetsReader } from './public-sheets.js';
 import type { ImportView } from '../shared/imports.js';
 
-export type ImportAccessMode='PUBLIC'|'SERVICE_ACCOUNT';
+export type ImportAccessMode='SERVICE_ACCOUNT';
 type Intent={accessMode:ImportAccessMode;sessionId:string;expiresAt:number;expectation:ReplacementExpectation;spreadsheetId:string;sheetId:string|null;groupCount:number;accountId:string|null;candidate?:PreparedActivity;sheetChoices?:{id:string;title:string}[]};
 export class ImportService {
   private intents=new Map<string,Intent>();
   constructor(private readonly database:SqliteDatabase,private readonly identity:IdentityService,private readonly sheets:SheetsGateway,
     private readonly activities:ActivityService,private readonly now:()=>number=Date.now,
-    private readonly readSource=(proof:TabProof,id:string,params:Record<string,string>)=>sheets.spreadsheet(proof,id,params),
-    private readonly publicReader:PublicSheetsReader=new PublicSheetsReader(undefined)){}
+    private readonly readSource=(proof:TabProof,id:string,params:Record<string,string>)=>sheets.spreadsheet(proof,id,params)){}
   private teacher(proof:TabProof){const actor=this.identity.principal(proof);if(actor.role!=='TEACHER')throw new AppError('FORBIDDEN');return actor;}
-  begin(proof:TabProof,url:unknown,groupCount:unknown,abandonmentToken?:string,accessMode?:unknown){
+  begin(proof:TabProof,url:unknown,groupCount:unknown,abandonmentToken?:string,accessMode:unknown='SERVICE_ACCOUNT'){
     const actor=this.teacher(proof),source=parseSheetsUrl(url);
-    if(accessMode!=='PUBLIC'&&accessMode!=='SERVICE_ACCOUNT')throw new AppError('SHEETS_ACCESS_MODE_REQUIRED');
+    if(accessMode!=='SERVICE_ACCOUNT')throw new AppError('SHEETS_ACCESS_MODE_REQUIRED');
     if(typeof groupCount!=='number'||!Number.isInteger(groupCount)||groupCount<2||groupCount>20)throw new AppError('INVALID_GROUP_COUNT');
     const gate=this.activities.importGate(proof,abandonmentToken);
     if(gate.status==='RUNNING')throw new AppError('STATE_CONFLICT');
     if(gate.status==='DOCUMENT_BUSY')throw new AppError('DOCUMENT_OPERATION_BUSY');
     if(gate.status==='REQUIRES_RECONCILIATION')throw new AppError('EXPORT_RECONCILIATION_REQUIRED');
-    if(accessMode==='SERVICE_ACCOUNT')this.sheets.assertConfigured();
-    else if(!this.publicReader.configured)throw new AppError('PUBLIC_SHEETS_NOT_CONFIGURED');
+    this.sheets.assertConfigured();
     for(const [token,intent]of this.intents)if(intent.expiresAt<=this.now())this.intents.delete(token);
     const token=randomBytes(32).toString('hex');
     const intent:Intent={accessMode,sessionId:actor.sessionId,expiresAt:Math.min(actor.expiresAt,this.now()+600000),expectation:{...gate.expectation,...(abandonmentToken?{abandonmentToken}:{})},
@@ -44,9 +41,9 @@ export class ImportService {
     if((current?.version??null)!==intent.expectation.version)throw new AppError('VERSION_CONFLICT');
     if(current?.state==='RUNNING')throw new AppError('STATE_CONFLICT');
   }
-  options(proof:TabProof){this.teacher(proof);return{publicConfigured:this.publicReader.configured,serviceAccountConfigured:this.sheets.configured};}
+  options(proof:TabProof){this.teacher(proof);return{serviceAccountConfigured:this.sheets.configured};}
   private read(proof:TabProof,intent:Intent,params:Record<string,string>){
-    return intent.accessMode==='PUBLIC'?this.publicReader.spreadsheet(intent.spreadsheetId,params):this.readSource(proof,intent.spreadsheetId,params);
+    return this.readSource(proof,intent.spreadsheetId,params);
   }
   private find(proof:TabProof,token:string){const intent=this.intents.get(token);if(!intent)throw new AppError('IMPORT_EXPIRED');this.check(proof,intent);return intent;}
   private view(token:string,intent:Intent):ImportView{

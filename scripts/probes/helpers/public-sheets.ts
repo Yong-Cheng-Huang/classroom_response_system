@@ -1,4 +1,4 @@
-import {AppError} from '../shared/errors.js';
+import {AppError} from '../../../src/shared/errors.js';
 
 /** 只讀公開原表；不使用共用 OAuth 狀態，也不接受任意上游網址。 */
 export class PublicSheetsReader {

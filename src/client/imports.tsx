@@ -1,29 +1,20 @@
-import { useEffect,useRef,useState } from 'react';
+import { useRef,useState } from 'react';
 import { ApiFailure,tabSession } from './session.js';
 import type { ImportView } from '../shared/imports.js';
 import type { ActivityPhase } from '../shared/contracts.js';
 
 export function ImportGuidedNotes({phase,serviceAccountReady,onImported,abandonmentToken}:{abandonmentToken?:string;phase:ActivityPhase|undefined;serviceAccountReady:boolean;onImported:()=>void}){
   const [url,setUrl]=useState(''),[groups,setGroups]=useState('2'),[preview,setPreview]=useState<ImportView|null>(null),[sheetId,setSheetId]=useState(''),[busy,setBusy]=useState(false),[message,setMessage]=useState('');
-  const [mode,setMode]=useState<'PUBLIC'|'SERVICE_ACCOUNT'>(serviceAccountReady?'SERVICE_ACCOUNT':'PUBLIC'),[publicConfigured,setPublicConfigured]=useState(false);
-  const selected=useRef(false);
-  useEffect(()=>{let active=true;void tabSession.request<{publicConfigured:boolean}>('/api/imports/options','GET').then(value=>{if(active)setPublicConfigured(value.publicConfigured);}).catch(()=>{});return()=>{active=false;};},[]);
-  useEffect(()=>{if(!selected.current&&!preview&&!working.current)setMode(serviceAccountReady?'SERVICE_ACCOUNT':'PUBLIC');},[serviceAccountReady,preview]);
   const working=useRef(false);
-  const blocked=phase==='RUNNING'||(mode==='SERVICE_ACCOUNT'?!serviceAccountReady:!publicConfigured);
+  const blocked=phase==='RUNNING'||!serviceAccountReady;
   async function action(work:()=>Promise<void>){if(working.current)return;working.current=true;setBusy(true);setMessage('');try{await work();}catch(error){setMessage(error instanceof ApiFailure?error.message:'匯入暫時無法完成，原活動仍保留。');}finally{working.current=false;setBusy(false);}}
-  async function inspect(){selected.current=true;if(!Number.isInteger(Number(groups))||Number(groups)<2||Number(groups)>20)throw new ApiFailure('INVALID_GROUP_COUNT','組數必須是 2～20 的整數。');if(!url.trim())throw new ApiFailure('INVALID_REQUEST','請填寫 Google Sheets 網址。');setPreview(await tabSession.request<ImportView>('/api/imports/inspect','POST',{url,accessMode:mode,groupCount:Number(groups),...(abandonmentToken?{abandonmentToken}:{})}));setSheetId('');}
+  async function inspect(){if(!Number.isInteger(Number(groups))||Number(groups)<2||Number(groups)>20)throw new ApiFailure('INVALID_GROUP_COUNT','組數必須是 2～20 的整數。');if(!url.trim())throw new ApiFailure('INVALID_REQUEST','請填寫 Google Sheets 網址。');setPreview(await tabSession.request<ImportView>('/api/imports/inspect','POST',{url,groupCount:Number(groups),...(abandonmentToken?{abandonmentToken}:{})}));setSheetId('');}
   async function select(){if(!preview)return;setPreview(await tabSession.request<ImportView>(`/api/imports/${preview.inspectionToken}/select`,'POST',{sheetId}));}
   async function commit(){if(!preview)return;await tabSession.request(`/api/imports/${preview.inspectionToken}/commit`,'POST',{confirmed:preview.needsReplacementConfirmation});setPreview(null);setMessage('匯入完成，活動目前待開始。');onImported();}
   async function cancel(){if(!preview)return;try{await tabSession.request(`/api/imports/${preview.inspectionToken}/cancel`,'POST',{});setMessage('已取消匯入，原活動保持不變。');}finally{setPreview(null);}}
   return <div className="empty-state" aria-label="匯入 Guided Notes"><h3>匯入 Guided Notes</h3>
     {phase==='RUNNING'?<p>搶答進行中，結束活動後才能匯入新學習單。</p>:<>
-    <label htmlFor="import-mode">匯入方式</label><select id="import-mode" disabled={busy||!!preview} value={mode} onChange={e=>{selected.current=true;setMode(e.target.value as 'PUBLIC'|'SERVICE_ACCOUNT');setMessage('');}}>
-      <option value="PUBLIC">公開學習單（免 Google 登入）</option><option value="SERVICE_ACCOUNT">服務帳戶</option>
-    </select>
-    {mode==='SERVICE_ACCOUNT'&&!serviceAccountReady&&<p className="hint">請先配置服務帳戶，並將原表共用給頁面顯示的Email。</p>}
-    {mode==='PUBLIC'&&<p className="hint">請貼原始 Sheets 網址，並將原表共用設為「知道連結的任何人可查看」。僅發布到網路不保證可讀；不需開放編輯。</p>}
-    {mode==='PUBLIC'&&!publicConfigured&&<p className="notice">公開讀取尚未配置，請管理者設定 GOOGLE_SHEETS_API_KEY 並重新啟動，或改選服務帳戶。</p>}
+    {!serviceAccountReady&&<p className="hint">請先配置服務帳戶，並將原表共用給頁面顯示的Email。</p>}
     <form noValidate onSubmit={event=>{event.preventDefault();void action(inspect);}}>
       <label htmlFor="sheet-url">Google Sheets 網址</label><input id="sheet-url" type="url" value={url} required disabled={busy||blocked||!!preview} onChange={e=>setUrl(e.target.value)} placeholder="https://docs.google.com/spreadsheets/d/…"/>
       <label htmlFor="group-count">組數（2～20）</label><input id="group-count" type="number" min="2" max="20" step="1" value={groups} required disabled={busy||blocked||!!preview} onChange={e=>setGroups(e.target.value)}/>

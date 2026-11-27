@@ -37,7 +37,8 @@
     "probe:performance-preflight": "node --import tsx scripts/probes/performance-preflight.ts",
     "probe:performance": "node --import tsx scripts/probes/performance-acceptance.ts",
     "probe:public-import-live": "node --env-file-if-exists=.env --import tsx scripts/probes/public-import-live.ts",
-    "probe:service-account-live": "node --env-file-if-exists=.env --import tsx scripts/probes/service-account-live.ts"
+    "probe:service-account-live": "node --env-file-if-exists=.env --import tsx scripts/probes/service-account-live.ts",
+    "probe:single-import-live": "node --env-file-if-exists=.env --import tsx scripts/probes/single-import-live.ts"
   },
   "dependencies": {
     "better-sqlite3": "13.2.0",
