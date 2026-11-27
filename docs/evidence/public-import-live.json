@@ -1,0 +1,46 @@
+{
+  "日期": "2026-11-27T11:27:48.329Z",
+  "狀態": "通過",
+  "環境": {
+    "隔離SQLite": true,
+    "OAuthProvider": null,
+    "Google連結": 0,
+    "APIkey已設定": true
+  },
+  "來源": [
+    {
+      "類型": "F1",
+      "網址": "https://docs.google.com/spreadsheets/d/12uh5xhIx2wXFMy42KU8lN7rLFQ8GDugt9zfAFEvu-1E/edit?gid=1167716485",
+      "題數": 6,
+      "欄位": 6,
+      "合併數": 21,
+      "定位與題目比對": true,
+      "必要格式存在": true,
+      "快照SHA256": "c172ac58d251f736b4157300ff5888a3d85e5ce7d9dfd97273ec54c651cac6ca",
+      "真HTTP匯入": true,
+      "CSV含作答且BOM正確": true,
+      "Sheets寫回無OAuth拒絕": true
+    },
+    {
+      "類型": "F2",
+      "網址": "https://docs.google.com/spreadsheets/d/1PXXwWiBKJNpPkLRoJLMzZWsAh4Jzn2bThHTeRAiq3Hg/edit?gid=1028924918",
+      "題數": 4,
+      "欄位": 6,
+      "合併數": 13,
+      "定位與題目比對": true,
+      "必要格式存在": true,
+      "快照SHA256": "1ce6932aa5d3f33b17a8694ba0e4f00b8cbab66117bcdc641a8da496393b821b",
+      "真HTTP匯入": true,
+      "CSV含作答且BOM正確": true,
+      "Sheets寫回無OAuth拒絕": true
+    }
+  ],
+  "外部寫入": 0,
+  "參考快照題號比對": "僅比對時1.0與1等值；正式內容不改寫",
+  "外部請求": [
+    "GET",
+    "GET",
+    "GET",
+    "GET"
+  ]
+}

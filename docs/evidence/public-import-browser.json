@@ -1,0 +1,10 @@
+{
+  "Chrome": "158.0.8127.89",
+  "公開上游": "模擬Sheets API，非真實Google驗證",
+  "OAuthProvider": null,
+  "Google連結": false,
+  "模式切換與候選鎖定": true,
+  "多表選擇": true,
+  "真學生表單": true,
+  "真CSV下載": true
+}

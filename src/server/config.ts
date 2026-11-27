@@ -15,7 +15,7 @@ export function readConfig(env: NodeJS.ProcessEnv = process.env) {
   }
   const teacherPassword = env.TEACHER_PASSWORD?.trim() ? env.TEACHER_PASSWORD : undefined;
   const googleClientFile=resolve(projectRoot,env.GOOGLE_OAUTH_CLIENT_FILE||resolve(dataDir,'google-oauth-client.json'));
-  return Object.freeze({ host: '127.0.0.1' as const, port, dataDir, databasePath: resolve(dataDir, 'classroom.db'), teacherPassword,googleClientFile });
+  return Object.freeze({ host: '127.0.0.1' as const, port, dataDir, databasePath: resolve(dataDir, 'classroom.db'), teacherPassword,googleClientFile,googleSheetsApiKey:env.GOOGLE_SHEETS_API_KEY?.trim()||undefined });
 }
 
 export type AppConfig = ReturnType<typeof readConfig>;

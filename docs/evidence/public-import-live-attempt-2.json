@@ -1,0 +1,13 @@
+{
+  "日期": "2026-11-27T11:25:50.795Z",
+  "狀態": "未通過",
+  "環境": {
+    "隔離SQLite": true,
+    "OAuthProvider": null,
+    "Google連結": 0,
+    "APIkey已設定": true
+  },
+  "來源": [],
+  "外部寫入": 0,
+  "安全錯誤代碼": "VERIFICATION_FAILED"
+}

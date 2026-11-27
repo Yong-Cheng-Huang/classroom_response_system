@@ -90,3 +90,10 @@ test('6.6 重用已有答案文件：保留原格格式，但不建立提交或�
     const response:Response=await fetch(`http://127.0.0.1:${address.port}/api/activities/current/view`,{headers});assert.equal(response.status,200);const body=await response.text();assert.ok(!body.includes('PRIVATE_OLD_SOURCE_ANSWER'));assert.ok(!body.includes('snapshot_json'));
   }
 });
+
+test('公開金鑰失敗不撤銷可用OAuth；明確選授權才使用原reader',async t=>{
+  const {PublicSheetsReader}=await import('../../src/server/public-sheets.js');const f=await fixture(t);let oauthCalls=0;
+  const imports=new ImportService(f.database,f.identity,f.google,f.activities,f.now,async()=>{oauthCalls++;return sheetFixture(f1);},new PublicSheetsReader('KEY_CANARY',async()=>Response.json({error:{details:[{reason:'API_KEY_INVALID'}],message:'KEY_CANARY'}},{status:400})));
+  const revision=f.google.revision();await assert.rejects(imports.inspect(imports.begin(f.proof,url,2,undefined,'PUBLIC')),{code:'PUBLIC_SHEETS_KEY_INVALID'});f.google.assertRevision(revision);assert.equal(f.identity.current(f.proof).role,'TEACHER');assert.equal(oauthCalls,0);
+  const original=await imports.inspect(imports.begin(f.proof,url,2));assert.equal(original.stage,'READY');assert.equal(oauthCalls,2);
+});

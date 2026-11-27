@@ -9,6 +9,7 @@ import { readActivityModel } from './read-model.js';
 import { ActivityService } from './activity.js';
 import { GoogleService,GoogleOAuthProvider,loadGoogleClient } from './google.js';
 import { GoogleVault } from './google-vault.js';
+import { PublicSheetsReader } from './public-sheets.js';
 import { ImportService } from './imports.js';
 import { ExportService } from './exports.js';
 import { SubmissionService } from './submissions.js';
@@ -30,7 +31,7 @@ try {
     identity:activeIdentity,
     submissions:new SubmissionService(activeDatabase,activeIdentity),
     exports:new ExportService(activeDatabase,activeIdentity,google,activities),
-    activities,google,imports:new ImportService(activeDatabase,activeIdentity,google,activities),
+    activities,google,imports:new ImportService(activeDatabase,activeIdentity,google,activities,Date.now,undefined,new PublicSheetsReader(config.googleSheetsApiKey)),
     authenticate:request=>{assertRequestOrigin(request);return activeIdentity.principal(activeIdentity.proof(request));},
     beforeRead:()=>activeIdentity.sweep(),
     readModel:()=>readActivityModel(activeDatabase,activeIdentity),
