@@ -1,0 +1,102 @@
+{
+  "方式": "確認PID／cwd後SIGTERM正常重啟，未強制終止",
+  "前": {
+    "at": "2026-11-26T22:12:18.966Z",
+    "schemaVersion": 3,
+    "SQLiteUserVersion": 0,
+    "tables": {
+      "activities": {
+        "rows": 1,
+        "sha256": "508dd93c11e6f658ff23800fa7f3789c3c2ae424ebfb20842177c3e116d45460"
+      },
+      "sources": {
+        "rows": 1,
+        "sha256": "09b1195b5937df363dddf6cced23c9cde0d932e06b05d80a47d658f13713961b"
+      },
+      "groups": {
+        "rows": 2,
+        "sha256": "0f8539b8f1c35c134a7b5d9c088e690e6ec98c8a61246da9dfcb8f88f74b5cc2"
+      },
+      "questions": {
+        "rows": 6,
+        "sha256": "4abe8a8cd35a4c1f6ec33a7917b31f1039feaa8498601446b6f2f829d9965bee"
+      },
+      "question_fields": {
+        "rows": 6,
+        "sha256": "ef41fd9f12843882ef50c3441719801efdc7c0249de629d9ab8ca7873462f777"
+      },
+      "submissions": {
+        "rows": 1,
+        "sha256": "7cb27cd29e5e0783514966b89535ab814e93ca7962e01f293fd351326a370677"
+      },
+      "submission_answers": {
+        "rows": 1,
+        "sha256": "6beb6ca5764de77cb9c73f2994be3149c13e34a87945a1882840b10dc7ef1fd4"
+      },
+      "google_connection": {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "document_output_management": {
+        "rows": 49,
+        "sha256": "ea9b9fb87d632375ab6333d28ebebc2206abe15c65090ca9728a1b9870ba76d8"
+      },
+      "export_operations": {
+        "rows": 1,
+        "sha256": "2c933923d73f7ff487f945562161b826e6792bbfa612f15935f487480c42aba8"
+      }
+    },
+    "receiveHighWater": 448
+  },
+  "後": {
+    "at": "2026-11-26T22:12:30.455Z",
+    "schemaVersion": 3,
+    "SQLiteUserVersion": 0,
+    "tables": {
+      "activities": {
+        "rows": 1,
+        "sha256": "508dd93c11e6f658ff23800fa7f3789c3c2ae424ebfb20842177c3e116d45460"
+      },
+      "sources": {
+        "rows": 1,
+        "sha256": "09b1195b5937df363dddf6cced23c9cde0d932e06b05d80a47d658f13713961b"
+      },
+      "groups": {
+        "rows": 2,
+        "sha256": "0f8539b8f1c35c134a7b5d9c088e690e6ec98c8a61246da9dfcb8f88f74b5cc2"
+      },
+      "questions": {
+        "rows": 6,
+        "sha256": "4abe8a8cd35a4c1f6ec33a7917b31f1039feaa8498601446b6f2f829d9965bee"
+      },
+      "question_fields": {
+        "rows": 6,
+        "sha256": "ef41fd9f12843882ef50c3441719801efdc7c0249de629d9ab8ca7873462f777"
+      },
+      "submissions": {
+        "rows": 1,
+        "sha256": "7cb27cd29e5e0783514966b89535ab814e93ca7962e01f293fd351326a370677"
+      },
+      "submission_answers": {
+        "rows": 1,
+        "sha256": "6beb6ca5764de77cb9c73f2994be3149c13e34a87945a1882840b10dc7ef1fd4"
+      },
+      "google_connection": {
+        "rows": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "document_output_management": {
+        "rows": 49,
+        "sha256": "ea9b9fb87d632375ab6333d28ebebc2206abe15c65090ca9728a1b9870ba76d8"
+      },
+      "export_operations": {
+        "rows": 1,
+        "sha256": "2c933923d73f7ff487f945562161b826e6792bbfa612f15935f487480c42aba8"
+      }
+    },
+    "receiveHighWater": 448
+  },
+  "十個業務表內容相同": true,
+  "接收序號不倒退": true,
+  "目前服務": "npm run dev，127.0.0.1:3000，含CSV下載API"
+}
