@@ -1,3 +1,4 @@
+import {ServiceAccountSheets,ServiceAccountTokens} from '../../src/server/service-account.js';
 // 只讀使用者提供的公開原始範本；隔離資料庫、空Google連結、停用OAuth。
 import assert from 'node:assert/strict';
 import {mkdtempSync,rmSync,writeFileSync,mkdirSync} from 'node:fs';
@@ -10,8 +11,6 @@ import {IdentityService} from '../../src/server/identity.js';
 import {ActivityService} from '../../src/server/activity.js';
 import {SubmissionService} from '../../src/server/submissions.js';
 import {ExportService} from '../../src/server/exports.js';
-import {GoogleService} from '../../src/server/google.js';
-import {GoogleVault} from '../../src/server/google-vault.js';
 import {ImportService} from '../../src/server/imports.js';
 import {PublicSheetsReader} from '../../src/server/public-sheets.js';
 import {createApplication} from '../../src/server/app.js';
@@ -24,11 +23,11 @@ import {sheetFixture} from '../../tests/helpers/sheets.js';
 import type {TabProof} from '../../src/shared/session.js';
 
 const config=readConfig(),directory=mkdtempSync(join(tmpdir(),'crs-public-live-')),database=openDatabase(join(directory,'classroom.db')),password=randomBytes(32).toString('hex');
-const identity=new IdentityService(database,password),activities=new ActivityService(database,identity),google=new GoogleService(database,identity,new GoogleVault(directory),null);
+const identity=new IdentityService(database,password),activities=new ActivityService(database,identity),google=new ServiceAccountSheets(identity,new ServiceAccountTokens(null));
 const captures:Spreadsheet[]=[],methods:string[]=[];
 const reader=new PublicSheetsReader(config.googleSheetsApiKey,async(input,init)=>{assert.equal(init?.method,'GET');assert.equal(new URL(String(input)).origin,'https://sheets.googleapis.com');assert.ok(!new Headers(init?.headers).has('Authorization'));methods.push(init.method);const response=await fetch(input,init);if(response.ok){const raw=await response.clone().json() as Spreadsheet;if(raw.sheets?.some(s=>s.data))captures.push(raw);}return response;});
 const imports=new ImportService(database,identity,google,activities,Date.now,async()=>assert.fail('不可使用OAuth'),reader);
-const app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),database,()=>{},{identity,activities,imports,google,submissions:new SubmissionService(database,identity),exports:new ExportService(database,identity,google,activities),authenticate:r=>{assertRequestOrigin(r);return identity.principal(identity.proof(r));},beforeRead:()=>identity.sweep(),readModel:()=>readActivityModel(database,identity)});
+const app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),database,()=>{},{identity,activities,imports,sheets:google,submissions:new SubmissionService(database,identity),exports:new ExportService(database,identity,google,activities),authenticate:r=>{assertRequestOrigin(r);return identity.principal(identity.proof(r));},beforeRead:()=>identity.sweep(),readModel:()=>readActivityModel(database,identity)});
 const report:Record<string,unknown>={日期:new Date().toISOString(),狀態:'執行中',環境:{隔離SQLite:true,OAuthProvider:null,Google連結:0,APIkey已設定:reader.configured},來源:[],外部寫入:0};
 try{
  if(!reader.configured)throw new AppError('PUBLIC_SHEETS_NOT_CONFIGURED');
@@ -58,10 +57,10 @@ try{
   assert.equal((await call(`/api/activities/${activityId}/questions/${q.id}/submissions`,student,{requestId:randomUUID(),answers:fields.map(f=>({fieldId:f.id,text:'真實公開匯入後本機作答'}))})).status,200);
   assert.equal((await call(`/api/activities/${activityId}/end`,teacher,{expectedVersion:2,confirmed:true})).status,200);
   const csv=await call(`/api/activities/${activityId}/submissions.csv`,teacher);assert.equal(csv.status,200);const bytes=Buffer.from(await csv.arrayBuffer());assert.equal(bytes.subarray(0,3).toString('hex'),'efbbbf');assert.ok(bytes.toString().includes('真實公開匯入後本機作答'));
-  const denied=await call(`/api/activities/${activityId}/exports`,teacher,{requestId:randomUUID(),mode:'ANSWERS',paused:true,expectedVersion:3});assert.equal(denied.status,401);assert.equal((await denied.json()).error.code,'GOOGLE_REAUTHORIZE');
+  const denied=await call(`/api/activities/${activityId}/exports`,teacher,{accessMode:'SERVICE_ACCOUNT',requestId:randomUUID(),mode:'ANSWERS',paused:true,expectedVersion:3});assert.equal(denied.status,503);assert.equal((await denied.json()).error.code,'SERVICE_ACCOUNT_NOT_CONFIGURED');
   assert.equal(database.prepare('SELECT * FROM google_connection').get(),undefined);
   (report.來源 as unknown[]).push({類型:fixture.dataset,網址:fixture.source,題數:candidate.questions.length,欄位:candidate.questions.reduce((n,q)=>n+q.fields.length,0),合併數:sheet.merges?.length,定位與題目比對:true,必要格式存在:true,快照SHA256:createHash('sha256').update(JSON.stringify(candidate.source.snapshot)).digest('hex'),真HTTP匯入:true,CSV含作答且BOM正確:true,Sheets寫回無OAuth拒絕:true});
  }
  report.狀態='通過';report.外部請求=methods;
 }catch(error){report.狀態='未通過';report.安全錯誤代碼=error instanceof AppError?error.code:'VERIFICATION_FAILED';report.驗證行號=error instanceof Error?error.stack?.match(/public-import-live\.ts:(\d+):/u)?.[1]:undefined;process.exitCode=1;}
-finally{await app.close();identity.shutdown();database.close();rmSync(directory,{recursive:true,force:true});mkdirSync('docs/evidence',{recursive:true});writeFileSync('docs/evidence/public-import-live.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));}
+finally{await app.close();identity.shutdown();database.close();rmSync(directory,{recursive:true,force:true});mkdirSync('docs/evidence',{recursive:true});writeFileSync('docs/evidence/public-import-after-service-account.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));}

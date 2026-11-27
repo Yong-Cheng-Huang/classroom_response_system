@@ -7,8 +7,8 @@ import { IdentityService } from './identity.js';
 import { assertRequestOrigin } from './identity-http.js';
 import { readActivityModel } from './read-model.js';
 import { ActivityService } from './activity.js';
-import { GoogleService,GoogleOAuthProvider,loadGoogleClient } from './google.js';
-import { GoogleVault } from './google-vault.js';
+import { loadServiceAccount } from './service-account-config.js';
+import { ServiceAccountSheets,ServiceAccountTokens } from './service-account.js';
 import { PublicSheetsReader } from './public-sheets.js';
 import { ImportService } from './imports.js';
 import { ExportService } from './exports.js';
@@ -22,16 +22,15 @@ try {
   database = openDatabase(config.databasePath);
   identity=new IdentityService(database,config.teacherPassword,Date.now,true);
   const activeDatabase=database,activeIdentity=identity;
-  let provider:GoogleOAuthProvider|null=null;
-  try{const client=loadGoogleClient(config.googleClientFile,config.port);if(client)provider=new GoogleOAuthProvider(client);}
-  catch{logger({level:'error',event:'操作失敗',code:'GOOGLE_CONFIGURATION_INVALID'});}
+  let account:ReturnType<typeof loadServiceAccount>=null;
+  try{account=loadServiceAccount(config.serviceAccountFile);}catch{logger({level:'error',event:'操作失敗',code:'SERVICE_ACCOUNT_INVALID'});}
   const activities=new ActivityService(activeDatabase,activeIdentity);
-  const google=new GoogleService(activeDatabase,activeIdentity,new GoogleVault(config.dataDir),provider);
+  const sheets=new ServiceAccountSheets(activeIdentity,new ServiceAccountTokens(account));
   const app = createApplication(config, database, logger,{
     identity:activeIdentity,
     submissions:new SubmissionService(activeDatabase,activeIdentity),
-    exports:new ExportService(activeDatabase,activeIdentity,google,activities),
-    activities,google,imports:new ImportService(activeDatabase,activeIdentity,google,activities,Date.now,undefined,new PublicSheetsReader(config.googleSheetsApiKey)),
+    exports:new ExportService(activeDatabase,activeIdentity,sheets,activities),
+    activities,sheets,imports:new ImportService(activeDatabase,activeIdentity,sheets,activities,Date.now,undefined,new PublicSheetsReader(config.googleSheetsApiKey)),
     authenticate:request=>{assertRequestOrigin(request);return activeIdentity.principal(activeIdentity.proof(request));},
     beforeRead:()=>activeIdentity.sweep(),
     readModel:()=>readActivityModel(activeDatabase,activeIdentity),

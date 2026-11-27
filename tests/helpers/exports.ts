@@ -1,11 +1,10 @@
+import {fixtureSheets} from './service-account.js';
 import type { TestContext } from 'node:test';
 import { temporaryDatabase } from './database.js';
 import { sheetFixture } from './sheets.js';
 import { f1,f2 } from '../fixtures/catalog.js';
 import { IdentityService } from '../../src/server/identity.js';
 import { ActivityService } from '../../src/server/activity.js';
-import { GoogleService,googleScopes,type GoogleProvider } from '../../src/server/google.js';
-import { GoogleVault } from '../../src/server/google-vault.js';
 import { ExportService,type ExportIO } from '../../src/server/exports.js';
 import { parseGuidedNotes,type Spreadsheet,type Cell } from '../../src/server/guided-notes.js';
 import { replacePreparedActivity } from '../../src/server/activity-replacement.js';
@@ -36,9 +35,7 @@ export class SheetsMemory {
 export async function exportFixture(t:TestContext,grouped=false,configure?:(memory:SheetsMemory)=>void){
  const data=temporaryDatabase(t),now=()=>1000,password='exports-isolated-fixture',identity=new IdentityService(data.database,password,now),activities=new ActivityService(data.database,identity,undefined,now);
  const p=freshProof(),grant=identity.login(password,p),teacher={...p,token:grant.token,generation:grant.generation};
- const tokens={accessToken:'exports-fixture-access',refreshToken:'exports-fixture-refresh',scopes:[...googleScopes],account:'fixture@example.test',expiresAt:999999999};
- const provider:GoogleProvider={authorization:state=>'https://example.test/?state='+state,exchange:async()=>tokens,refresh:async()=>tokens};
- const google=new GoogleService(data.database,identity,new GoogleVault(data.directory),provider,now);await google.complete(new URL(google.begin(teacher).authorizationUrl).searchParams.get('state')!,'code',false);
+ const google=fixtureSheets(identity,now);
  const memory=new SheetsMemory(sheetFixture(grouped?f2:f1));configure?.(memory);const initial=await replacePreparedActivity(data.database,parseGuidedNotes(memory.source,'1',2),{activityId:null,version:null,confirmed:false});
  const allocator=createSqliteAllocator(data.database,now),submissions=new SubmissionService(data.database,identity),group=data.database.prepare('SELECT id FROM groups ORDER BY number LIMIT 1').get() as {id:string};
  const studentProof=freshProof(),studentGrant=identity.join(initial.activityId,group.id,'=甲👨‍👩‍👧‍👦',studentProof),student={...studentProof,token:studentGrant.token,generation:studentGrant.generation};
@@ -48,6 +45,6 @@ export async function exportFixture(t:TestContext,grouped=false,configure?:(memo
  activities.transition(teacher,initial.activityId,2,'end',allocator(),true);
  const io:ExportIO={read:()=>memory.read(),write:(...args)=>memory.write(...args)};
  const service=new ExportService(data.database,identity,google,activities,now,io);
- let count=0;const run=(mode:'ANSWERS'|'COLUMNS'|'INLINE')=>service.execute(service.begin(teacher,initial.activityId,{requestId:'export-'+(++count),mode,paused:true,expectedVersion:3}));
+ let count=0;const run=(mode:'ANSWERS'|'COLUMNS'|'INLINE')=>service.execute(service.begin(teacher,initial.activityId,{accessMode:'SERVICE_ACCOUNT',requestId:'export-'+(++count),mode,paused:true,expectedVersion:3}));
  return{...data,identity,activities,google,teacher,student,service,memory,io,run,now,activityId:initial.activityId,source:()=>parseGuidedNotes(memory.source,'1',2)};
 }

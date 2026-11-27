@@ -1,3 +1,5 @@
+import {ServiceAccountSheets,ServiceAccountTokens} from '../../src/server/service-account.js';
+import {loadServiceAccount} from '../../src/server/service-account-config.js';
 // 僅在操作者明確執行時，以現有授權建立隔離副本並測正式匯出服務。
 import assert from 'node:assert/strict';
 import Database from 'better-sqlite3';
@@ -7,8 +9,6 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { readConfig } from '../../src/server/config.js';
 import { openDatabase } from '../../src/server/database.js';
-import { GoogleService,GoogleOAuthProvider,loadGoogleClient,type GoogleTokens } from '../../src/server/google.js';
-import { GoogleVault } from '../../src/server/google-vault.js';
 import { IdentityService } from '../../src/server/identity.js';
 import { ActivityService } from '../../src/server/activity.js';
 import { SubmissionService } from '../../src/server/submissions.js';
@@ -28,11 +28,7 @@ const identity=new IdentityService(database,'isolated-live-password'),proof=fres
 const activities=new ActivityService(database,identity),created=new Set<string>();let writes=0,request=0;
 const delay=(ms:number)=>new Promise<void>(done=>setTimeout(done,ms));
 try{
- const real=new Database(config.databasePath,{readonly:true,fileMustExist:true});let tokens:GoogleTokens;
- try{const connection=real.prepare("SELECT credential_reference FROM google_connection WHERE state='CONNECTED'").get() as {credential_reference:string}|undefined;if(!connection)throw new Error('尚無可用Google連結');tokens=new GoogleVault(config.dataDir).load<GoogleTokens>(connection.credential_reference);}finally{real.close();}
- const client=loadGoogleClient(config.googleClientFile,config.port);if(!client)throw new Error('缺少OAuth設定');
- const vault=new GoogleVault(directory),reference=vault.save(tokens);database.prepare("INSERT INTO google_connection VALUES(1,?,?,?,'CONNECTED')").run(tokens.account,JSON.stringify(tokens.scopes),reference);
- const google=new GoogleService(database,identity,vault,new GoogleOAuthProvider(client));
+ const tokens=new ServiceAccountTokens(loadServiceAccount(config.serviceAccountFile));const google=Object.assign(new ServiceAccountSheets(identity,tokens),{accessToken:async(p:TabProof)=>{identity.principal(p);return tokens.token();}});
  async function raw(path:string,body:unknown){const token=await google.accessToken(teacher),response=await fetch('https://sheets.googleapis.com/v4/'+path,{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(30000)});if(!response.ok)throw new Error('Google隔離副本操作HTTP_'+response.status);return await response.json() as Record<string,unknown>;}
  const read=async(id:string)=>await google.spreadsheet(teacher,id,{includeGridData:'true'}) as Spreadsheet;
  const io:ExportIO={read:(p,id)=>read(id),write:async(p,id,requests)=>{assert.ok(created.has(id),'只能寫入本探針建立的隔離副本');await google.batchUpdate(p,id,requests);writes++;}};
@@ -49,14 +45,14 @@ try{
   activities.transition(teacher,changed.activityId,1,'start',allocator());const questions=database.prepare('SELECT id FROM questions WHERE activity_id=? ORDER BY position').all(changed.activityId) as {id:string}[];
   for(const [qIndex,q]of questions.slice(0,-1).entries()){const fields=database.prepare('SELECT id FROM question_fields WHERE question_id=? ORDER BY position').all(q.id) as {id:string}[];submissions.submit(student,changed.activityId,q.id,{requestId:randomUUID(),answers:fields.map((f,i)=>({fieldId:f.id,text:qIndex===0?'=文字不是公式👨‍👩‍👧‍👦\n'+'測'.repeat(140):`=第${qIndex+1}題子題${i+1}\n答案👨‍👩‍👧‍👦`}))},allocator());}
   activities.transition(teacher,changed.activityId,2,'end',allocator(),true);
-  const run=async(mode:ExportMode)=>{const outcome=await service.execute(service.begin(teacher,changed.activityId,{requestId:'live-'+(++request),mode,paused:true,expectedVersion:3}));assert.equal(outcome.state,'COMPLETED',JSON.stringify({mode,state:outcome.state,message:outcome.message}));await delay(2300);return outcome;};
+  const run=async(mode:ExportMode)=>{const outcome=await service.execute(service.begin(teacher,changed.activityId,{accessMode:'SERVICE_ACCOUNT',requestId:'live-'+(++request),mode,paused:true,expectedVersion:3}));assert.equal(outcome.state,'COMPLETED',JSON.stringify({mode,state:outcome.state,message:outcome.message}));await delay(2300);return outcome;};
   const checkpoint=()=>{entry.已完成批次=writes;save();};
   for(const from of ['ANSWERS','COLUMNS','INLINE'] as const)for(const to of ['ANSWERS','COLUMNS','INLINE'] as const){await run(from);await run(to);const before=await read(id);await run(to);const after=await read(id);assert.deepEqual(after,before,'重複匯出必須完全一致');checkpoint();console.log(JSON.stringify({類型:entry.類型,切換:from+'→'+to,重複一致:true}));}
   await run('INLINE');source=await read(id);const fields=candidate.questions.flatMap(q=>q.fields),grid=sheetGrid(source.sheets.find(s=>String(s.properties.sheetId)===sheetId)!);const first=fields[0]!.answerRange.split(':')[0]!,cell=grid.cell(first),runs=cell.textFormatRuns as {startIndex:number;format:{fontSize?:number}}[];assert.equal(runs[1]!.format.fontSize,9);assert.match(cell.userEnteredValue!.stringValue!,/組別：第 1 組/);assert.equal(cell.userEnteredValue!.formulaValue,undefined);entry.灰色9點與純文字=true;
   const token=await google.accessToken(teacher),pdf=await fetch(`https://docs.google.com/spreadsheets/d/${id}/export?format=pdf&gid=${sheetId}&portrait=false&fitw=true`,{headers:{Authorization:'Bearer '+token},signal:AbortSignal.timeout(30000)});
   entry.PDF預覽HTTP=pdf.status;if(pdf.ok&&(pdf.headers.get('content-type')??'').includes('pdf')){mkdirSync('test-results',{recursive:true});const file=`test-results/export-live-${index+1}.pdf`;writeFileSync(file,Buffer.from(await pdf.arrayBuffer()));entry.PDF預覽=file;}
   await run('ANSWERS');
-  const lossIO:ExportIO={read:io.read,write:async(...args)=>{await io.write(...args);throw new Error('隔離真實遠端完成後的回覆遺失');}};const loss=new ExportService(database,identity,google,activities,Date.now,lossIO),unknown=await loss.execute(loss.begin(teacher,changed.activityId,{requestId:'lost-'+randomUUID(),mode:'COLUMNS',paused:true,expectedVersion:3}));assert.equal(unknown.state,'UNCONFIRMED');const sent=writes;assert.equal((await loss.reconcile(teacher,unknown.id)).state,'COMPLETED');assert.equal(writes,sent);entry.真實寫入後注入回覆遺失核對不重送=true;await delay(2300);
+  const lossIO:ExportIO={read:io.read,write:async(...args)=>{await io.write(...args);throw new Error('隔離真實遠端完成後的回覆遺失');}};const loss=new ExportService(database,identity,google,activities,Date.now,lossIO),unknown=await loss.execute(loss.begin(teacher,changed.activityId,{accessMode:'SERVICE_ACCOUNT',requestId:'lost-'+randomUUID(),mode:'COLUMNS',paused:true,expectedVersion:3}));assert.equal(unknown.state,'UNCONFIRMED');const sent=writes;assert.equal((await loss.reconcile(teacher,unknown.id)).state,'COMPLETED');assert.equal(writes,sent);entry.真實寫入後注入回覆遺失核對不重送=true;await delay(2300);
   await run('ANSWERS');source=await read(id);assert.deepEqual(source.sheets.filter(s=>String(s.properties.sheetId)!==sheetId).map(s=>hash(s)),otherBefore);entry.未選工作表不變=true;entry.三乘三切換與重複一致=true;entry.狀態='通過';checkpoint();
  }
  report.狀態='通過';save();console.log('真實Google隔離匯出驗證通過');

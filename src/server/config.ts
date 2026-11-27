@@ -14,8 +14,7 @@ export function readConfig(env: NodeJS.ProcessEnv = process.env) {
     if (dataDir === forbidden || dataDir.startsWith(forbidden + sep)) throw new AppError('INVALID_CONFIG');
   }
   const teacherPassword = env.TEACHER_PASSWORD?.trim() ? env.TEACHER_PASSWORD : undefined;
-  const googleClientFile=resolve(projectRoot,env.GOOGLE_OAUTH_CLIENT_FILE||resolve(dataDir,'google-oauth-client.json'));
-  return Object.freeze({ host: '127.0.0.1' as const, port, dataDir, databasePath: resolve(dataDir, 'classroom.db'), teacherPassword,googleClientFile,googleSheetsApiKey:env.GOOGLE_SHEETS_API_KEY?.trim()||undefined });
+  return Object.freeze({ host: '127.0.0.1' as const, port, dataDir, databasePath: resolve(dataDir, 'classroom.db'), teacherPassword,serviceAccountFile:resolve(projectRoot,env.GOOGLE_SERVICE_ACCOUNT_FILE||resolve(dataDir,'google-service-account.json')),googleSheetsApiKey:env.GOOGLE_SHEETS_API_KEY?.trim()||undefined });
 }
 
 export type AppConfig = ReturnType<typeof readConfig>;

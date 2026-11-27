@@ -9,7 +9,7 @@ import { AppError } from '../shared/errors.js';
 import type { IdentityService } from './identity.js';
 import { assertRequestOrigin } from './identity-http.js';
 import type { ActivityService } from './activity.js';
-import type { GoogleService } from './google.js';
+import type { SheetsGateway } from './service-account.js';
 import type { ImportService } from './imports.js';
 import type { ExportService } from './exports.js';
 import type { SubmissionService } from './submissions.js';
@@ -22,7 +22,7 @@ export type ApiPorts = {
   identity?: IdentityService;
   beforeRead?: () => void;
   activities?:ActivityService;
-  google?:GoogleService;
+  sheets?:SheetsGateway;
   imports?:ImportService;
   submissions?:SubmissionService;
   exports?:ExportService;

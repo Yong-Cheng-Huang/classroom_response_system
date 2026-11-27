@@ -1,6 +1,8 @@
+> 服務帳戶改版已完成驗證：老師不再連結個人Google。私有匯入與全部Sheets寫回改用共用給服務帳戶的原試算表；公開只讀及CSV保留。請參考[新版設定指南](docs/google-service-account-setup.md)。下列OAuth敘述與原階段數字為歷史驗收，服務帳戶驗證進度另行記錄。
+
 # 課堂搶答系統
 
-本機執行的 TypeScript／React／Node.js／SQLite 專案，目前完成基礎環境、資料庫、分頁身分、活動管理、Google 授權與匯入、即時同步／恢復、搶答提交、學生作答、老師管理及完整結果，累計85／85，依使用者確認D41完成紀錄型驗收；原1秒／5秒與完整60輪為後續改善目標，尚未全面達標。首頁支援老師登入、匯入、學生選組／離組、全部題目與題組作答、分頁草稿、同組提交鎖定、開始及確認結束與同步計時。老師可預覽完整題組並監看全部組別答案、名次與臺灣提交時間；學生結束後可查看成功答案、本組三種成績及成功題數；老師可於結束後使用三模式 Sheets 匯出、核對未知結果及確認放棄後換場。
+本機執行的 TypeScript／React／Node.js／SQLite 專案，目前完成基礎環境、資料庫、分頁身分、活動管理、服務帳戶及公開匯入、即時同步／恢復、搶答提交、學生作答、老師管理及完整結果，累計85／85，依使用者確認D41完成紀錄型驗收；原1秒／5秒與完整60輪為後續改善目標，尚未全面達標。首頁支援老師登入、匯入、學生選組／離組、全部題目與題組作答、分頁草稿、同組提交鎖定、開始及確認結束與同步計時。老師可預覽完整題組並監看全部組別答案、名次與臺灣提交時間；學生結束後可查看成功答案、本組三種成績及成功題數；老師可於結束後使用三模式 Sheets 匯出、核對未知結果及確認放棄後換場。
 
 ## 環境與啟動
 
@@ -33,14 +35,15 @@ npm start
 | `APP_PORT` | `3000`，固定啟動埠 |
 | `APP_DATA_DIR` | 專案根目錄下 `data/`，相對路徑不受啟動工作目錄影響 |
 | `TEACHER_PASSWORD` | 無預設值；未設定或全空白時老師登入停用，回傳繁體中文說明 |
+| `GOOGLE_SERVICE_ACCOUNT_FILE` | 可選；預設`APP_DATA_DIR/google-service-account.json`，私有匯入與Sheets寫回使用 |
 | `GOOGLE_SHEETS_API_KEY` | 可選；後端公開學習單讀取，不需老師 Google 登入；缺值只停用公開模式 |
 | `SHEETS_TEST_SPREADSHEET_ID` | 真實寫入測試使用的明確可寫副本；匯出探針另外建立私有隔離副本 |
 
 `.env`、資料庫、備份、測試產物與憑證不得提交版控。資料目錄不能置於 `src/`、`dist/` 或 `node_modules/`，避免被網頁服務讀取。在 `.env` 設定非空的 `TEACHER_PASSWORD`，重新啟動後即可使用「老師登入」。沒有預設密碼。老師登出只影響當前分頁；修改啟動密碼並重啟會撤銷全部舊老師身分。
 
-空資料庫會顯示「等待老師匯入活動」，不會自動建立種子活動。老師可選「公開學習單（免 Google 登入）」讀取公開可查看的原表（管理者須先設定 API key），或完成 Google 授權讀取私有文件；兩者皆可貼單題／題組範本網址、設定 2～20 組、選表並確認匯入。若舊 dev 服務仍在執行，須先停止再重新 `npm run dev`，才會載入新的後端。
+空資料庫會顯示「等待老師匯入活動」，不會自動建立種子活動。老師可選「公開學習單（免 Google 登入）」讀取公開可查看的原表（管理者須先設定 API key），或將私有文件共用給服務帳戶後讀取；兩者皆可貼單題／題組範本網址、設定 2～20 組、選表並確認匯入。若舊 dev 服務仍在執行，須先停止再重新 `npm run dev`，才會載入新的後端。
 
-Google 真實授權及兩份副本讀取已驗證，包含正常重啟及單題實際匯入；第一次配置新環境仍須操作者自行在 Google 頁面同意。client JSON 路徑由 `GOOGLE_OAUTH_CLIENT_FILE` 設定，預設為 `APP_DATA_DIR/google-oauth-client.json`；token 只由後端加密保存在資料目錄，學生不取得憑證。
+歷史版本的Google個人授權及兩份副本讀取曾完成驗證，包含正常重啟及單題實際匯入；第一次配置新環境仍須操作者自行在 Google 頁面同意。client JSON 路徑由 `GOOGLE_OAUTH_CLIENT_FILE` 設定，預設為 `APP_DATA_DIR/google-oauth-client.json`；token 只由後端加密保存在資料目錄，學生不取得憑證。
 
 ## 測試
 
@@ -92,7 +95,7 @@ npm run test:startup
 | 語言／執行 | TypeScript 7.0.2、tsx 4.23.15 |
 | SQLite 驅動 | better-sqlite3 13.2.0，實測 SQLite 3.54.1 |
 | WebSocket 基礎 | ws 8.23.0 |
-| Google 後端 OAuth | google-auth-library 11.3.4 |
+| Google 服務帳戶 JWT | google-auth-library 11.3.4 |
 | 瀏覽器測試 | @playwright/test 1.65.1 |
 | 型別 | @types/node 24.19.4、@types/react 19.3.3、@types/react-dom 19.3.0、@types/better-sqlite3 9.6.0、@types/ws 8.18.2 |
 

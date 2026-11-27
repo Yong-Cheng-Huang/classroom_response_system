@@ -1,62 +1,8 @@
-import { test,expect } from '@playwright/test';
-import { mkdtempSync,rmSync } from 'node:fs';
-import { join } from 'node:path';
-import { tmpdir } from 'node:os';
-import { openDatabase } from '../../src/server/database.js';
-import { readConfig } from '../../src/server/config.js';
-import { IdentityService } from '../../src/server/identity.js';
-import { GoogleService,googleScopes,type GoogleProvider } from '../../src/server/google.js';
-import { GoogleVault } from '../../src/server/google-vault.js';
-import { createApplication } from '../../src/server/app.js';
-import { assertRequestOrigin } from '../../src/server/identity-http.js';
-import { readActivityModel } from '../../src/server/read-model.js';
-import { ActivityService } from '../../src/server/activity.js';
-import { ImportService } from '../../src/server/imports.js';
-import { sheetFixture } from '../helpers/sheets.js';
-import { f1,f2 } from '../fixtures/catalog.js';
-
-test('Google 連結畫面：另開授權頁不丟老師身分，兩老師共用、分頁登出不解除',async({context})=>{
-  test.setTimeout(60000);
-  const directory=mkdtempSync(join(tmpdir(),'crs-google-ui-')),database=openDatabase(join(directory,'classroom.db'));
-  const password='google-browser-fixture-only',identity=new IdentityService(database,password);let base='';
-  const tokens={accessToken:'private-google-access-fixture',refreshToken:'private-google-refresh-fixture',expiresAt:Date.now()+3600000,scopes:[...googleScopes],account:'fixture@example.test'};
-  const provider:GoogleProvider={authorization:state=>base+'/api/google/callback?'+new URLSearchParams({state,code:'fixture-code'}),exchange:async()=>tokens,refresh:async()=>tokens};
-  const google=new GoogleService(database,identity,new GoogleVault(directory),provider);
-  const activities=new ActivityService(database,identity);let source=sheetFixture(f1);
-  const imports=new ImportService(database,identity,google,activities,Date.now,async()=>structuredClone(source));
-  const app=createApplication(readConfig({TEACHER_PASSWORD:password}),database,()=>{}, {identity,google,activities,imports,authenticate:req=>{assertRequestOrigin(req);return identity.principal(identity.proof(req));},readModel:()=>readActivityModel(database,identity)});
-  const address=await app.listen(0);if(!address||typeof address==='string')throw new Error('測試服務未啟動');base=`http://127.0.0.1:${address.port}`;
-  try{
-    const pages=[await context.newPage(),await context.newPage()];
-    for(const p of pages){await p.goto(base);await p.getByRole('button',{name:'老師登入',exact:true}).click();await p.getByLabel('老師密碼').fill(password);await p.getByRole('button',{name:'登入老師身分',exact:true}).click();await expect(p.getByRole('heading',{name:'老師已登入'})).toBeVisible();}
-    const originalName=await pages[0]!.evaluate(()=>window.name);
-    await pages[0]!.getByRole('button',{name:'連結 Google',exact:true}).click();
-    const popupEvent=context.waitForEvent('page');await pages[0]!.getByRole('link',{name:'前往 Google 授權（另開分頁）'}).click();
-    const popup=await popupEvent;await popup.waitForLoadState();await expect(popup.getByText('Google 已連結。請關閉此頁，返回原老師分頁。')).toBeVisible();expect(await popup.evaluate(()=>window.opener===null)).toBe(true);
-    for(const p of pages)await expect(p.getByText('fixture@example.test',{exact:true})).toBeVisible();
-    expect(await pages[0]!.evaluate(()=>window.name)).toBe(originalName);await pages[0]!.reload();await expect(pages[0]!.getByRole('heading',{name:'老師已登入'})).toBeVisible();
-    const teacher=pages[0]!;
-    await teacher.getByLabel('Google Sheets 網址',{exact:true}).fill('https://docs.google.com/spreadsheets/d/fixture-copy/edit');
-    await teacher.getByRole('button',{name:'讀取學習單',exact:true}).click();await expect(teacher.getByText('已完整解析：6 題、6 個作答欄位、2 組。',{exact:true})).toBeVisible();
-    await teacher.getByRole('button',{name:'取消匯入',exact:true}).click();expect(database.prepare('SELECT * FROM activities').get()).toBeUndefined();
-    await teacher.getByRole('button',{name:'讀取學習單',exact:true}).click();await teacher.getByRole('button',{name:'匯入此學習單',exact:true}).click();await expect(teacher.getByRole('heading',{name:'待開始',exact:true})).toBeVisible();
-    const original=(database.prepare('SELECT id FROM activities').get() as {id:string}).id;
-    const student=await context.newPage();await student.goto(base);await student.getByLabel('暱稱',{exact:true}).fill('原組員');await student.getByRole('button',{name:/第 1 組/}).click();await expect(student.getByRole('heading',{name:'已加入組別',exact:true})).toBeVisible();
-    source=sheetFixture({...f1,merges:f1.merges.filter(m=>m!=='G15:H15')});
-    await teacher.getByRole('button',{name:'讀取學習單',exact:true}).click();await expect(teacher.getByRole('alert')).toContainText('學習單格式不符');expect((database.prepare('SELECT id FROM activities').get() as {id:string}).id).toBe(original);
-    source=sheetFixture(f1);source.sheets.push(sheetFixture(f2,2,'題組工作表').sheets[0]!);
-    await teacher.getByRole('button',{name:'讀取學習單',exact:true}).click();await teacher.getByLabel('選擇工作表',{exact:true}).selectOption('2');await teacher.getByRole('button',{name:'讀取工作表',exact:true}).click();
-    await expect(teacher.getByText('已完整解析：4 題、6 個作答欄位、2 組。',{exact:true})).toBeVisible();await teacher.getByRole('button',{name:'取消匯入',exact:true}).click();expect((database.prepare('SELECT id FROM activities').get() as {id:string}).id).toBe(original);
-    await expect(student.getByRole('heading',{name:'已加入組別',exact:true})).toBeVisible();
-    source=sheetFixture(f2);await teacher.getByRole('button',{name:'讀取學習單',exact:true}).click();await expect(teacher.getByText(/確認後會清除目前活動/)).toBeVisible();
-    await teacher.getByRole('button',{name:'確認替換並匯入',exact:true}).click();await expect(teacher.getByRole('heading',{name:'待開始',exact:true})).toBeVisible();
-    expect((database.prepare('SELECT id FROM activities').get() as {id:string}).id).not.toBe(original);await expect(student.getByRole('alert')).toContainText('新活動');await expect(student.getByLabel('暱稱',{exact:true})).toHaveValue('原組員');
-    await pages[0]!.getByRole('button',{name:'登出',exact:true}).click();await expect(pages[0]!.getByRole('button',{name:'老師登入',exact:true})).toBeVisible();
-    await pages[1]!.reload();await expect(pages[1]!.getByText('fixture@example.test',{exact:true})).toBeVisible();
-    await pages[1]!.screenshot({path:'test-results/google-connected.png',fullPage:true});
-    await teacher.getByRole('button',{name:'老師登入',exact:true}).click();await teacher.getByLabel('老師密碼').fill(password);await teacher.getByRole('button',{name:'登入老師身分',exact:true}).click();await expect(teacher.getByRole('heading',{name:'待開始',exact:true})).toBeVisible();
-    await teacher.screenshot({path:'test-results/import-ready.png',fullPage:true});
-    await pages[1]!.getByRole('button',{name:'解除本機連結',exact:true}).click();await expect(pages[1]!.getByRole('button',{name:'連結 Google',exact:true})).toBeVisible();
-    expect(database.prepare('SELECT * FROM google_connection').get()).toBeUndefined();await popup.close();
-  }finally{await app.close();database.close();rmSync(directory,{recursive:true,force:true});}
+import {test,expect} from '@playwright/test';
+import {publicImportFixture} from '../helpers/public-import.js';
+import {csvTeacher} from '../helpers/csv-browser.js';
+test('服務帳戶設定：沒有個人Google授權入口，未配置不影響老師登入或公開方式',async({context})=>{
+ const f=await publicImportFixture(true,true);try{const a=await context.newPage(),b=await context.newPage();for(const p of [a,b]){await csvTeacher(p,f);await expect(p.getByLabel('學習單存取設定',{exact:true}).getByText(/服務帳戶尚未配置/)).toBeVisible();await expect(p.getByRole('button',{name:'連結 Google',exact:true})).toHaveCount(0);await expect(p.getByRole('link',{name:/前往 Google 授權/})).toHaveCount(0);await expect(p.getByLabel('匯入方式',{exact:true})).toHaveValue('PUBLIC');}
+ await a.getByRole('button',{name:'登出',exact:true}).click();await expect(b.getByRole('heading',{name:'老師已登入',exact:true})).toBeVisible();
+ }finally{await f.close();}
 });
