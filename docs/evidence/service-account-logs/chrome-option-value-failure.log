@@ -1,0 +1,111 @@
+[WebServer] (node:11594) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:11640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/clock-pulse.spec.ts:16:1 › 13.3 頁面interval停止時，授權伺服器脈衝仍更新計時DOM (5.1s)
+  ✓   2 tests/browser/exports.spec.ts:22:1 › 12.1～12.12 老師匯出三模式、D31、預檢取消、核對及放棄後完整成功換場 (5.3s)
+  ✓   3 tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 (2.1s)
+  ✓   4 tests/browser/google.spec.ts:4:1 › 服務帳戶設定：沒有個人Google授權入口，未配置不影響老師登入或公開方式 (1.3s)
+  ✓   5 tests/browser/identity.spec.ts:17:1 › 正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷 (9.5s)
+  ✓   6 tests/browser/measurement-http.spec.ts:16:1 › 13.3 診斷器保留HTTP已呈現的React DOM時刻，與稍後WS快照分開 (849ms)
+  ✓   7 tests/browser/measurement.spec.ts:16:1 › 13.3 觀測器在真Chrome無序列化helper錯誤，React commit後才記錄實際狀態與DOM (791ms)
+  ✓   8 tests/browser/pause.spec.ts:15:1 › D39 真Chrome受控凍結另列暫停，恢復正確結果；12小時已到期不得復活 (1.0s)
+  ✘   9 tests/browser/public-import.spec.ts:10:1 › 公開免Google：模式鎖定、取消重選、多表、學生作答到CSV；寫回仍拒絕 (30.3s)
+(node:13574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 tests/browser/public-import.spec.ts:26:1 › 公開缺配置提示與失敗不fallback、不登出，原OAuth選項保留 (30.4s)
+(node:13868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 tests/browser/ranking.spec.ts:18:1 › 8.1～8.7 同 Chrome 兩老師四學生：同組競爭、角色分流、重建後第三名及結束重送 (8.9s)
+  ✓  12 tests/browser/realtime.spec.ts:15:1 › 7.1～7.3 同 Chrome 兩老師與學生由 WS 套用快照；停用 view 輪詢仍同步 (7.1s)
+  ✓  13 tests/browser/recovery-queue.spec.ts:16:1 › 13.3 有效授權票證排隊1.8秒不遭短watchdog反覆中止，仍於5秒內恢復 (5.2s)
+  ✓  14 tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 (46.8s)
+  ✓  15 tests/browser/results.spec.ts:17:1 › 11.1～11.4 完整學生結果：三狀態、四子題只計一題、成功公開、無人題及重啟恢復 (6.8s)
+  ✓  16 tests/browser/student.spec.ts:29:1 › 9.1～9.6 學生表單：等待、同名組員、分頁草稿、四子題、鎖定、結束與換場 (5.3s)
+  ✓  17 tests/browser/student.spec.ts:77:1 › 9.4～9.6 送出前中斷、重整及相同 requestId 重試；儲存失敗不送出 (3.1s)
+  ✓  18 tests/browser/student.spec.ts:98:1 › 9.5 伺服器欄位錯誤、他人先送出，以及換場後延遲回覆不得復活草稿 (3.4s)
+  ✓  19 tests/browser/submission-csv.spec.ts:9:1 › CSV01～05 實際下載全組單題／四子題，位於匯入下方、免Google、UTF8中文與原排名 (2.4s)
+  ✓  20 tests/browser/submission-csv.spec.ts:27:1 › CSV01／08 JSON錯誤不下載，可重試取得零提交表頭 (1.4s)
+  ✓  21 tests/browser/submission-csv.spec.ts:32:55 › CSV08 logout 後取消延遲檔案，不觸發舊下載 (1.2s)
+  ✓  22 tests/browser/submission-csv.spec.ts:32:55 › CSV08 replacement 後取消延遲檔案，不觸發舊下載 (1.2s)
+  ✓  23 tests/browser/teacher.spec.ts:20:1 › 10.2～10.4 多老師獨立預覽、完整題組監看、同毫秒名次、結束及重啟保存 (4.4s)
+  ✓  24 tests/browser/teacher.spec.ts:76:1 › 10.1 老師匯入介面：繁體驗證、2／20組、選表、跨階段限制及替換清除提醒 (5.0s)
+
+
+  1) tests/browser/public-import.spec.ts:10:1 › 公開免Google：模式鎖定、取消重選、多表、學生作答到CSV；寫回仍拒絕 ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('匯入方式', { exact: true })
+        - locator resolved to <select id="import-mode">…</select>
+      - attempting select option action
+        2 × waiting for element to be visible and enabled
+          - did not find some options
+        - retrying select option action
+        - waiting 20ms
+        2 × waiting for element to be visible and enabled
+          - did not find some options
+        - retrying select option action
+          - waiting 100ms
+        59 × waiting for element to be visible and enabled
+           - did not find some options
+         - retrying select option action
+           - waiting 500ms
+        - waiting for element to be visible and enabled
+
+
+      13 |   const teacher=await context.newPage();let headers:Record<string,string>={};teacher.on('request',r=>{const h=r.headers();if(r.url().startsWith(f.base+'/api/')&&h.authorization)headers={Authorization:h.authorization,'X-Tab-Proof':h['x-tab-proof']!,'X-Document-Instance':h['x-document-instance']!,'X-Session-Generation':h['x-session-generation']!,'Content-Type':'application/json'};});await csvTeacher(teacher,f);const mode=teacher.getByLabel('匯入方式',{exact:true}),read=teacher.getByRole('button',{name:'讀取學習單',exact:true});
+      14 |   await expect(mode).toHaveValue('PUBLIC');await expect(read).toBeEnabled();
+    > 15 |   await mode.selectOption('SERVICE_ACCOUNT');await expect(read).toBeDisabled();await mode.selectOption('PUBLIC');await teacher.getByLabel('Google Sheets 網址',{exact:true}).fill(publicUrl);await read.click();
+         |              ^
+      16 |   await expect(mode).toBeDisabled();await expect(teacher.getByLabel('選擇工作表',{exact:true})).toBeVisible();await teacher.getByRole('button',{name:'取消匯入',exact:true}).click();await expect(mode).toBeEnabled();
+      17 |   await read.click();await teacher.getByLabel('選擇工作表',{exact:true}).selectOption('2');await teacher.getByRole('button',{name:'讀取工作表',exact:true}).click();await expect(teacher.getByText('已完整解析：4 題、6 個作答欄位、2 組。',{exact:true})).toBeVisible();await teacher.getByRole('button',{name:'匯入此學習單',exact:true}).click();await expect(teacher.getByRole('button',{name:'開始搶答',exact:true})).toBeEnabled();
+      18 |   const student=await context.newPage();await student.goto(f.base);await student.getByLabel('暱稱').fill('公開匯入學生');await student.getByRole('button',{name:/^第 1 組 /}).click();await expect(student.getByRole('heading',{name:'已加入組別',exact:true})).toBeVisible();
+        at /Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/browser/public-import.spec.ts:15:14
+
+    Error Context: test-results/public-import-公開免Google：模式鎖定、取消重選、多表、學生作答到CSV；寫回仍拒絕/error-context.md
+
+  2) tests/browser/public-import.spec.ts:26:1 › 公開缺配置提示與失敗不fallback、不登出，原OAuth選項保留 ─────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('匯入方式', { exact: true })
+        - locator resolved to <select id="import-mode">…</select>
+      - attempting select option action
+        2 × waiting for element to be visible and enabled
+          - did not find some options
+        - retrying select option action
+        - waiting 20ms
+        2 × waiting for element to be visible and enabled
+          - did not find some options
+        - retrying select option action
+          - waiting 100ms
+        48 × waiting for element to be visible and enabled
+           - did not find some options
+         - retrying select option action
+           - waiting 500ms
+        - waiting for element to be visible and enabled
+
+
+      25 | });
+      26 | test('公開缺配置提示與失敗不fallback、不登出，原OAuth選項保留',async({page})=>{
+    > 27 |  const missing=await publicImportFixture(false,true);try{await csvTeacher(page,missing);await expect(page.getByText(/公開讀取尚未配置/)).toBeVisible();await expect(page.getByRole('button',{name:'讀取學習單',exact:true})).toBeDisabled();await page.getByLabel('匯入方式',{exact:true}).selectOption('SERVICE_ACCOUNT');await expect(page.getByText('請先配置服務帳戶，並將原表共用給頁面顯示的Email。',{exact:true})).toBeVisible();}finally{await missing.close();}
+         |                                                                                                                                                                                                                                                                           ^
+      28 |  const f=await publicImportFixture(true,true);try{f.setTransport(async()=>Response.json({error:{message:'PUBLIC_CANARY'}},{status:403}));await csvTeacher(page,f);await page.getByLabel('Google Sheets 網址',{exact:true}).fill(publicUrl);await page.getByRole('button',{name:'讀取學習單',exact:true}).click();await expect(page.getByRole('alert').filter({hasText:'無法公開讀取此文件'})).toBeVisible();await expect(page.getByRole('heading',{name:'老師已登入',exact:true})).toBeVisible();await expect(page.getByLabel('匯入方式',{exact:true})).toHaveValue('PUBLIC');expect(await page.content()).not.toContain('PUBLIC_CANARY');expect(f.oauthCalls()).toBe(0);}finally{await f.close();}
+      29 | });
+      30 |
+        at /Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/browser/public-import.spec.ts:27:267
+
+    Error Context: test-results/public-import-公開缺配置提示與失敗不fallback、不登出，原OAuth選項保留/error-context.md
+
+  2 failed
+    tests/browser/public-import.spec.ts:10:1 › 公開免Google：模式鎖定、取消重選、多表、學生作答到CSV；寫回仍拒絕 ───────────────
+    tests/browser/public-import.spec.ts:26:1 › 公開缺配置提示與失敗不fallback、不登出，原OAuth選項保留 ──────────────────
+  22 passed (3.5m)

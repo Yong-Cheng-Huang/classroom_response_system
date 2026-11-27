@@ -1,3 +1,4 @@
+import {fixtureSheets} from '../helpers/service-account.js';
 import { test,expect,type Page } from '@playwright/test';
 import { mkdtempSync,rmSync,writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -12,8 +13,6 @@ import { assertRequestOrigin } from '../../src/server/identity-http.js';
 import { readActivityModel } from '../../src/server/read-model.js';
 import { replacePreparedActivity } from '../../src/server/activity-replacement.js';
 import { preparedActivity } from '../helpers/replacement.js';
-import { GoogleService,googleScopes,type GoogleProvider } from '../../src/server/google.js';
-import { GoogleVault } from '../../src/server/google-vault.js';
 import { ImportService } from '../../src/server/imports.js';
 import { sheetFixture } from '../helpers/sheets.js';
 import { f1,f2 } from '../fixtures/catalog.js';
@@ -23,8 +22,8 @@ test('10.2～10.4 多老師獨立預覽、完整題組監看、同毫秒名次�
  const directory=mkdtempSync(join(tmpdir(),'crs-teacher-monitor-')),path=join(directory,'classroom.db'),password='teacher-monitor-fixture';
  let database=openDatabase(path),now=Date.UTC(2026,10,26,4,5,6,789),identity!:IdentityService,app!:ReturnType<typeof createApplication>,base='';
  const launch=async(port=0)=>{
-  identity=new IdentityService(database,password,()=>now,true);const db=database,id=identity,google=new GoogleService(db,id,new GoogleVault(directory),null);
-  app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),db,()=>{},{identity:id,google,now:()=>now,activities:new ActivityService(db,id,undefined,()=>now),submissions:new SubmissionService(db,id),authenticate:request=>{assertRequestOrigin(request);return id.principal(id.proof(request));},beforeRead:()=>id.sweep(),readModel:()=>readActivityModel(db,id)});
+  identity=new IdentityService(database,password,()=>now,true);const db=database,id=identity,google=fixtureSheets(id,()=>now);
+  app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),db,()=>{},{identity:id,sheets:google,now:()=>now,activities:new ActivityService(db,id,undefined,()=>now),submissions:new SubmissionService(db,id),authenticate:request=>{assertRequestOrigin(request);return id.principal(id.proof(request));},beforeRead:()=>id.sweep(),readModel:()=>readActivityModel(db,id)});
   const address=await app.listen(port);if(!address||typeof address==='string')throw new Error('隔離服務未啟動');identity.markReady();base=`http://127.0.0.1:${address.port}`;return address.port;
  };
  const headers=new Map<Page,Record<string,string>>();
@@ -77,17 +76,13 @@ test('10.2～10.4 多老師獨立預覽、完整題組監看、同毫秒名次�
 test('10.1 老師匯入介面：繁體驗證、2／20組、選表、跨階段限制及替換清除提醒',async({context})=>{
  test.setTimeout(60000);const directory=mkdtempSync(join(tmpdir(),'crs-teacher-controls-')),database=openDatabase(join(directory,'classroom.db')),password='teacher-controls-fixture';
  const identity=new IdentityService(database,password,Date.now,true);let base='',source=sheetFixture(f1),inspects=0;
- const tokens={accessToken:'isolated-access',refreshToken:'isolated-refresh',expiresAt:Date.now()+3600000,scopes:[...googleScopes],account:'teacher@example.test'};
- const provider:GoogleProvider={authorization:state=>base+'/api/google/callback?'+new URLSearchParams({state,code:'fixture'}),exchange:async()=>tokens,refresh:async()=>tokens};
- const google=new GoogleService(database,identity,new GoogleVault(directory),provider),activities=new ActivityService(database,identity),imports=new ImportService(database,identity,google,activities,Date.now,async()=>structuredClone(source));
- const app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),database,()=>{},{identity,google,activities,imports,authenticate:request=>{assertRequestOrigin(request);return identity.principal(identity.proof(request));},beforeRead:()=>identity.sweep(),readModel:()=>readActivityModel(database,identity)});
+ const google=fixtureSheets(identity),activities=new ActivityService(database,identity),imports=new ImportService(database,identity,google,activities,Date.now,async()=>structuredClone(source));
+ const app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),database,()=>{},{identity,sheets:google,activities,imports,authenticate:request=>{assertRequestOrigin(request);return identity.principal(identity.proof(request));},beforeRead:()=>identity.sweep(),readModel:()=>readActivityModel(database,identity)});
  const address=await app.listen(0);if(!address||typeof address==='string')throw new Error('隔離服務未啟動');identity.markReady();base=`http://127.0.0.1:${address.port}`;
  try{
   const a=await context.newPage(),b=await context.newPage(),student=await context.newPage();
   for(const p of [a,b]){await p.goto(base);await p.getByRole('button',{name:'老師登入',exact:true}).click();await p.getByRole('button',{name:'登入老師身分',exact:true}).click();await expect(p.getByRole('alert')).toHaveText('老師密碼不正確，請重新輸入。');await p.getByLabel('老師密碼').fill(password);await p.getByRole('button',{name:'登入老師身分',exact:true}).click();await expect(p.getByRole('heading',{name:'老師已登入',exact:true})).toBeVisible();}
-  await expect(a.getByRole('button',{name:'讀取學習單',exact:true})).toBeDisabled();
-  await a.getByRole('button',{name:'連結 Google',exact:true}).click();const popupEvent=context.waitForEvent('page');await a.getByRole('link',{name:'前往 Google 授權（另開分頁）',exact:true}).click();const popup=await popupEvent;await expect(popup.getByText('Google 已連結。請關閉此頁，返回原老師分頁。')).toBeVisible();
-  for(const p of [a,b])await expect(p.getByText('teacher@example.test',{exact:true})).toBeVisible();await popup.close();
+  for(const p of [a,b])await expect(p.getByText('robot@fixture.iam.gserviceaccount.com',{exact:true})).toBeVisible();
   a.on('request',request=>{if(request.url()===base+'/api/imports/inspect')inspects++;});
   await a.getByLabel('Google Sheets 網址',{exact:true}).fill('https://docs.google.com/spreadsheets/d/fixture-copy/edit');
   for(const invalid of ['1','21','2.5','']){await a.getByLabel('組數（2～20）',{exact:true}).fill(invalid);await a.getByRole('button',{name:'讀取學習單',exact:true}).click();await expect(a.getByRole('alert')).toHaveText('組數必須是 2～20 的整數。');}expect(inspects).toBe(0);
@@ -102,7 +97,7 @@ test('10.1 老師匯入介面：繁體驗證、2／20組、選表、跨階段限
   await b.getByRole('button',{name:'結束活動',exact:true}).click();await b.getByRole('button',{name:'確認結束',exact:true}).click();await expect(a.getByRole('heading',{name:'已結束',exact:true})).toBeVisible();
   source=sheetFixture(f2);await a.getByRole('button',{name:'讀取學習單',exact:true}).click();await expect(a.getByRole('button',{name:'確認替換並匯入',exact:true})).toBeVisible();await a.getByRole('button',{name:'取消匯入',exact:true}).click();expect((database.prepare('SELECT id FROM activities').get() as {id:string}).id).toBe(old);
   await a.getByRole('button',{name:'讀取學習單',exact:true}).click();await a.getByRole('button',{name:'確認替換並匯入',exact:true}).click();await expect(a.getByRole('heading',{name:'待開始',exact:true})).toBeVisible();expect((database.prepare('SELECT id FROM activities').get() as {id:string}).id).not.toBe(old);await expect(student.getByRole('alert')).toContainText('新活動');await expect(student.getByLabel('暱稱')).toHaveValue('保留原組員');
-  await a.getByRole('button',{name:'登出',exact:true}).click();await expect(a.getByRole('region',{name:'全部組別提交監看',exact:true})).toHaveCount(0);await expect(b.getByRole('heading',{name:'老師已登入',exact:true})).toBeVisible();await expect(b.getByText('teacher@example.test',{exact:true})).toBeVisible();
-  writeFileSync('test-results/teacher-controls.json',JSON.stringify({Chrome:context.browser()!.version(),空密碼繁體錯誤:true,未連結禁止匯入:true,繁體組數驗證:['1','21','2.5','空白'],合法組數:[2,20],選表完整解析:true,待開始及結束替換提示與取消:true,讀取後另一老師開始即禁用提交:true,成功換場才清除舊身分:true,登出只影響自己:true,範圍:'真Chrome／HTTP／SQLite；Google OAuth及來源讀取為隔離替身，真Google整合沿用第6群組證據，沒有外部寫入'},null,2)+'\n');
+  await a.getByRole('button',{name:'登出',exact:true}).click();await expect(a.getByRole('region',{name:'全部組別提交監看',exact:true})).toHaveCount(0);await expect(b.getByRole('heading',{name:'老師已登入',exact:true})).toBeVisible();await expect(b.getByText('robot@fixture.iam.gserviceaccount.com',{exact:true})).toBeVisible();
+  writeFileSync('test-results/teacher-controls.json',JSON.stringify({Chrome:context.browser()!.version(),空密碼繁體錯誤:true,服務帳戶可直接匯入:true,繁體組數驗證:['1','21','2.5','空白'],合法組數:[2,20],選表完整解析:true,待開始及結束替換提示與取消:true,讀取後另一老師開始即禁用提交:true,成功換場才清除舊身分:true,登出只影響自己:true,範圍:'真Chrome／HTTP／SQLite；服務帳戶及來源讀取為隔離替身，真Google整合沿用第6群組證據，沒有外部寫入'},null,2)+'\n');
  }finally{await app.close();identity.shutdown();database.close();rmSync(directory,{recursive:true,force:true});}
 });

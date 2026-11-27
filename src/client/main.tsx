@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { tabSession,ApiFailure } from './session.js';
 import type { ActivityView,LobbyView } from '../shared/views.js';
 import { TeacherActivity } from './activity.js';
-import { GoogleConnection } from './google.js';
+import { SheetsConnection } from './sheets.js';
 import { ExportGuidedNotes } from './exports.js';
 import { ImportGuidedNotes } from './imports.js';
 import { ExportSubmissionCsv } from './submission-csv.js';
@@ -21,7 +21,7 @@ function App() {
   const [lobby,setLobby]=useState<LobbyView|null>(null);
   const [view,setView]=useState<ActivityView|null>(null);
   const [loadMessage,setLoadMessage]=useState('');
-  const [googleReady,setGoogleReady]=useState(false);
+  const [serviceAccountReady,setServiceAccountReady]=useState(false);
   const [abandonmentToken,setAbandonmentToken]=useState('');
   useEffect(()=>setAbandonmentToken(''),[view?.activityId,identity.session?.role,identity.session?.createdAt]);
   const loadSequence=useRef(0);
@@ -77,7 +77,7 @@ function App() {
     <section className="workspace" aria-label="身分與組別">
       {identity.message&&<p className="notice" role="alert">{identity.message}</p>}
       {identity.status==='DISCONNECTED'?<><h2>正在恢復連線</h2><p>暫存資料已保留，請稍候。</p></>:
-      identity.session?.role==='TEACHER'?<><div className="section-heading"><span className="badge">老師</span><button className="link-button" disabled={identity.busy} onClick={()=>act(()=>tabSession.logout())}>登出</button></div><h2>老師已登入</h2><p>此分頁可管理課堂活動。</p><GoogleConnection onReady={setGoogleReady}/>{view?.role==='TEACHER'&&view.phase!=='EMPTY'?<><TeacherActivity key={view.activityId} view={view} act={act}/><ExportGuidedNotes key={view.activityId+':exports'} view={view} googleReady={googleReady} onAbandon={setAbandonmentToken}/></>:<div className="empty-state"><h3>尚未匯入活動</h3></div>}<ImportGuidedNotes abandonmentToken={abandonmentToken} phase={view?.phase} googleReady={googleReady} onImported={()=>{void load();}}/><ExportSubmissionCsv activityId={view?.role==='TEACHER'?view.activityId:null} phase={view?.role==='TEACHER'?view.phase:'EMPTY'}/></>:
+      identity.session?.role==='TEACHER'?<><div className="section-heading"><span className="badge">老師</span><button className="link-button" disabled={identity.busy} onClick={()=>act(()=>tabSession.logout())}>登出</button></div><h2>老師已登入</h2><p>此分頁可管理課堂活動。</p><SheetsConnection onReady={setServiceAccountReady}/>{view?.role==='TEACHER'&&view.phase!=='EMPTY'?<><TeacherActivity key={view.activityId} view={view} act={act}/><ExportGuidedNotes key={view.activityId+':exports'} view={view} serviceAccountReady={serviceAccountReady} onAbandon={setAbandonmentToken}/></>:<div className="empty-state"><h3>尚未匯入活動</h3></div>}<ImportGuidedNotes abandonmentToken={abandonmentToken} phase={view?.phase} serviceAccountReady={serviceAccountReady} onImported={()=>{void load();}}/><ExportSubmissionCsv activityId={view?.role==='TEACHER'?view.activityId:null} phase={view?.role==='TEACHER'?view.phase:'EMPTY'}/></>:
       identity.session?.role==='STUDENT'?<><span className="badge">學生</span><h2>已加入組別</h2><p className="nickname-display">{identity.session.nickname}</p>
         {view?.role==='STUDENT'&&view.participantId===identity.session.participantId&&view.activityId===identity.session.activityId?<StudentPanel key={view.activityId+':'+view.participantId} view={view} busy={identity.busy} act={act} refresh={()=>{void load();}}/>:<p>正在同步組別資料…</p>}
       </>:

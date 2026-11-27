@@ -7,8 +7,6 @@ import { createApplication } from '../../src/server/app.js';
 import { IdentityService } from '../../src/server/identity.js';
 import { ActivityService } from '../../src/server/activity.js';
 import { SubmissionService } from '../../src/server/submissions.js';
-import { GoogleService } from '../../src/server/google.js';
-import { GoogleVault } from '../../src/server/google-vault.js';
 import { assertRequestOrigin } from '../../src/server/identity-http.js';
 import { readActivityModel } from '../../src/server/read-model.js';
 import { readConfig } from '../../src/server/config.js';
@@ -21,7 +19,7 @@ test('11.1～11.4 完整學生結果：三狀態、四子題只計一題、成�
  let database=openDatabase(path),identity!:IdentityService,app!:ReturnType<typeof createApplication>,base='';
  const launch=async(port=0)=>{
   identity=new IdentityService(database,password,Date.now,true);const db=database,id=identity;
-  app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),db,()=>{},{identity:id,google:new GoogleService(db,id,new GoogleVault(directory),null),activities:new ActivityService(db,id),submissions:new SubmissionService(db,id),authenticate:request=>{assertRequestOrigin(request);return id.principal(id.proof(request));},beforeRead:()=>id.sweep(),readModel:()=>readActivityModel(db,id)});
+  app=createApplication(readConfig({APP_DATA_DIR:directory,TEACHER_PASSWORD:password}),db,()=>{},{identity:id,activities:new ActivityService(db,id),submissions:new SubmissionService(db,id),authenticate:request=>{assertRequestOrigin(request);return id.principal(id.proof(request));},beforeRead:()=>id.sweep(),readModel:()=>readActivityModel(db,id)});
   const address=await app.listen(port);if(!address||typeof address==='string')throw new Error('測試服務未啟動');identity.markReady();base=`http://127.0.0.1:${address.port}`;return address.port;
  };
  const headers=new Map<Page,Record<string,string>>(),frames=new Map<Page,RealtimeFrame[]>();

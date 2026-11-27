@@ -1,0 +1,46 @@
+[WebServer] (node:5674) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:5785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 tests/browser/clock-pulse.spec.ts:16:1 › 13.3 頁面interval停止時，授權伺服器脈衝仍更新計時DOM (35.8s)
+(node:6859) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 tests/browser/exports.spec.ts:22:1 › 12.1～12.12 老師匯出三模式、D31、預檢取消、核對及放棄後完整成功換場 (35.7s)
+  ✘   3 tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 (8.6s)
+
+
+  1) tests/browser/clock-pulse.spec.ts:16:1 › 13.3 頁面interval停止時，授權伺服器脈衝仍更新計時DOM ───────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error Context: test-results/clock-pulse-13-3-頁面interval停止時，授權伺服器脈衝仍更新計時DOM/error-context.md
+
+  2) tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 ──────────────
+
+    Test was interrupted.
+
+    Error: page.goto: net::ERR_ABORTED; maybe frame was detached?
+    Call log:
+      - navigating to "http://127.0.0.1:3100/", waiting until "load"
+
+
+      4 |   const pages = await Promise.all(Array.from({ length: 3 }, () => context.newPage()));
+      5 |   for (const page of pages) {
+    > 6 |     await page.goto('/');
+        |                ^
+      7 |     await expect(page.getByRole('heading', { name: '課堂搶答系統', exact: true })).toBeVisible();
+      8 |     await expect(page.getByRole('status')).toHaveText('本機服務已連線');
+      9 |   }
+        at /Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system/tests/browser/foundation.spec.ts:6:16
+
+    Error Context: test-results/foundation-1-4-同一Chrome-context的多分頁均可載入React並連接同來源後端/error-context.md
+
+  1 failed
+    tests/browser/clock-pulse.spec.ts:16:1 › 13.3 頁面interval停止時，授權伺服器脈衝仍更新計時DOM ────────────────────
+  1 interrupted
+    tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 ───────────────
+  21 did not run
+  1 passed (3.0m)

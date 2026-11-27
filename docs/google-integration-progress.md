@@ -1,3 +1,5 @@
+> 新版已依使用者確認改用公開讀取／服務帳戶，個人OAuth功能退出。請先依[服務帳戶設定指南](google-service-account-setup.md)操作；本文OAuth相關操作與舊測試數據保留為歷史紀錄，不代表新版仍提供OAuth。
+
 # Google 授權整合進度
 
 日期：2026-11-26（Asia/Taipei）。Change：`build-local-classroom-response-system`。

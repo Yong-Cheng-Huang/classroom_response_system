@@ -1,3 +1,5 @@
+> 新版已依使用者確認改用公開讀取／服務帳戶，個人OAuth功能退出。請先依[服務帳戶設定指南](google-service-account-setup.md)操作；本文OAuth相關操作與舊測試數據保留為歷史紀錄，不代表新版仍提供OAuth。
+
 # Google OAuth 與 Sheets 測試資源設定
 
 日期：2026-11-26（Asia/Taipei）。使用者已確認目前尚未配置；本文件提供手動設定步驟，不代表任務 6.1 已完成或 Google 連結已可使用。

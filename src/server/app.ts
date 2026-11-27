@@ -13,7 +13,8 @@ import { AppError, publicError } from '../shared/errors.js';
 import { OrderedCommandQueue, createSqliteAllocator } from './command-queue.js';
 import { createApi, type ApiPorts } from './api.js';
 import { identityHttp } from './identity-http.js';
-import { googleHttp } from './google-http.js';
+import { sheetsHttp } from './sheets-http.js';
+import {ServiceAccountSheets,ServiceAccountTokens} from './service-account.js';
 import { exportHttp } from './export-http.js';
 import { importHttp } from './import-http.js';
 
@@ -26,7 +27,7 @@ export function createApplication(config: AppConfig, database: SqliteDatabase, l
   const realtime = new RealtimeService(ports,commands);
   const api = createApi(database, commands, ports);
   const sessions=ports.identity?identityHttp(ports.identity,commands):undefined;
-  const google=ports.identity&&ports.google?googleHttp(ports.google,ports.identity,commands,logger):undefined;
+  const sheets=ports.identity?sheetsHttp(ports.sheets??new ServiceAccountSheets(ports.identity,new ServiceAccountTokens(null)),ports.identity):undefined;
   const imports=ports.identity&&ports.imports?importHttp(ports.imports,ports.identity,commands):undefined;
 
   const exports=ports.identity&&ports.exports&&ports.activities?exportHttp(ports.exports,ports.identity,ports.activities,commands):undefined;
@@ -65,7 +66,7 @@ export function createApplication(config: AppConfig, database: SqliteDatabase, l
         }
         if(await realtime.http(request,response,url,operationId))return;
         if(sessions&&await sessions(request,response,url,operationId))return;
-        if(google&&await google(request,response,url,operationId))return;
+        if(sheets&&await sheets(request,response,url,operationId))return;
         if(imports&&await imports(request,response,url,operationId))return;
         if(exports&&await exports(request,response,url,operationId))return;
         if (await api(request, response, url, operationId)) return;

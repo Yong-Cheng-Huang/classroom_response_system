@@ -30,9 +30,10 @@ test('PUBLIC 最後一題失敗／取消／未確認／外部錯誤保留舊活�
 });
 test('PUBLIC 與Google解除獨立，仍驗老師／到期／版本；OAuth預設不回退',async t=>{
  const f=await publicImportFixture();t.after(f.close);
- assert.throws(()=>f.imports.begin(f.proof,url,2),{code:'GOOGLE_REAUTHORIZE'});assert.equal(f.oauthCalls(),0);
+ assert.throws(()=>f.imports.begin(f.proof,url,2),{code:'SHEETS_ACCESS_MODE_REQUIRED'});assert.equal(f.oauthCalls(),0);
  let release!:(r:Response)=>void;f.setTransport(()=>{f.setTransport(async()=>Response.json(sheetFixture(f1)));return new Promise(r=>{release=r;});});
- const pending=f.imports.inspect(f.imports.begin(f.proof,url,2,undefined,'PUBLIC'));f.google.disconnect(f.proof);release(Response.json(sheetFixture(f1)));
+ const pending=f.imports.inspect(f.imports.begin(f.proof,url,2,undefined,'PUBLIC'));// 無OAuth可解除；公開方式不依賴服務帳戶。
+ release(Response.json(sheetFixture(f1)));
  const ready=await pending,other=freshPublicProof(),grant=f.identity.login(f.password,other);Object.assign(other,{token:grant.token,generation:grant.generation});
  await assert.rejects(f.imports.commit(other,ready.inspectionToken,false),{code:'IMPORT_EXPIRED'});await f.imports.commit(f.proof,ready.inspectionToken,false);
  f.setTransport(()=>{f.setTransport(async()=>Response.json(sheetFixture(f1)));return new Promise(r=>{release=r;});});
@@ -48,7 +49,7 @@ test('PUBLIC 真HTTP老師限定options與模式，拒絕偽造、過期、偷�
  const post=(path:string,body:unknown,h=headers)=>fetch(f.base+path,{method:'POST',headers:h,body:JSON.stringify(body)});
  assert.equal((await get({})).status,401);assert.equal((await get({...headers,'X-Role':'TEACHER',Authorization:'Bearer invented'})).status,401);
  assert.equal((await get({...headers,'X-Document-Instance':'wrong'})).status,401);assert.equal((await get(headers,'?accessMode=PUBLIC')).status,400);
- const response=await get();assert.equal(response.status,200);assert.deepEqual((await response.json()).data,{publicConfigured:true});
+ const response=await get();assert.equal(response.status,200);assert.deepEqual((await response.json()).data,{publicConfigured:true,serviceAccountConfigured:false});
  for(const mode of ['public','INVALID',null,{},true])assert.equal((await post('/api/imports/inspect',{url,groupCount:2,accessMode:mode})).status,400);
  const inspected=await post('/api/imports/inspect',{url,groupCount:2,accessMode:'PUBLIC'}),preview=(await inspected.json()).data;assert.equal(inspected.status,200);
  for(const path of ['select','commit'])assert.equal((await post(`/api/imports/${preview.inspectionToken}/${path}`,{sheetId:'1',confirmed:false,accessMode:'OAUTH'})).status,400);

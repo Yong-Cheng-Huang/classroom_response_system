@@ -8,10 +8,10 @@
   },
   "scripts": {
     "dev": "node --env-file-if-exists=.env --import tsx src/server/index.ts --dev",
-    "build": "tsc -p tsconfig.server.json && vite build",
+    "build": "node scripts/clean-server-build.mjs && tsc -p tsconfig.server.json && vite build",
     "start": "node --env-file-if-exists=.env dist/server/index.js",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test tests/unit/*.test.ts tests/integration/*.test.ts",
+    "test": "node --import tsx --test --test-concurrency=1 tests/unit/*.test.ts tests/integration/*.test.ts",
     "test:unit": "node --import tsx --test tests/unit/*.test.ts",
     "test:db": "node --import tsx --test tests/integration/database.test.ts tests/integration/activity-replacement.test.ts",
     "test:http": "node --import tsx --test tests/integration/http.test.ts tests/integration/api.test.ts tests/integration/identity.test.ts tests/integration/activity.test.ts tests/integration/google.test.ts tests/integration/imports.test.ts tests/integration/realtime.test.ts tests/integration/submissions.test.ts tests/integration/results.test.ts tests/integration/exports.test.ts",
@@ -36,7 +36,8 @@
     "probe:acceptance42": "node --env-file-if-exists=.env --import tsx scripts/probes/acceptance-42.ts",
     "probe:performance-preflight": "node --import tsx scripts/probes/performance-preflight.ts",
     "probe:performance": "node --import tsx scripts/probes/performance-acceptance.ts",
-    "probe:public-import-live": "node --env-file-if-exists=.env --import tsx scripts/probes/public-import-live.ts"
+    "probe:public-import-live": "node --env-file-if-exists=.env --import tsx scripts/probes/public-import-live.ts",
+    "probe:service-account-live": "node --env-file-if-exists=.env --import tsx scripts/probes/service-account-live.ts"
   },
   "dependencies": {
     "better-sqlite3": "13.2.0",
