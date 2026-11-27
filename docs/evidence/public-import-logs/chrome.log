@@ -1,0 +1,33 @@
+[WebServer] (node:77871) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:77910) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/clock-pulse.spec.ts:16:1 › 13.3 頁面interval停止時，授權伺服器脈衝仍更新計時DOM (5.6s)
+  ✓   2 tests/browser/exports.spec.ts:23:1 › 12.1～12.12 老師匯出三模式、D31、預檢取消、核對及放棄後完整成功換場 (9.9s)
+  ✓   3 tests/browser/foundation.spec.ts:3:1 › 1.4 同一Chrome context的多分頁均可載入React並連接同來源後端 (2.5s)
+  ✓   4 tests/browser/google.spec.ts:18:1 › Google 連結畫面：另開授權頁不丟老師身分，兩老師共用、分頁登出不解除 (9.2s)
+  ✓   5 tests/browser/identity.spec.ts:17:1 › 正式身分：同一 Chrome 原生副本、交接競爭、重啟、到期與草稿撤銷 (14.4s)
+  ✓   6 tests/browser/measurement-http.spec.ts:16:1 › 13.3 診斷器保留HTTP已呈現的React DOM時刻，與稍後WS快照分開 (2.1s)
+  ✓   7 tests/browser/measurement.spec.ts:16:1 › 13.3 觀測器在真Chrome無序列化helper錯誤，React commit後才記錄實際狀態與DOM (2.6s)
+  ✓   8 tests/browser/pause.spec.ts:15:1 › D39 真Chrome受控凍結另列暫停，恢復正確結果；12小時已到期不得復活 (2.5s)
+  ✓   9 tests/browser/public-import.spec.ts:10:1 › 公開免Google：模式鎖定、取消重選、多表、學生作答到CSV；寫回仍拒絕 (2.4s)
+  ✓  10 tests/browser/public-import.spec.ts:26:1 › 公開缺配置提示與失敗不fallback、不登出，原OAuth選項保留 (1.9s)
+  ✓  11 tests/browser/ranking.spec.ts:18:1 › 8.1～8.7 同 Chrome 兩老師四學生：同組競爭、角色分流、重建後第三名及結束重送 (6.3s)
+  ✓  12 tests/browser/realtime.spec.ts:15:1 › 7.1～7.3 同 Chrome 兩老師與學生由 WS 套用快照；停用 view 輪詢仍同步 (19.0s)
+  ✓  13 tests/browser/recovery-queue.spec.ts:16:1 › 13.3 有效授權票證排隊1.8秒不遭短watchdog反覆中止，仍於5秒內恢復 (10.5s)
+  ✓  14 tests/browser/recovery.spec.ts:16:1 › 7.4～7.7 同 Chrome 背景心跳、關閉 30 秒移除、正常及 D38 重建自動恢復、結束與校時 (59.5s)
+  ✓  15 tests/browser/results.spec.ts:19:1 › 11.1～11.4 完整學生結果：三狀態、四子題只計一題、成功公開、無人題及重啟恢復 (11.1s)
+  ✓  16 tests/browser/student.spec.ts:29:1 › 9.1～9.6 學生表單：等待、同名組員、分頁草稿、四子題、鎖定、結束與換場 (20.1s)
+  ✓  17 tests/browser/student.spec.ts:77:1 › 9.4～9.6 送出前中斷、重整及相同 requestId 重試；儲存失敗不送出 (5.8s)
+  ✓  18 tests/browser/student.spec.ts:98:1 › 9.5 伺服器欄位錯誤、他人先送出，以及換場後延遲回覆不得復活草稿 (7.2s)
+  ✓  19 tests/browser/submission-csv.spec.ts:9:1 › CSV01～05 實際下載全組單題／四子題，位於匯入下方、免Google、UTF8中文與原排名 (3.7s)
+  ✓  20 tests/browser/submission-csv.spec.ts:27:1 › CSV01／08 JSON錯誤不下載，可重試取得零提交表頭 (3.6s)
+  ✓  21 tests/browser/submission-csv.spec.ts:32:55 › CSV08 logout 後取消延遲檔案，不觸發舊下載 (1.8s)
+  ✓  22 tests/browser/submission-csv.spec.ts:32:55 › CSV08 replacement 後取消延遲檔案，不觸發舊下載 (2.0s)
+  ✓  23 tests/browser/teacher.spec.ts:21:1 › 10.2～10.4 多老師獨立預覽、完整題組監看、同毫秒名次、結束及重啟保存 (7.0s)
+  ✓  24 tests/browser/teacher.spec.ts:77:1 › 10.1 老師匯入介面：繁體驗證、2／20組、選表、跨階段限制及替換清除提醒 (16.3s)
+
+  24 passed (4.0m)

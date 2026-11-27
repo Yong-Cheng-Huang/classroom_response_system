@@ -35,7 +35,8 @@
     "test:acceptance-security": "node --import tsx --test tests/integration/acceptance-security.test.ts tests/integration/realtime.test.ts tests/integration/results.test.ts",
     "probe:acceptance42": "node --env-file-if-exists=.env --import tsx scripts/probes/acceptance-42.ts",
     "probe:performance-preflight": "node --import tsx scripts/probes/performance-preflight.ts",
-    "probe:performance": "node --import tsx scripts/probes/performance-acceptance.ts"
+    "probe:performance": "node --import tsx scripts/probes/performance-acceptance.ts",
+    "probe:public-import-live": "node --env-file-if-exists=.env --import tsx scripts/probes/public-import-live.ts"
   },
   "dependencies": {
     "better-sqlite3": "13.2.0",

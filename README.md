@@ -33,11 +33,12 @@ npm start
 | `APP_PORT` | `3000`，固定啟動埠 |
 | `APP_DATA_DIR` | 專案根目錄下 `data/`，相對路徑不受啟動工作目錄影響 |
 | `TEACHER_PASSWORD` | 無預設值；未設定或全空白時老師登入停用，回傳繁體中文說明 |
+| `GOOGLE_SHEETS_API_KEY` | 可選；後端公開學習單讀取，不需老師 Google 登入；缺值只停用公開模式 |
 | `SHEETS_TEST_SPREADSHEET_ID` | 真實寫入測試使用的明確可寫副本；匯出探針另外建立私有隔離副本 |
 
 `.env`、資料庫、備份、測試產物與憑證不得提交版控。資料目錄不能置於 `src/`、`dist/` 或 `node_modules/`，避免被網頁服務讀取。在 `.env` 設定非空的 `TEACHER_PASSWORD`，重新啟動後即可使用「老師登入」。沒有預設密碼。老師登出只影響當前分頁；修改啟動密碼並重啟會撤銷全部舊老師身分。
 
-空資料庫會顯示「等待老師匯入活動」，不會自動建立種子活動。老師完成 Google 授權後，可貼單題／題組範本網址、設定 2～20 組、選表並確認匯入。若舊 dev 服務仍在執行，須先停止再重新 `npm run dev`，才會載入新的後端。
+空資料庫會顯示「等待老師匯入活動」，不會自動建立種子活動。老師可選「公開學習單（免 Google 登入）」讀取公開可查看的原表（管理者須先設定 API key），或完成 Google 授權讀取私有文件；兩者皆可貼單題／題組範本網址、設定 2～20 組、選表並確認匯入。若舊 dev 服務仍在執行，須先停止再重新 `npm run dev`，才會載入新的後端。
 
 Google 真實授權及兩份副本讀取已驗證，包含正常重啟及單題實際匯入；第一次配置新環境仍須操作者自行在 Google 頁面同意。client JSON 路徑由 `GOOGLE_OAUTH_CLIENT_FILE` 設定，預設為 `APP_DATA_DIR/google-oauth-client.json`；token 只由後端加密保存在資料目錄，學生不取得憑證。
 
@@ -70,6 +71,7 @@ npm run test:startup
 - [活動生命週期、換場服務與驗證](docs/activity-management.md)。
 - [Google OAuth 與可寫 Sheets 副本設定步驟](docs/google-oauth-setup.md)。
 - [Google 授權實作與初期驗證紀錄](docs/google-integration-progress.md)。
+- [公開學習單設定、模式與限制](docs/public-guided-notes.md)。
 - [Guided Notes 匯入操作與完整階段驗證](docs/guided-notes-import.md)。
 - [學生作答、草稿、提交確認與階段驗證](docs/student-participation.md)。
 - [老師管理、題目預覽與完整提交監看](docs/teacher-console.md)。
