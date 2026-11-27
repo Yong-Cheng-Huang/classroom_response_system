@@ -3,84 +3,112 @@
     "檔案": "package-lock.json",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b"
+    "SHA256": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+    "原驗證路徑": "package-lock.json",
+    "歷史SHA256": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b"
   },
   {
     "檔案": "docs/requirements.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413"
+    "SHA256": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
+    "原驗證路徑": "docs/requirements.md",
+    "歷史SHA256": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/proposal.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/proposal.md",
     "與第12階段相同": false,
-    "授權變更": "D39、D40（使用者明確確認）",
-    "SHA256": "b4084a1420abf6a28471d08e0e8395e2b9bde87c87a71e8fddfbe7d3a6667646"
+    "授權變更": "D39、D40及D41（使用者明確確認紀錄型驗收）；已歸檔",
+    "SHA256": "39936a6b56089e3ce5251ede3620d8065a7b12f40b3b2fe2b02a3d49b7ad7df6",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/proposal.md",
+    "歷史SHA256": "b4084a1420abf6a28471d08e0e8395e2b9bde87c87a71e8fddfbe7d3a6667646"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/design.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/design.md",
     "與第12階段相同": false,
-    "授權變更": "D39、D40（使用者明確確認）",
-    "SHA256": "52d6f2704ac7d2d72dea11313c009caabc2f23ce1bd4e83a4189b2b1f5713d3d"
+    "授權變更": "D39、D40及D41（使用者明確確認紀錄型驗收）；已歸檔",
+    "SHA256": "d14d85bc532384311273319ffb60eedc9360818267139268d85f08794bfd925a",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/design.md",
+    "歷史SHA256": "52d6f2704ac7d2d72dea11313c009caabc2f23ce1bd4e83a4189b2b1f5713d3d"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "d341472f9a1d5d0532f0824b10c7f9fbc25a5bef92d0ecc8e5d3c83e7f89a86c"
+    "SHA256": "d341472f9a1d5d0532f0824b10c7f9fbc25a5bef92d0ecc8e5d3c83e7f89a86c",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+    "歷史SHA256": "d341472f9a1d5d0532f0824b10c7f9fbc25a5bef92d0ecc8e5d3c83e7f89a86c"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae"
+    "SHA256": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+    "歷史SHA256": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "588d4e02d091cec7f651f04703a3e2837ddc444828cebed506bbaeb1c67dc416"
+    "SHA256": "588d4e02d091cec7f651f04703a3e2837ddc444828cebed506bbaeb1c67dc416",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+    "歷史SHA256": "588d4e02d091cec7f651f04703a3e2837ddc444828cebed506bbaeb1c67dc416"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "0560e630233b128a0a8e5ac18a737ecbd59db0172589a91abce6948ca421f13c"
+    "SHA256": "0560e630233b128a0a8e5ac18a737ecbd59db0172589a91abce6948ca421f13c",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+    "歷史SHA256": "0560e630233b128a0a8e5ac18a737ecbd59db0172589a91abce6948ca421f13c"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "094d8565f9adc0f524283f85c53cd6650b4a6988a97ff520dc0e6e7268a341b6"
+    "SHA256": "094d8565f9adc0f524283f85c53cd6650b4a6988a97ff520dc0e6e7268a341b6",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+    "歷史SHA256": "094d8565f9adc0f524283f85c53cd6650b4a6988a97ff520dc0e6e7268a341b6"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "9ee9c5cd099c2c45d71b935eae3945ee454279d17583fe46b145b37b8661eaae"
+    "SHA256": "9ee9c5cd099c2c45d71b935eae3945ee454279d17583fe46b145b37b8661eaae",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+    "歷史SHA256": "9ee9c5cd099c2c45d71b935eae3945ee454279d17583fe46b145b37b8661eaae"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "4d96e9b5ed4bd1134e3b596c92ab6568eb70944f54da9c8d61c0bbbd69b76bfc"
+    "SHA256": "4d96e9b5ed4bd1134e3b596c92ab6568eb70944f54da9c8d61c0bbbd69b76bfc",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+    "歷史SHA256": "4d96e9b5ed4bd1134e3b596c92ab6568eb70944f54da9c8d61c0bbbd69b76bfc"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
     "與第12階段相同": false,
-    "授權變更": "D39、D40（使用者明確確認）",
-    "SHA256": "6a1bfb7b710abce43f0947c79b5140cdada4e538b183bebd73cc73464afb3220"
+    "授權變更": "D39、D40及D41（使用者明確確認紀錄型驗收）；已歸檔",
+    "SHA256": "f81ad741452bfcb46c37ac579e1e40d85fcd6761068db66d82bd3361cbfed189",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+    "歷史SHA256": "6a1bfb7b710abce43f0947c79b5140cdada4e538b183bebd73cc73464afb3220"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "d6e8efc179e7bbab07ed658b57b8fc3903ca6d41d82a410e32cd736eda527792"
+    "SHA256": "d6e8efc179e7bbab07ed658b57b8fc3903ca6d41d82a410e32cd736eda527792",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+    "歷史SHA256": "d6e8efc179e7bbab07ed658b57b8fc3903ca6d41d82a410e32cd736eda527792"
   },
   {
-    "檔案": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+    "檔案": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md",
     "與第12階段相同": true,
     "授權變更": null,
-    "SHA256": "5f73af6dc2c977f701bedad0c8e449a133a87eb00d42dc44d0ed1164772f776f"
+    "SHA256": "5f73af6dc2c977f701bedad0c8e449a133a87eb00d42dc44d0ed1164772f776f",
+    "原驗證路徑": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+    "歷史SHA256": "5f73af6dc2c977f701bedad0c8e449a133a87eb00d42dc44d0ed1164772f776f"
   }
 ]

@@ -9,24 +9,24 @@
 本次重新讀取現有文件，沒有沿用上一階段「已完整」的結論作為證據。審查來源如下：
 
 - [原始需求](requirements.md)，全文 188 行。
-- [proposal.md](../openspec/changes/build-local-classroom-response-system/proposal.md)。
-- [design.md](../openspec/changes/build-local-classroom-response-system/design.md)，含 D01～D31、例外及逐條來源追蹤表。
-- [tasks.md](../openspec/changes/build-local-classroom-response-system/tasks.md)，13 群組、79 個未完成任務。
+- [proposal.md](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/proposal.md)。
+- [design.md](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/design.md)，含 D01～D31、例外及逐條來源追蹤表。
+- [tasks.md](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/tasks.md)，13 群組、79 個未完成任務。
 - 下表十份變更規格，以及 `.openspec.yaml`、`openspec/config.yaml`。
 - 本對話中已確認的範本結構、D01～D31，作為補充與例外的授權依據；未重新讀取或修改遠端學習單。
 
 | 規格 | 需求數 | 情境數 | 範圍 |
 |---|---:|---:|---|
-| [identity-access](../openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md) | 9 | 14 | 密碼、分頁、暱稱、期限與授權 |
-| [activity-lifecycle](../openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md) | 6 | 12 | 狀態、確認、替換、清除與計時 |
-| [guided-notes-import](../openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md) | 7 | 11 | 網址、選表、範本、題組與匯入原子性 |
-| [teacher-console](../openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md) | 5 | 5 | 老師預覽、控制與完整結果 |
-| [student-participation](../openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md) | 7 | 10 | 選組、組員、題目與草稿 |
-| [realtime-recovery](../openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md) | 7 | 9 | 同步、寬限、重連與效能 |
-| [submission-ranking](../openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md) | 8 | 12 | 驗證、一次提交、原子性與排名 |
-| [activity-results](../openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md) | 5 | 5 | 結果、計分與資料公開 |
-| [guided-notes-export](../openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md) | 13 | 16 | 三模式、變更保護、恢復與 D31 |
-| [persistence-security](../openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md) | 8 | 8 | 持久化、Google 連結與安全 |
+| [identity-access](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md) | 9 | 14 | 密碼、分頁、暱稱、期限與授權 |
+| [activity-lifecycle](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md) | 6 | 12 | 狀態、確認、替換、清除與計時 |
+| [guided-notes-import](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md) | 7 | 11 | 網址、選表、範本、題組與匯入原子性 |
+| [teacher-console](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md) | 5 | 5 | 老師預覽、控制與完整結果 |
+| [student-participation](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md) | 7 | 10 | 選組、組員、題目與草稿 |
+| [realtime-recovery](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md) | 7 | 9 | 同步、寬限、重連與效能 |
+| [submission-ranking](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md) | 8 | 12 | 驗證、一次提交、原子性與排名 |
+| [activity-results](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md) | 5 | 5 | 結果、計分與資料公開 |
+| [guided-notes-export](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md) | 13 | 16 | 三模式、變更保護、恢復與 D31 |
+| [persistence-security](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md) | 8 | 8 | 持久化、Google 連結與安全 |
 | **合計** | **75** | **102** | 全部為 ADDED Requirements |
 
 方法：逐段語意比對原需求與規格；重算需求／情境／任務；核對 Given／When／Then、規格 ID 與任務引用；檢查生命週期及故障時序；以官方技術文件核對關鍵 API 保證；重新執行嚴格驗證。自動統計只能證明結構與引用，不替代語意審查。

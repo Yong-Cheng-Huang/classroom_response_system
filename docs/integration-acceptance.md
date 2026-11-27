@@ -1,10 +1,10 @@
 # 第 13 階段整合驗收報告
 
-Change：`build-local-classroom-response-system`。目前 **84／85**，13.6 文件交付完成，13.3 固定效能仍未勾選，**不宣告整體驗收完成**。D39 已依使用者確認登錄；D37 的 HTTP／WS 呈現測點已由使用者確認為 D40，完整同版驗收尚未完成。使用者指示「繼續」後，持續診斷與回歸，沒有執行 Verify、規格同步或 Archive。
+Change：`build-local-classroom-response-system`。目前 **85／85，依D41完成紀錄型驗收**。使用者於2026-11-27明確同意「既有量測、功能測試及缺失紀錄齊備即完成」，原1秒／5秒與完整60輪改列後續改善目標，**原效能目標仍未全面達標**；本Change已同步主規格並歸檔，沒有執行獨立Verify。
 
 ## 需求與決策保留
 
-原始 `docs/requirements.md` 逐字保留，SHA-256：`498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413`。[追蹤表](integration-traceability.md)及[完整 JSON](evidence/integration-traceability.json)核對 L4～L188 的 152 列內容，對應 78 項需求、122 個情境、D01～D40，未對應原文為零。每個情境列出 Given／When／Then、實際測試或階段證據；索引存在不代表所有時限已通過。
+原始 `docs/requirements.md` 逐字保留，SHA-256：`498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413`。[追蹤表](integration-traceability.md)及[完整 JSON](evidence/integration-traceability.json)核對 L4～L188 的 152 列內容，對應 78 項需求、122 個情境、D01～D41，未對應原文為零。每個情境列出 Given／When／Then、實際測試或階段證據；索引存在不代表所有時限已通過。
 
 D39：真正 Chrome 凍結／丟棄及 macOS 休眠另列暫停，一般背景維持同步與計時 1 秒、有效分頁恢復 5 秒。恢復仍依原分頁證明、固定 12 小時、撤銷及活動規則，不新增寬限，不復活失效身分，不刪失敗樣本。D40 進一步確認首次正確 DOM 測點與 WS 時刻另列，已授權修訂 proposal、design、RR08、13.1／13.3 及量測設定版本 3。其他受保護規格與套件鎖定檔未改，見 [雜湊核對](evidence/integration-protected-files.json)。U03 仍僅維持未核實範圍隔離。
 
@@ -20,7 +20,7 @@ D39：真正 Chrome 凍結／丟棄及 macOS 休眠另列暫停，一般背景�
 
 前期載入、輸入、連線池屏障、舊匯出狀態斷言及清理失敗全部保留。成功輪最後清理 ENOTEMPTY 導致原 CLI exit 1；功能通過與清理更正分列於 [cleanup 證據](evidence/acceptance-42-cleanup.json)，不能聲稱原命令 exit 0。Playwright／測試版先前試跑不冒充本輪原生零售版證據。
 
-## 13.3 固定效能與量測釐清：未完成
+## 13.3 紀錄型驗收：依D41完成；原效能目標未全面達標
 
 設定仍為 F1～F3 各 20 輪、42 分頁、20 組及全部固定批次，沒有放寬 1／5 秒或以資料量當產品上限。[量測方法](performance-measurement.md)及 [最新程序摘要](evidence/performance-acceptance.json)說明時間軸、誤差及保存方式；全部歷史嘗試在 `docs/evidence/performance/`，不能合併不同版本的單輪成功充作同版完整 60 輪。
 
@@ -30,7 +30,7 @@ F3 單輪開始預檢曾取得 42 筆有效樣本，最壞上界約 578ms，僅�
 
 受控真 Chrome 測試重現：HTTP 完整讀模已在 React DOM 正確呈現時，WS 快照可能尚未到達。原觀測器只保存與 WS 快照相符的 React commit，會漏掉較早的 HTTP 呈現。因此，歷史數據能證明 WS 關聯套用較晚，**不能單獨證明每一筆實際畫面較晚**；先前過於確定的歸因已更正，數據不改寫，見 [更正紀錄](evidence/performance-measurement-errata.json)。
 
-新增獨立 DOM 時間線、HTTP／WS 收送與 React 時刻；使用者已明確確認 D40：T_apply 採實際正確 DOM 首次呈現，另列 WS revision／到達／套用時間；同步與計時 1 秒不變，5 秒恢復仍須授權 WS 快照、正確角色／組別／成員／提交／畫面及計時皆恢復。已同步正式 artifact 與工具，歷史資料保留；**完整同版 60 輪通過前不勾 13.3。**
+新增獨立 DOM 時間線、HTTP／WS 收送與 React 時刻；使用者已明確確認 D40：T_apply 採實際正確 DOM 首次呈現，另列 WS revision／到達／套用時間；同步與計時 1 秒不變，5 秒恢復仍須授權 WS 快照、正確角色／組別／成員／提交／畫面及計時皆恢復。已同步正式 artifact 與工具，歷史資料保留；此為D40當時的完成標準；現依使用者確認D41改採紀錄型驗收，完整60輪保留為後續目標。
 
 ### 逐頁恢復測點與未達標
 
@@ -42,7 +42,7 @@ F3 單輪開始預檢曾取得 42 筆有效樣本，最壞上界約 578ms，僅�
 | 修正測點後 18:12 分段診斷 | F1 重整仍 9 頁超過 5 秒，最壞上界 **5268.13ms**；不是完整 60 輪。 |
 | 18:14 首頁快取比較 | 入組已有 105 筆同步超過 1 秒，最壞 **1937.52ms**，未走到重整，不能判定快取改善或造成該結果；試驗性產品修改已撤回。 |
 
-見[診斷界線](evidence/performance-diagnosis.json)、[全部嘗試](evidence/performance-attempts.json)與[測點更正](evidence/performance-measurement-errata.json)。根因尚未定位，首頁 I/O、Node 事件迴圈／持久化負載與 Chrome 導覽排隊仍是待驗假說。普通背景前置已成立，沒有證據可把這些超時歸類為 D39 暫停。**13.3 保持未完成，不宣告整體驗收通過。**
+見[診斷界線](evidence/performance-diagnosis.json)、[全部嘗試](evidence/performance-attempts.json)與[測點更正](evidence/performance-measurement-errata.json)。根因尚未定位，首頁 I/O、Node 事件迴圈／持久化負載與 Chrome 導覽排隊仍是待驗假說。普通背景前置已成立，沒有證據可把這些超時歸類為 D39 暫停。**13.3依D41完成紀錄型驗收；上述原效能缺失與未執行輪次仍保留。**
 
 ### 已修正並有回歸的路徑
 
@@ -92,14 +92,24 @@ npm run audit:traceability
 
 已正常重啟本機服務，先前十個業務資料表內容雜湊前後相同，包含活動、題目、答案、名次、Google 連結及匯出管理，序號未倒退；[保存證據](evidence/integration-production-preservation.json)記錄該次重啟。續作後又正常重啟並核對十個業務表內容相同、序號不倒退，含目前保留的續接／輪詢／計時修正，見[最新重啟保存](evidence/integration-production-current.json)。本次最後僅修正測試工具與文件，首頁快取試驗已撤回；目前 3000 健康檢查 schema 3 可用。
 
-## 尚待處理
+## 後續改善與已知限制（D41非歸檔阻擋）
 
 | 項目 | 狀態與下一步 |
 |---|---|
-| D40 已確認 | 首次正確DOM與WS時間線分列，原門檻保持；完整程序未通過。 |
-| 13.3 固定時限 | 同版 60 輪尚未完成；依已確認D40及原負載、門檻及背景狀態完整執行，報全部失敗與最壞值。 |
+| D40 已確認 | 首次正確DOM與WS時間線分列；原門檻為後續目標，完整程序未通過。 |
+| 13.3 固定時限 | 同版60輪尚未完成，依D41改列後續改善；現階段核對既有數據、失敗與未執行輪次，沒有補算通過。 |
 | 有視窗補充前置 | 解鎖確認後實際 hidden 前置成立，個別恢復補充通過；不能取代 42 分頁效能驗收。 |
 | 真正丟棄／OS 休眠 | 未主動實驗，依 D39 分列，不宣稱已通過。 |
 | U03 | 解除未核實範圍政策仍未確認，既有隔離繼續有效。 |
 
-最新任務、測試、原需求與檔案雜湊見 [交付彙整](evidence/integration-verification.json)。原始需求完整保留，未自行降低門檻、刪功能、改技術堆疊或進入封存。
+最新任務、測試、原需求與檔案雜湊見 [交付彙整](evidence/integration-verification.json)。原始需求與原始樣本完整保留；D41為使用者明確確認的驗收放寬，不刪功能、不改技術堆疊。
+
+## D41 完成紀錄（2026-11-27）
+
+[決策與核對清單](evidence/performance-acceptance-policy.json)記錄8類完成條件與18次歷史程序。既有功能回歸為157項單元／整合、22項Chrome與1項啟動通過（見CSV交付日誌），真Google42頁功能流程通過及原清理exit 1界線保持。此次沒有重跑或重分類舊效能樣本，沒有改寫1.94秒、5.27秒等原數據。
+
+D41只取消數值與完整60輪作為本版結案阻擋；身分隔離、期限、恢復裁定、每組每題一次、交易原子性、學生資料可見性與持久化契約仍須成立。完整原目標驗證、效能瓶頸定位、真正丟棄與OS休眠列為後續改善，不以任務勾選冒稱已實驗。
+
+## 歸檔與驗證
+
+原系統Change已歸檔至 [提案](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/proposal.md)；14份規劃檔與metadata完整保留。10份主規格已同步，連同既有CSV共11份規格通過Strict Validate；歸檔後追蹤稽核仍可執行，152列原文／78需求／122情境／41決策未遺漏。見 [歸檔驗證](evidence/d41-logs/archive-validation.json)與 [稽核日誌](evidence/d41-logs/traceability.log)。此次未重跑應用程式或效能測試，原始數據、測試及資料庫schema均未改；僅維護稽核工具使其可讀歸檔設計。

@@ -257,7 +257,7 @@
     "src/client/submission-csv.tsx": "07787fc634411e4d671e120ec97b9a988f0c554ccaa6b5010778918167f6e59e",
     "src/client/session.ts": "21590184be2619a41dd3027f019afe295a854270ef5939d5831b70dff3c0653d",
     "src/client/main.tsx": "8e5281f8ef83fc20c03d6e49dccc54ac203405be0ad5c24c582b16226bc0e168",
-    "docs/submission-csv-export.md": "0614b0d9485f12a3a635724c31a9a9c0a8626df609b00dcb71168661598e2015",
+    "docs/submission-csv-export.md": "3006781c90211c3857923f785073e50df34412343aa59bf48e9c7c2e35834732",
     "docs/local-operation-guide.md": "2fae0352bf6be17cd51794e767d1511db2bc2c8b56c426ad7351b365c04a7ee0"
   },
   "OpenSpec同步與歸檔": {
@@ -275,5 +275,11 @@
     "全案驗證結果": "2／2通過，無issues",
     "原系統Change": "84／85保持開放，13.3未完成；不在本次同步或歸檔範圍",
     "主規格SHA256": "7174bfdfc70a7966fe0da338d016178e710677275aa7cec97172a8437a1105b8"
+  },
+  "後續原系統D41狀態": {
+    "進度": "85／85",
+    "完成方式": "使用者明確確認紀錄型驗收",
+    "原效能目標全面通過": false,
+    "證據": "docs/evidence/performance-acceptance-policy.json"
   }
 }

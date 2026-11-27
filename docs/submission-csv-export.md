@@ -30,4 +30,6 @@ CSV 匯出本場所有已受理並保存的提交，包含未搶到的紀錄，�
 
 2026-11-27（Asia/Taipei）：使用者確認功能測試無問題並授權合併後，另指示同步與歸檔。已將8項需求／16個情境完整同步至 [主規格](../openspec/specs/submission-records-export/spec.md)，原 Purpose 及需求／情境內容保留；7／7任務完成的 Change 連同 metadata 原樣移至 [歸檔提案](../openspec/changes/archive/2026-11-27-add-submission-records-csv-export/proposal.md)。
 
-主規格 Strict Validate 1／1通過；同步歸檔後全案 Strict Validate 2／2通過（CSV主規格與仍開放的原系統Change）。原系統仍84／85，13.3效能缺失未完成，沒有同步或歸檔該原系統Change，也沒有修改原 requirements.md 或系統程式。
+主規格 Strict Validate 1／1通過；同步歸檔後全案 Strict Validate 2／2通過（CSV主規格與仍開放的原系統Change）。CSV歸檔當時原系統仍84／85，13.3效能缺失未完成，沒有同步或歸檔該原系統Change，也沒有修改原 requirements.md 或系統程式。
+
+後續狀態：使用者另於2026-11-27確認D41，原系統依紀錄型驗收完成85／85並歸檔。原效能目標與原失敗數據未改成通過，見 [D41證據](evidence/performance-acceptance-policy.json)。

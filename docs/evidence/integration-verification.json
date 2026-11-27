@@ -3,29 +3,28 @@
   "Change": "build-local-classroom-response-system",
   "任務": {
     "總數": 85,
-    "完成": 84,
-    "未完成": [
-      "13.3 固定效能"
-    ],
+    "完成": 85,
+    "未完成": [],
     "本階段完成": [
       "13.1",
       "13.2",
+      "13.3",
       "13.4",
       "13.5",
       "13.6"
     ],
     "本次最後完成": [
-      "13.6"
+      "13.3（依D41紀錄型驗收）"
     ],
-    "CLI核對": "勾選前83／85，勾選後84／85；sourcePath／line／任務原文逐字核對；13.3仍false"
+    "CLI核對": "依最新sourcePath／line／任務原文核對；84／85→85／85，all_done"
   },
   "規格": {
     "需求": 78,
     "情境": 122,
-    "決策": 40,
+    "決策": 41,
     "原文內容列": 152,
     "未對應原文": 0,
-    "StrictValidate": "通過1／1，無issues；不是實作Verify"
+    "StrictValidate": "D41修訂Change1／1、同步及歸檔後主規格11／11通過"
   },
   "測試": {
     "型別檢查": {
@@ -65,7 +64,7 @@
     },
     "固定效能": {
       "通過": false,
-      "任務": "13.3保留未完成",
+      "任務": "13.3依D41紀錄型驗收完成；原數值及60輪目標仍未通過",
       "完整60輪": false,
       "證據": "docs/evidence/performance-attempts.json",
       "測點更正": "docs/evidence/performance-measurement-errata.json",
@@ -73,20 +72,28 @@
         "超過5秒": 9,
         "最壞上界ms": 5268.125874976151
       },
-      "首頁快取實驗": "未走到重整，入組105筆>1秒；無法歸因，產品試驗已撤回"
+      "首頁快取實驗": "未走到重整，入組105筆>1秒；無法歸因，產品試驗已撤回",
+      "紀錄型驗收完成": true
     },
     "G2": {
       "證據": "docs/evidence/g2-confirmed-recovery-probe.json",
       "狀態": "D38_BOUNDARY_PASS",
       "案例": 5
+    },
+    "最近功能回歸": {
+      "單元與整合": 157,
+      "Chrome": 22,
+      "正式啟動": 1,
+      "來源": "docs/evidence/csv-export-verification.json",
+      "本輪重跑功能或效能測試": false
     }
   },
   "重要界線": [
-    "不宣告完整驗收通過，不勾13.3，不合併不同版本單輪成功",
-    "已保留D39／D40使用者確認，原1秒與5秒門檻不變",
-    "真正丟棄與OS休眠未主動實測；普通hidden未被排除為暫停",
-    "U03解除未核實範圍政策仍未確認，保護隔離有效",
-    "未執行Verify、Sync或Archive"
+    "依D41完成紀錄型驗收，不宣告原1秒／5秒或完整60輪全面通過",
+    "所有原始效能失敗與未執行輪次保留，不修改舊結果",
+    "身分、期限、權限、原子性及持久化功能不放寬",
+    "真正丟棄與OS休眠未實驗，後續改善保留",
+    "U03解除政策仍未確認，既有保護隔離不變"
   ],
   "正式服務": {
     "啟動": "npm run dev",
@@ -126,13 +133,9 @@
   "SHA256": {
     "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
     "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
-    "tests/helpers/restoration-measurement.ts": "b827d78269d89e72af6309d5d2d5296fe25cefa9e7c433143b4f83821f422c50",
-    "tests/helpers/react-measurement.browser.js": "8c4b59136fbeede211b1c545b389b5e3b52cde02f8c65823f7f61040bee4726e",
-    "scripts/probes/performance-acceptance.ts": "8cd4f07ee664a054bf610e941e58ce871788aac995026ac138fbfa3b6076a74d",
-    "docs/integration-acceptance.md": "6573a70ac81f5581bb5ce71dd5f374a446d85423ba1835bf520cbd24ec1bb9ec",
-    "docs/local-operation-guide.md": "ecbc51e519d7579c19f398beafa1a9f4d32bf423cd4fdfa71548a34e9077544e",
-    "docs/performance-measurement.md": "2bbe922a557efd2c353a4335e2913af48bc1aaea576e0682d76274c253cee3ea",
-    "openspec/changes/build-local-classroom-response-system/tasks.md": "d65c1c1e110a162f65f2e900f11359da17fee408b5125adf373aaa4633589009"
+    "docs/integration-acceptance.md": "e52c546a26c6712281a585a70e08f9f1cdf4cc603010bbf229bbae1fefc7192f",
+    "docs/local-operation-guide.md": "33c89d30c3ceb427988098b1b3a4067a5b98b434c99d9e5cb0188fafafbd1625",
+    "docs/performance-measurement.md": "b9880681e937611a25d7c0f183c1f14bece85356194d361c254e010adea605f8"
   },
   "交付": [
     "docs/integration-acceptance.md",
@@ -142,5 +145,42 @@
     "docs/performance-measurement.md",
     "docs/evidence/performance-diagnosis.json"
   ],
-  "文件完成界線": "122個情境均列證據與狀態；固定時限及未實驗的暫停情境明列缺失；13.6文件交付完成，整體85項未完成。"
+  "文件完成界線": "依D41紀錄型完成85項任務，舊效能目標與剩餘技術風險明列為後續改善。",
+  "D41驗收政策": "docs/evidence/performance-acceptance-policy.json",
+  "歷史交付SHA256": {
+    "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
+    "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+    "tests/helpers/restoration-measurement.ts": "b827d78269d89e72af6309d5d2d5296fe25cefa9e7c433143b4f83821f422c50",
+    "tests/helpers/react-measurement.browser.js": "8c4b59136fbeede211b1c545b389b5e3b52cde02f8c65823f7f61040bee4726e",
+    "scripts/probes/performance-acceptance.ts": "8cd4f07ee664a054bf610e941e58ce871788aac995026ac138fbfa3b6076a74d",
+    "docs/integration-acceptance.md": "6573a70ac81f5581bb5ce71dd5f374a446d85423ba1835bf520cbd24ec1bb9ec",
+    "docs/local-operation-guide.md": "ecbc51e519d7579c19f398beafa1a9f4d32bf423cd4fdfa71548a34e9077544e",
+    "docs/performance-measurement.md": "2bbe922a557efd2c353a4335e2913af48bc1aaea576e0682d76274c253cee3ea",
+    "openspec/changes/build-local-classroom-response-system/tasks.md": "d65c1c1e110a162f65f2e900f11359da17fee408b5125adf373aaa4633589009"
+  },
+  "歸檔": {
+    "日期": "2026-11-27 Asia/Taipei",
+    "路徑": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system",
+    "完成依據": "D41紀錄型驗收，原效能目標未全面通過",
+    "主規格含CSV": 11,
+    "嚴格驗證": "docs/evidence/d41-logs/archive-validation.json",
+    "稽核日誌": "docs/evidence/d41-logs/traceability.log",
+    "原始資料保護": "原始效能樣本、應用程式、測試、schema與原需求SHA256核對一致"
+  },
+  "歸檔檔案SHA256": {
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/.openspec.yaml": "4492318684c90914e715dee55afe9b23f60f7465350ada31d1d9437964f126f8",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/tasks.md": "83b4524afdf2e3e9e9b438961a437d9f1aa5838a2c841c7dff1a24ca192373d3",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/design.md": "d14d85bc532384311273319ffb60eedc9360818267139268d85f08794bfd925a",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/proposal.md": "39936a6b56089e3ce5251ede3620d8065a7b12f40b3b2fe2b02a3d49b7ad7df6",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md": "d341472f9a1d5d0532f0824b10c7f9fbc25a5bef92d0ecc8e5d3c83e7f89a86c",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md": "588d4e02d091cec7f651f04703a3e2837ddc444828cebed506bbaeb1c67dc416",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md": "0560e630233b128a0a8e5ac18a737ecbd59db0172589a91abce6948ca421f13c",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md": "094d8565f9adc0f524283f85c53cd6650b4a6988a97ff520dc0e6e7268a341b6",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md": "9ee9c5cd099c2c45d71b935eae3945ee454279d17583fe46b145b37b8661eaae",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md": "4d96e9b5ed4bd1134e3b596c92ab6568eb70944f54da9c8d61c0bbbd69b76bfc",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md": "f81ad741452bfcb46c37ac579e1e40d85fcd6761068db66d82bd3361cbfed189",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md": "d6e8efc179e7bbab07ed658b57b8fc3903ca6d41d82a410e32cd736eda527792",
+    "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md": "5f73af6dc2c977f701bedad0c8e449a133a87eb00d42dc44d0ed1164772f776f"
+  }
 }

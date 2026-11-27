@@ -4,7 +4,7 @@
     "原始內容列": 152,
     "需求": 78,
     "情境": 122,
-    "決策": 40,
+    "決策": 41,
     "未對應原文": 0
   },
   "原始需求SHA256": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
@@ -53,6 +53,7 @@
         "tests/browser/identity.spec.ts",
         "tests/integration/acceptance-security.test.ts",
         "docs/evidence/identity-verification.json",
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -339,6 +340,7 @@
         "tests/integration/export-crash.test.ts",
         "tests/integration/google.test.ts",
         "docs/evidence/export-verification.json",
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -360,6 +362,7 @@
         "RR03"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -629,6 +632,7 @@
         "RR01"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -1526,6 +1530,7 @@
         "RR03"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2056,6 +2061,7 @@
         "RR01"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2078,6 +2084,7 @@
         "RR01"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2100,6 +2107,7 @@
         "RR01"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2122,6 +2130,7 @@
         "RR01"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2144,6 +2153,7 @@
         "RR02"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2167,6 +2177,7 @@
         "RR06"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2190,6 +2201,7 @@
         "RR06"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2273,6 +2285,7 @@
         "RR06"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2355,6 +2368,7 @@
         "RR07"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2377,6 +2391,7 @@
         "RR07"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2399,6 +2414,7 @@
         "RR07"
       ],
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2530,6 +2546,7 @@
       "已確認內容": "斷線約 30 秒寬限，逾期失效移除，進行中不可再加入",
       "規格與任務": "RR03、IA09",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2555,6 +2572,7 @@
       "已確認內容": "停機不計寬限，恢復後原有效身分重新有約 30 秒；不復活已失效者",
       "規格與任務": "RR04",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2889,6 +2907,7 @@
       "已確認內容": "驗收 2 老師＋40 學生、20 組各 2 人，不是產品人數上限",
       "規格與任務": "RR02、RR07",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2902,13 +2921,14 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     },
     {
       "決策": "D26",
       "已確認內容": "本機正常時完成操作後 1 秒同步、計時差異至多 1 秒",
       "規格與任務": "RR02",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2922,13 +2942,14 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     },
     {
       "決策": "D27",
       "已確認內容": "可用後有效開啟分頁 5 秒內自動重連恢復，不需人工操作",
       "規格與任務": "RR05",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2942,7 +2963,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     },
     {
       "決策": "D28",
@@ -2954,6 +2975,7 @@
         "tests/browser/identity.spec.ts",
         "tests/integration/acceptance-security.test.ts",
         "docs/evidence/identity-verification.json",
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -2967,7 +2989,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     },
     {
       "決策": "D29",
@@ -3053,6 +3075,7 @@
       "已確認內容": "R03：明定連線／寬限／撤銷／到期與落盤邊界，補正常及強制中斷時序；證據不足的極端判準須另確認，不自創例外",
       "規格與任務": "RR03、RR04、PS01、恢復關卡 G2",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -3114,6 +3137,7 @@
       "已確認內容": "R06：固定驗收資料集與批次，記錄環境、各次與最壞值；測量點明確，不放寬 1／5 秒或把驗收規模變成產品上限",
       "規格與任務": "RR08、量測程序、任務 1.6、13.3",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -3127,13 +3151,14 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     },
     {
       "決策": "D38",
       "已確認內容": "G2 探針後使用者明確選 A：U01 不明中斷依最後已提交 CONNECTED／GRACE 狀態重給原分頁 30 秒；固定 12 小時、已撤銷、活動關聯與分頁證明優先。可能恢復截止已到但失效未落盤者，作為明確例外而非歷史有效證明",
       "規格與任務": "RR04、PS01、7.4、7.5",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -3163,6 +3188,7 @@
       "已確認內容": "第 13 階段使用者確認 U02：真正 Chrome 凍結／丟棄或 macOS 休眠另列暫停情境；一般背景維持同步與計時 1 秒、服務可用後恢復 5 秒；恢復依既有身分規則，不新增寬限或復活已失效者，保存全部量測與失敗",
       "規格與任務": "RR08、13.3",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -3176,13 +3202,14 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     },
     {
       "決策": "D40",
       "已確認內容": "使用者釐清 D37：T_apply 採正確 React DOM 首次呈現，可由授權 HTTP 讀模或 WS 更新；另列 WS revision、到達及套用，未確認不編造。同步仍 1 秒；5 秒恢復須授權 WS 快照與正確畫面皆恢復，所有原始樣本保留",
       "規格與任務": "RR08、13.3",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -3196,14 +3223,44 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "稽核註記": "D39／D40為使用者明確確認；時限仍須完整同版60輪證據"
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
+    },
+    {
+      "決策": "D41",
+      "已確認內容": "使用者確認紀錄型驗收：既有量測、功能測試與缺失清單齊備即可完成13.3並歸檔；1秒／5秒及完整60輪為後續改善目標。保留舊失敗，不宣稱舊目標達標；身分、權限、原子性與持久化功能不放寬",
+      "規格與任務": "RR02、RR05、RR07、RR08、PS08、13.1、13.3",
+      "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
+        "tests/unit/restoration-measurement.test.ts",
+        "tests/browser/clock-pulse.spec.ts",
+        "tests/browser/measurement-http.spec.ts",
+        "tests/integration/read-model.test.ts",
+        "tests/integration/response-flush.test.ts",
+        "tests/browser/measurement.spec.ts",
+        "docs/evidence/acceptance-42.json",
+        "docs/evidence/performance-acceptance.json",
+        "tests/integration/realtime.test.ts",
+        "tests/unit/realtime.test.ts",
+        "tests/browser/recovery.spec.ts",
+        "docs/evidence/recovery-verification.json",
+        "docs/local-operation-guide.md",
+        "docs/evidence/integration-verification.json",
+        "tests/integration/upgrade-reset.test.ts",
+        "tests/integration/database.test.ts",
+        "tests/integration/state-crash.test.ts",
+        "tests/integration/export-crash.test.ts",
+        "tests/integration/google.test.ts",
+        "tests/integration/acceptance-security.test.ts",
+        "docs/evidence/export-verification.json"
+      ],
+      "稽核註記": "D39／D40保留觀測與身分規則；D41已確認本階段採紀錄型驗收，原1／5秒及60輪為後續目標"
     }
   ],
   "功能規格": [
     {
       "id": "AL01",
       "標題": "AL01 四階段與合法轉換",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
       "證據": [
         "tests/integration/activity.test.ts",
         "tests/integration/activity-replacement.test.ts",
@@ -3219,7 +3276,7 @@
     {
       "id": "AL02",
       "標題": "AL02 開始與結束確認",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
       "證據": [
         "tests/integration/activity.test.ts",
         "tests/integration/activity-replacement.test.ts",
@@ -3235,7 +3292,7 @@
     {
       "id": "AL03",
       "標題": "AL03 重新匯入的階段與確認",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
       "證據": [
         "tests/integration/activity.test.ts",
         "tests/integration/activity-replacement.test.ts",
@@ -3252,7 +3309,7 @@
     {
       "id": "AL04",
       "標題": "AL04 成功替換與資料清除",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
       "證據": [
         "tests/integration/activity.test.ts",
         "tests/integration/activity-replacement.test.ts",
@@ -3268,7 +3325,7 @@
     {
       "id": "AL05",
       "標題": "AL05 伺服器時間與停機計時",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
       "證據": [
         "tests/integration/activity.test.ts",
         "tests/integration/activity-replacement.test.ts",
@@ -3284,7 +3341,7 @@
     {
       "id": "AL06",
       "標題": "AL06 多老師操作與過期請求",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-lifecycle/spec.md",
       "證據": [
         "tests/integration/activity.test.ts",
         "tests/integration/activity-replacement.test.ts",
@@ -3300,7 +3357,7 @@
     {
       "id": "AR01",
       "標題": "AR01 結束前學生僅能取得本組資料",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md",
       "證據": [
         "tests/integration/results.test.ts",
         "tests/unit/projections.test.ts",
@@ -3314,7 +3371,7 @@
     {
       "id": "AR02",
       "標題": "AR02 結束後成功答案公開例外",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md",
       "證據": [
         "tests/integration/results.test.ts",
         "tests/unit/projections.test.ts",
@@ -3328,7 +3385,7 @@
     {
       "id": "AR03",
       "標題": "AR03 本組三種結果與成功題數",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md",
       "證據": [
         "tests/integration/results.test.ts",
         "tests/unit/projections.test.ts",
@@ -3342,7 +3399,7 @@
     {
       "id": "AR04",
       "標題": "AR04 無人搶答與結果保留",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md",
       "證據": [
         "tests/integration/results.test.ts",
         "tests/unit/projections.test.ts",
@@ -3356,7 +3413,7 @@
     {
       "id": "AR05",
       "標題": "AR05 老師完整查詢與學生越權防護",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/activity-results/spec.md",
       "證據": [
         "tests/integration/results.test.ts",
         "tests/unit/projections.test.ts",
@@ -3370,7 +3427,7 @@
     {
       "id": "GE01",
       "標題": "GE01 匯出資格與原始目標",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3385,7 +3442,7 @@
     {
       "id": "GE02",
       "標題": "GE02 逐題成功答案與題組定位",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3400,7 +3457,7 @@
     {
       "id": "GE03",
       "標題": "GE03 三種匯出模式",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3415,7 +3472,7 @@
     {
       "id": "GE04",
       "標題": "GE04 固定 I 到 K 附加欄",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3431,7 +3488,7 @@
     {
       "id": "GE05",
       "標題": "GE05 格內附註與排版例外",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3446,7 +3503,7 @@
     {
       "id": "GE06",
       "標題": "GE06 重複匯出與模式切換",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3462,7 +3519,7 @@
     {
       "id": "GE07",
       "標題": "GE07 全題定位與整批不寫入",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3477,7 +3534,7 @@
     {
       "id": "GE08",
       "標題": "GE08 來源人工變更保護",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3493,7 +3550,7 @@
     {
       "id": "GE09",
       "標題": "GE09 無人作答與舊附加資訊清除",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3508,7 +3565,7 @@
     {
       "id": "GE10",
       "標題": "GE10 跨活動最少輸出管理資訊",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3523,7 +3580,7 @@
     {
       "id": "GE11",
       "標題": "GE11 原提交時間與文字安全",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3538,7 +3595,7 @@
     {
       "id": "GE12",
       "標題": "GE12 匯出中斷與結果不明",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3553,7 +3610,7 @@
     {
       "id": "GE13",
       "標題": "GE13 匯出期間停止外部編輯的操作前提",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3568,7 +3625,7 @@
     {
       "id": "GE14",
       "標題": "GE14 結果待確認與放棄核對",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3585,7 +3642,7 @@
     {
       "id": "GE15",
       "標題": "GE15 放棄核對後的未核實範圍隔離",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-export/spec.md",
       "證據": [
         "tests/integration/exports.test.ts",
         "tests/integration/export-crash.test.ts",
@@ -3601,7 +3658,7 @@
     {
       "id": "GI01",
       "標題": "GI01 網址與組數輸入",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3617,7 +3674,7 @@
     {
       "id": "GI02",
       "標題": "GI02 工作表選取",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3633,7 +3690,7 @@
     {
       "id": "GI03",
       "標題": "GI03 固定範本與空白區辨識",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3649,7 +3706,7 @@
     {
       "id": "GI04",
       "標題": "GI04 題組與混合內容",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3664,7 +3721,7 @@
     {
       "id": "GI05",
       "標題": "GI05 已有答案的範本",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3679,7 +3736,7 @@
     {
       "id": "GI06",
       "標題": "GI06 完整解析後原子替換",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3696,7 +3753,7 @@
     {
       "id": "GI07",
       "標題": "GI07 來源定位可供後續核對",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/guided-notes-import/spec.md",
       "證據": [
         "tests/unit/guided-notes.test.ts",
         "tests/integration/imports.test.ts",
@@ -3711,7 +3768,7 @@
     {
       "id": "IA01",
       "標題": "IA01 老師密碼設定與登入",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3727,7 +3784,7 @@
     {
       "id": "IA02",
       "標題": "IA02 老師分頁獨立登入與登出",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3742,7 +3799,7 @@
     {
       "id": "IA03",
       "標題": "IA03 分頁身分隔離",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3761,7 +3818,7 @@
     {
       "id": "IA04",
       "標題": "IA04 固定十二小時期限",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3777,7 +3834,7 @@
     {
       "id": "IA05",
       "標題": "IA05 密碼變更撤銷老師身分",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3792,7 +3849,7 @@
     {
       "id": "IA06",
       "標題": "IA06 學生免密碼與暱稱",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3808,7 +3865,7 @@
     {
       "id": "IA07",
       "標題": "IA07 暱稱字元規則",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3823,7 +3880,7 @@
     {
       "id": "IA08",
       "標題": "IA08 所有入口皆驗證角色",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3839,7 +3896,7 @@
     {
       "id": "IA09",
       "標題": "IA09 失效原因與暱稱保留",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/identity-access/spec.md",
       "證據": [
         "tests/integration/identity.test.ts",
         "tests/unit/validation.test.ts",
@@ -3854,7 +3911,7 @@
     {
       "id": "PS01",
       "標題": "PS01 必要資料跨重啟保存",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3874,7 +3931,7 @@
     {
       "id": "PS02",
       "標題": "PS02 持久化成功後才確認",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3894,7 +3951,7 @@
     {
       "id": "PS03",
       "標題": "PS03 清除與最少管理資訊例外",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3915,7 +3972,7 @@
     {
       "id": "PS04",
       "標題": "PS04 老師 Google 帳號授權",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3935,7 +3992,7 @@
     {
       "id": "PS05",
       "標題": "PS05 共用單一 Google 連結",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3955,7 +4012,7 @@
     {
       "id": "PS06",
       "標題": "PS06 授權失效與本機憑證保護",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3975,7 +4032,7 @@
     {
       "id": "PS07",
       "標題": "PS07 繁體中文與錯誤遮蔽",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -3995,7 +4052,7 @@
     {
       "id": "PS08",
       "標題": "PS08 全功能驗收與需求完整性",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/persistence-security/spec.md",
       "證據": [
         "docs/local-operation-guide.md",
         "docs/evidence/integration-verification.json",
@@ -4015,8 +4072,9 @@
     {
       "id": "RR01",
       "標題": "RR01 分流即時同步",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4036,9 +4094,10 @@
     },
     {
       "id": "RR02",
-      "標題": "RR02 一秒同步與計時一致",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "標題": "RR02 同步與計時一致及效能觀測",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4059,8 +4118,9 @@
     {
       "id": "RR03",
       "標題": "RR03 一般斷線與關閉寬限",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4082,8 +4142,9 @@
     {
       "id": "RR04",
       "標題": "RR04 停機不計寬限",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4107,9 +4168,10 @@
     },
     {
       "id": "RR05",
-      "標題": "RR05 五秒內自動恢復",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "標題": "RR05 有效分頁自動恢復與時限觀測",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4130,8 +4192,9 @@
     {
       "id": "RR06",
       "標題": "RR06 快照恢復與過期資料排除",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4152,8 +4215,9 @@
     {
       "id": "RR07",
       "標題": "RR07 連線提示與瀏覽器驗收",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4174,8 +4238,9 @@
     {
       "id": "RR08",
       "標題": "RR08 可重現的時限驗收",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/realtime-recovery/spec.md",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -4198,7 +4263,7 @@
     {
       "id": "SP01",
       "標題": "SP01 等待與可選組別",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4213,7 +4278,7 @@
     {
       "id": "SP02",
       "標題": "SP02 離組與換組",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4228,7 +4293,7 @@
     {
       "id": "SP03",
       "標題": "SP03 本組畫面與成員辨識",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4242,7 +4307,7 @@
     {
       "id": "SP04",
       "標題": "SP04 階段式題目揭露",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4256,7 +4321,7 @@
     {
       "id": "SP05",
       "標題": "SP05 分頁草稿保存與清除",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4271,7 +4336,7 @@
     {
       "id": "SP06",
       "標題": "SP06 本組提交後鎖定",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4285,7 +4350,7 @@
     {
       "id": "SP07",
       "標題": "SP07 失效與結束導向",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/student-participation/spec.md",
       "證據": [
         "tests/browser/student.spec.ts",
         "tests/unit/drafts.test.ts",
@@ -4299,7 +4364,7 @@
     {
       "id": "SR01",
       "標題": "SR01 答案有效性與文字規則",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4314,7 +4379,7 @@
     {
       "id": "SR02",
       "標題": "SR02 題組完整且不可分割",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4329,7 +4394,7 @@
     {
       "id": "SR03",
       "標題": "SR03 每組每題一次且不可修改",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4344,7 +4409,7 @@
     {
       "id": "SR04",
       "標題": "SR04 伺服器接收順序與單一第一",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4361,7 +4426,7 @@
     {
       "id": "SR05",
       "標題": "SR05 提交與結束共同排序",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4375,7 +4440,7 @@
     {
       "id": "SR06",
       "標題": "SR06 已成功提交的重送一致性",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4389,7 +4454,7 @@
     {
       "id": "SR07",
       "標題": "SR07 成功不代表正確",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4403,7 +4468,7 @@
     {
       "id": "SR08",
       "標題": "SR08 不可變提交時間",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/submission-ranking/spec.md",
       "證據": [
         "tests/integration/submissions.test.ts",
         "tests/integration/submission-crash.test.ts",
@@ -4417,7 +4482,7 @@
     {
       "id": "TC01",
       "標題": "TC01 單題預覽切換",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md",
       "證據": [
         "tests/browser/teacher.spec.ts",
         "tests/browser/exports.spec.ts",
@@ -4430,7 +4495,7 @@
     {
       "id": "TC02",
       "標題": "TC02 老師管理操作",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md",
       "證據": [
         "tests/browser/teacher.spec.ts",
         "tests/browser/exports.spec.ts",
@@ -4444,7 +4509,7 @@
     {
       "id": "TC03",
       "標題": "TC03 即時完整提交監看",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md",
       "證據": [
         "tests/browser/teacher.spec.ts",
         "tests/browser/exports.spec.ts",
@@ -4457,7 +4522,7 @@
     {
       "id": "TC04",
       "標題": "TC04 結束後完整結果",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md",
       "證據": [
         "tests/browser/teacher.spec.ts",
         "tests/browser/exports.spec.ts",
@@ -4470,7 +4535,7 @@
     {
       "id": "TC05",
       "標題": "TC05 正確計時與臺灣提交時間",
-      "規格": "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md",
+      "規格": "openspec/changes/archive/2026-11-27-build-local-classroom-response-system/specs/teacher-console/spec.md",
       "證據": [
         "tests/browser/teacher.spec.ts",
         "tests/browser/exports.spec.ts",
@@ -5825,7 +5890,7 @@
         "tests/integration/acceptance-security.test.ts",
         "docs/evidence/export-verification.json"
       ],
-      "狀態": "交付指南與逐情境證據／缺失已列；13.3時限未通過，不宣告整體驗收完成",
+      "狀態": "交付指南與逐情境證據／缺失齊備；依D41完成紀錄型驗收，不宣稱原效能目標通過",
       "執行紀錄": [
         "docs/evidence/integration-logs/unit-integration.log",
         "docs/evidence/integration-logs/browser.log"
@@ -5836,6 +5901,7 @@
       "情境": "一組提交的接收者",
       "驗收敘述": "- **GIVEN** 老師、第一組及第二組分頁皆在線且活動進行中\n- **WHEN** 第一組提交成功\n- **THEN** 老師取得完整更新，第一組取得送出者與本組狀態，第二組不取得第一組提交事件、答案或排名",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -5858,8 +5924,9 @@
     {
       "需求": "RR02",
       "情境": "同步效能驗收",
-      "驗收敘述": "- **GIVEN** 約定的 42 個分頁同時操作且本機正常運作\n- **WHEN** 伺服器完成加入、離組、開始、提交或結束\n- **THEN** 所有有權接收的分頁於 1 秒內更新且計時差異不超過 1 秒，超時不得以最終有更新判定通過",
+      "驗收敘述": "- **GIVEN** 約定的 42 個分頁同時操作且本機正常運作\n- **WHEN** 伺服器完成加入、離組、開始、提交或結束\n- **THEN** 驗證有權分頁的狀態與計時正確，記錄實際延遲、誤差及與1秒目標的比較；超時保留為未達目標，紀錄齊備可依D41完成驗收，不宣稱舊時限通過",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -5873,7 +5940,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "狀態": "整合證據尚未完整；見整合驗收報告與缺失",
+      "狀態": "依D41以既有功能、量測與缺失紀錄完成驗收；原1秒／5秒及60輪仍為未全面達成的後續目標",
       "執行紀錄": [
         "docs/evidence/integration-logs/unit-integration.log",
         "docs/evidence/integration-logs/browser.log"
@@ -5884,6 +5951,7 @@
       "情境": "短暫斷線與重新整理",
       "驗收敘述": "- **GIVEN** 有效學生已有組別\n- **WHEN** 斷線後於寬限內由原分頁重連\n- **THEN** 保留原組別、身分與尚未提交草稿，不重複計算成員",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -5908,6 +5976,7 @@
       "情境": "關閉或斷線逾期",
       "驗收敘述": "- **GIVEN** 分頁連線中斷且伺服器持續正常提供服務\n- **WHEN** 超過約 30 秒仍未重連\n- **THEN** 工作階段失效，學生自成員名單移除，後續請求遭拒；進行中不得重新加入",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -5932,6 +6001,7 @@
       "情境": "停機超過三十秒",
       "驗收敘述": "- **GIVEN** 多個有效分頁已加入且伺服器停機前未失效\n- **WHEN** 伺服器停機超過 30 秒後恢復\n- **THEN** 原身分不僅因停機而失效，可在恢復後約 30 秒內重連回原組；停機仍計入活動總時長",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -5956,6 +6026,7 @@
       "情境": "停機期間到期或早已撤銷",
       "驗收敘述": "- **GIVEN** 身分已登出、逾期失效或停機期間達 12 小時\n- **WHEN** 服務恢復且分頁重連\n- **THEN** 不復活原身分，顯示對應原因並依階段限制再次加入",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -5980,6 +6051,7 @@
       "情境": "一般斷線寬限中正常停機",
       "驗收敘述": "- **GIVEN** 學生斷線尚未超過寬限且身分未達 12 小時，伺服器正常關機時可確認其仍有效\n- **WHEN** 伺服器停機超過 30 秒後恢復\n- **THEN** 自恢復服務重新提供約 30 秒重連時間，不以原截止時間扣除停機期間；原分頁可恢復原組",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6004,6 +6076,7 @@
       "情境": "寬限失效已保存後強制中斷",
       "驗收敘述": "- **GIVEN** 學生在正常服務下超過寬限，失效與移除決定已持久化\n- **WHEN** 程序立即強制中斷並重新啟動\n- **THEN** 該身分仍失效，不因重新提供恢復寬限而復活；其他仍有效身分不受影響",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6028,6 +6101,7 @@
       "情境": "不明中斷依最後已提交狀態恢復",
       "驗收敘述": "- **GIVEN** 原分頁最後已提交 CONNECTED／GRACE，非正常中斷使寬限截止前後不可判定，且固定期限、撤銷、活動及分頁證明檢查皆通過\n- **WHEN** 服務恢復可用並由原分頁於重新提供的 30 秒內重連\n- **THEN** 依 D38 恢復原身分及組別，不重複計人、不延長固定到期時間；即使截止已到但撤銷尚未落盤也採此例外，已提交失效者不得復活",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6050,8 +6124,9 @@
     {
       "需求": "RR05",
       "情境": "斷線期間活動結束",
-      "驗收敘述": "- **GIVEN** 有效分頁斷線且未超過寬限，老師已結束活動\n- **WHEN** 連線條件恢復\n- **THEN** 5 秒內自動顯示結果、正確組別、成員、提交狀態與停止後計時，不顯示舊作答畫面",
+      "驗收敘述": "- **GIVEN** 有效分頁斷線且未超過寬限，老師已結束活動\n- **WHEN** 連線條件恢復\n- **THEN** 自動顯示結果、正確組別、成員、提交狀態與停止後計時，不顯示舊作答畫面；記錄恢復時間與5秒目標比較，超時不得改稱原目標通過",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6065,7 +6140,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "狀態": "整合證據尚未完整；見整合驗收報告與缺失",
+      "狀態": "依D41以既有功能、量測與缺失紀錄完成驗收；原1秒／5秒及60輪仍為未全面達成的後續目標",
       "執行紀錄": [
         "docs/evidence/integration-logs/unit-integration.log",
         "docs/evidence/integration-logs/browser.log"
@@ -6076,6 +6151,7 @@
       "情境": "漏掉活動切換事件",
       "驗收敘述": "- **GIVEN** 舊學生分頁斷線期間已成功建立新活動\n- **WHEN** 分頁重新連線\n- **THEN** 偵測舊身分失效，保留暱稱並要求新選組，不以舊快照恢復舊組別",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6098,8 +6174,9 @@
     {
       "需求": "RR07",
       "情境": "背景與複製分頁",
-      "驗收敘述": "- **GIVEN** 約定規模分頁有部分位於背景\n- **WHEN** 執行生命週期、關閉、複製及恢復測試\n- **THEN** 背景分頁不錯誤增減人數，複製分頁獨立，符合前述時限，並記錄實際 Chrome 與 macOS 版本",
+      "驗收敘述": "- **GIVEN** 約定規模分頁有部分位於背景\n- **WHEN** 執行生命週期、關閉、複製及恢復測試\n- **THEN** 背景分頁不錯誤增減人數，複製分頁獨立，記錄前述時限觀測與未達目標情況及實際Chrome／macOS版本；依D41完成紀錄型驗收",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6113,7 +6190,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "狀態": "同一原生Chrome零售Stable 158.0.8127.89，2老師＋40學生真Sheets完整功能流程通過；時限仍由RR08另驗",
+      "狀態": "同一原生Chrome零售Stable 158.0.8127.89，2老師＋40學生真Sheets完整功能流程通過；原時限為後續目標，RR08依D41驗收紀錄完整性",
       "執行紀錄": [
         "docs/evidence/integration-logs/unit-integration.log",
         "docs/evidence/integration-logs/browser.log"
@@ -6122,8 +6199,9 @@
     {
       "需求": "RR08",
       "情境": "固定負載與背景分頁量測",
-      "驗收敘述": "- **GIVEN** 同一 Chrome 的 42 個分頁，載入設計指定單題、混合題組及合成負載資料集\n- **WHEN** 依固定批次重複執行開始、提交、結束、斷線及恢復，並記錄背景分頁更新\n- **THEN** 每次有權分頁資料套用與計時差皆符合 1 秒限制，服務可用後恢復符合 5 秒限制，報告最壞值且不把測試資料規模當產品上限",
+      "驗收敘述": "- **GIVEN** 同一 Chrome 的 42 個分頁，載入設計指定單題、混合題組及合成負載資料集\n- **WHEN** 依固定批次重複執行開始、提交、結束、斷線及恢復，並記錄背景分頁更新\n- **THEN** 保存已執行資料集／版本／輪次及全部失敗、最壞值與未執行輪次，列明與1秒／5秒及60輪目標的差距；功能與紀錄齊備可完成13.3，不宣稱舊目標通過或把基準當產品上限",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6137,7 +6215,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "狀態": "整合證據尚未完整；見整合驗收報告與缺失",
+      "狀態": "依D41以既有功能、量測與缺失紀錄完成驗收；原1秒／5秒及60輪仍為未全面達成的後續目標",
       "執行紀錄": [
         "docs/evidence/integration-logs/unit-integration.log",
         "docs/evidence/integration-logs/browser.log"
@@ -6146,8 +6224,9 @@
     {
       "需求": "RR08",
       "情境": "真正暫停情境與一般背景分開驗證",
-      "驗收敘述": "- **GIVEN** 一般背景分頁或有實際證據的 Chrome 凍結／丟棄、macOS 休眠\n- **WHEN** 執行固定負載量測與解除暫停後恢復\n- **THEN** 一般背景仍適用原 1 秒同步／計時與有效分頁 5 秒恢復門檻，真正暫停另列並保留全部觀察與失敗\n- **AND** 解除暫停依既有固定期限、撤銷、活動與分頁證明裁定，不新增身分例外或將暫停結果冒稱正常時限通過",
+      "驗收敘述": "- **GIVEN** 一般背景分頁或有實際證據的 Chrome 凍結／丟棄、macOS 休眠\n- **WHEN** 執行固定負載量測與解除暫停後恢復\n- **THEN** 一般背景仍納入量測並與原1秒／5秒目標比較，真正暫停另列；依D41保留全部觀察、失敗及未實驗項，不因數值未達而阻擋紀錄型完成\n- **AND** 解除暫停依既有固定期限、撤銷、活動與分頁證明裁定，不新增身分例外或將暫停結果冒稱正常時限通過",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6172,8 +6251,9 @@
     {
       "需求": "RR08",
       "情境": "HTTP先呈現與WS後確認分開量測",
-      "驗收敘述": "- **GIVEN** 有權分頁的 HTTP 完整讀模已正確呈現在 React DOM，對應 WS 快照稍後才抵達\n- **WHEN** 計算該變更的同步時限及恢復時限\n- **THEN** 依 D40 以首次正確 DOM 呈現記 T_apply，另列 WS revision、到達與套用時刻，未取得 WS 確認不得編造\n- **AND** 同步及計時仍遵守 1 秒，5 秒恢復仍須授權 WS 快照與正確畫面皆恢復，原始樣本及歷史失敗全部保留",
+      "驗收敘述": "- **GIVEN** 有權分頁的 HTTP 完整讀模已正確呈現在 React DOM，對應 WS 快照稍後才抵達\n- **WHEN** 計算該變更的同步時限及恢復時限\n- **THEN** 依 D40 以首次正確 DOM 呈現記 T_apply，另列 WS revision、到達與套用時刻，未取得 WS 確認不得編造\n- **AND** 原1秒／5秒為後續目標，恢復時刻仍須授權WS快照與正確畫面皆恢復；原始樣本及歷史失敗全部保留，依D41核對完整紀錄，不將新完成標記解讀為舊時限達標",
       "證據": [
+        "docs/evidence/performance-acceptance-policy.json",
         "tests/unit/restoration-measurement.test.ts",
         "tests/browser/clock-pulse.spec.ts",
         "tests/browser/measurement-http.spec.ts",
@@ -6187,7 +6267,7 @@
         "tests/browser/recovery.spec.ts",
         "docs/evidence/recovery-verification.json"
       ],
-      "狀態": "整合證據尚未完整；見整合驗收報告與缺失",
+      "狀態": "依D41以既有功能、量測與缺失紀錄完成驗收；原1秒／5秒及60輪仍為未全面達成的後續目標",
       "執行紀錄": [
         "docs/evidence/integration-logs/unit-integration.log",
         "docs/evidence/integration-logs/browser.log"

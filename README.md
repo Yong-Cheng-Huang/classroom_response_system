@@ -1,6 +1,6 @@
 # 課堂搶答系統
 
-本機執行的 TypeScript／React／Node.js／SQLite 專案，目前完成基礎環境、資料庫、分頁身分、活動管理、Google 授權與匯入、即時同步／恢復、搶答提交、學生作答、老師管理及完整結果，累計 84／85；第 13 階段固定效能仍未達標。首頁支援老師登入、匯入、學生選組／離組、全部題目與題組作答、分頁草稿、同組提交鎖定、開始及確認結束與同步計時。老師可預覽完整題組並監看全部組別答案、名次與臺灣提交時間；學生結束後可查看成功答案、本組三種成績及成功題數；老師可於結束後使用三模式 Sheets 匯出、核對未知結果及確認放棄後換場。
+本機執行的 TypeScript／React／Node.js／SQLite 專案，目前完成基礎環境、資料庫、分頁身分、活動管理、Google 授權與匯入、即時同步／恢復、搶答提交、學生作答、老師管理及完整結果，累計85／85，依使用者確認D41完成紀錄型驗收；原1秒／5秒與完整60輪為後續改善目標，尚未全面達標。首頁支援老師登入、匯入、學生選組／離組、全部題目與題組作答、分頁草稿、同組提交鎖定、開始及確認結束與同步計時。老師可預覽完整題組並監看全部組別答案、名次與臺灣提交時間；學生結束後可查看成功答案、本組三種成績及成功題數；老師可於結束後使用三模式 Sheets 匯出、核對未知結果及確認放棄後換場。
 
 ## 環境與啟動
 
@@ -77,7 +77,7 @@ npm run test:startup
 - [Guided Notes 三模式匯出、核對與放棄換場](docs/guided-notes-export.md)。
 
 - [原始需求](docs/requirements.md)，保持原樣。
-- [目前 OpenSpec 任務](openspec/changes/build-local-classroom-response-system/tasks.md)。
+- [已歸檔 OpenSpec 任務](openspec/changes/archive/2026-11-27-build-local-classroom-response-system/tasks.md)。
 
 ## 鎖定套件
 
@@ -131,14 +131,16 @@ G1 第二候選已整合至正式身分，驗證與限制見身分實作紀錄�
 
 ## 第 13 階段整合驗收
 
-完成 13.1、13.2、13.4、13.5、13.6：原始需求逐條追蹤、同一原生 Chrome 2 老師＋40 學生真 Sheets 完整流程、中斷及跨功能權限驗收。13.6 已整理交付與明確缺失；13.3 固定效能未完成，不能宣告整體驗收通過。完整證據、歷史失敗與缺失見 [整合驗收報告](docs/integration-acceptance.md)及 [本機操作指南](docs/local-operation-guide.md)。前面各階段的計數是歷史紀錄。
+完成 13.1、13.2、13.4、13.5、13.6：原始需求逐條追蹤、同一原生 Chrome 2 老師＋40 學生真 Sheets 完整流程、中斷及跨功能權限驗收。13.6已整理交付與缺失；13.3依D41紀錄型驗收完成，原固定效能目標仍未全面達標。完整證據、歷史失敗與缺失見 [整合驗收報告](docs/integration-acceptance.md)及 [本機操作指南](docs/local-operation-guide.md)。前面各階段的計數是歷史紀錄。
 
-U02 已確認為 D39：真正凍結／丟棄／OS 休眠另列暫停，一般背景維持原門檻、恢復依原身分規則。U03 解除政策未確認，未核實範圍保持隔離。D37 的實際 DOM 與 WS 關聯已由使用者確認為 D40：首次正確DOM記T_apply、WS另列，1／5秒門檻保持。
+U02 已確認為 D39：真正凍結／丟棄／OS 休眠另列暫停，一般背景仍納入紀錄、恢復依原身分規則；數值門檻依D41改列後續目標。U03 解除政策未確認，未核實範圍保持隔離。D37 的實際 DOM 與 WS 關聯已由使用者確認為 D40：首次正確DOM記T_apply、WS另列，1／5秒比較基準保持；本階段依D41採紀錄型驗收。
 
 `npm run probe:performance` 執行 F1～F3 各 20 輪固定程序，至少半小時，使用隔離庫及 Chrome 設定檔、保存逐筆誤差及全部失敗。`CRS_PERF_DIAGNOSTIC=join`／`submit` 只是分段診斷，不能替代正式驗收。新增觀測器證明 HTTP 完整讀模可能早於 WS 在 React 呈現，歷史 WS 關聯超時不能全部直接歸因畫面超時，原始數值仍完整保留。正式 60 輪尚未完成，沒有進行 Verify、規格同步或封存。
 
 ## 全組提交紀錄 CSV
 
-老師可在「匯入 Guided Notes」下方下載本場所有組別的已受理提交，含未搶到紀錄。僅活動結束後開放，不需 Google 連結；題組每個子題一列，提供題號、子題、組別、姓名（送出者暱稱）、答案、搶答順位、送出時間及是否搶答成功。CSV 採 UTF-8 BOM 供 Excel 開啟；格式與限制見 [CSV 匯出說明](docs/submission-csv-export.md)，驗收見 [證據](docs/evidence/csv-export-verification.json)。此新增 Change 與原84／85進度分開，原13.3效能缺失仍保留。
+老師可在「匯入 Guided Notes」下方下載本場所有組別的已受理提交，含未搶到紀錄。僅活動結束後開放，不需 Google 連結；題組每個子題一列，提供題號、子題、組別、姓名（送出者暱稱）、答案、搶答順位、送出時間及是否搶答成功。CSV 採 UTF-8 BOM 供 Excel 開啟；格式與限制見 [CSV 匯出說明](docs/submission-csv-export.md)，驗收見 [證據](docs/evidence/csv-export-verification.json)。CSV為獨立Change；原系統現依D41完成85／85，原效能缺失仍保留。
 
-CSV 的8項需求／16個情境已同步至 [主規格](openspec/specs/submission-records-export/spec.md)，7／7任務完成並經人工測試確認的 Change 已 [歸檔](openspec/changes/archive/2026-11-27-add-submission-records-csv-export/proposal.md)。原系統 Change 仍開放，13.3效能驗收尚未完成。
+CSV 的8項需求／16個情境已同步至 [主規格](openspec/specs/submission-records-export/spec.md)，7／7任務完成並經人工測試確認的 Change 已 [歸檔](openspec/changes/archive/2026-11-27-add-submission-records-csv-export/proposal.md)。原系統Change已依D41完成紀錄型驗收並歸檔，未把舊效能目標改稱達標。
+
+D41 的確認內容、18次歷史效能程序、缺失與後續目標見 [紀錄型驗收證據](docs/evidence/performance-acceptance-policy.json)及 [整合驗收報告](docs/integration-acceptance.md)。原始需求與原始量測數據保留，所有主規格位於 openspec/specs/。

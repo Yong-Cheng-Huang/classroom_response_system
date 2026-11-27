@@ -53,7 +53,7 @@ npm run probe:g1
 
 ## 停止依據
 
-[設計文件](../openspec/changes/build-local-classroom-response-system/design.md) 的 G1 段落明定：「若無法取得足夠證據、無法保留原分頁或會讓副本承接，停止相關實作並回人工」。任務 1.7 亦明定失敗記錄後停止相關正式實作，4.2 須先取得 G1 證據。
+[設計文件](../openspec/changes/archive/2026-11-27-build-local-classroom-response-system/design.md) 的 G1 段落明定：「若無法取得足夠證據、無法保留原分頁或會讓副本承接，停止相關實作並回人工」。任務 1.7 亦明定失敗記錄後停止相關正式實作，4.2 須先取得 G1 證據。
 
 [OpenSpec Apply Skill](../.agents/skills/openspec-apply-change/SKILL.md) 要求只有完整完成指定行為才勾選；遇到設計問題或需要縮減規格才能實現時，須提出並暫停。本次依既有關卡保留需求，沒有自行放寬副本隔離、強制原頁重新登入或把先拿鎖當成原頁。
 
