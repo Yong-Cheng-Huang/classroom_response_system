@@ -136,3 +136,7 @@ G1 第二候選已整合至正式身分，驗證與限制見身分實作紀錄�
 U02 已確認為 D39：真正凍結／丟棄／OS 休眠另列暫停，一般背景維持原門檻、恢復依原身分規則。U03 解除政策未確認，未核實範圍保持隔離。D37 的實際 DOM 與 WS 關聯已由使用者確認為 D40：首次正確DOM記T_apply、WS另列，1／5秒門檻保持。
 
 `npm run probe:performance` 執行 F1～F3 各 20 輪固定程序，至少半小時，使用隔離庫及 Chrome 設定檔、保存逐筆誤差及全部失敗。`CRS_PERF_DIAGNOSTIC=join`／`submit` 只是分段診斷，不能替代正式驗收。新增觀測器證明 HTTP 完整讀模可能早於 WS 在 React 呈現，歷史 WS 關聯超時不能全部直接歸因畫面超時，原始數值仍完整保留。正式 60 輪尚未完成，沒有進行 Verify、規格同步或封存。
+
+## 全組提交紀錄 CSV
+
+老師可在「匯入 Guided Notes」下方下載本場所有組別的已受理提交，含未搶到紀錄。僅活動結束後開放，不需 Google 連結；題組每個子題一列，提供題號、子題、組別、姓名（送出者暱稱）、答案、搶答順位、送出時間及是否搶答成功。CSV 採 UTF-8 BOM 供 Excel 開啟；格式與限制見 [CSV 匯出說明](docs/submission-csv-export.md)，驗收見 [證據](docs/evidence/csv-export-verification.json)。此新增 Change 與原84／85進度分開，原13.3效能缺失仍保留。

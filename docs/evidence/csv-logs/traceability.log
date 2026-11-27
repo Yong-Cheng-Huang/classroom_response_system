@@ -1,0 +1,5 @@
+
+> classroom-response-system@0.1.0 audit:traceability
+> python3 scripts/audit-traceability.py
+
+{"原始內容列": 152, "需求": 78, "情境": 122, "決策": 40, "未對應原文": 0}

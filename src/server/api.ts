@@ -13,6 +13,7 @@ import type { GoogleService } from './google.js';
 import type { ImportService } from './imports.js';
 import type { ExportService } from './exports.js';
 import type { SubmissionService } from './submissions.js';
+import { serializeSubmissionCsv } from './submission-csv.js';
 
 export type ApiPorts = {
   authenticate?: Authenticate;
@@ -26,7 +27,7 @@ export type ApiPorts = {
   submissions?:SubmissionService;
   exports?:ExportService;
 };
-type Route = { name: 'lobby' | 'view' | 'results' | CommandName; method: 'GET' | 'POST'; activityId?: string; questionId?: string };
+type Route = { name: 'lobby' | 'view' | 'results' | 'csv' | CommandName; method: 'GET' | 'POST'; activityId?: string; questionId?: string };
 type CurrentActivity = { id: string; state: ActivityState; version: number };
 
 function routeFor(url: URL): Route | null {
@@ -39,6 +40,7 @@ function routeFor(url: URL): Route | null {
   if (parts.join('/') === 'api/lobby') return { name: 'lobby', method: 'GET' };
   if (parts.join('/') === 'api/activities/current/view') return { name: 'view', method: 'GET' };
   if (parts[0] !== 'api' || parts[1] !== 'activities') return null;
+  if(parts.length===4&&parts[3]==='submissions.csv')return{name:'csv',method:'GET',activityId:identifier(parts[2])};
   if (parts.length === 4 && ['join', 'leave', 'start', 'end', 'results'].includes(parts[3]!)) {
     const name = parts[3] as 'join' | 'leave' | 'start' | 'end' | 'results';
     return { name, method: name === 'results' ? 'GET' : 'POST', activityId: identifier(parts[2]) };
@@ -96,6 +98,20 @@ export function createApi(database: SqliteDatabase, commands: OrderedCommandQueu
     if (route.method === 'GET') {
       const subject = route.name === 'lobby' ? null : await authenticated(request);
       ports.beforeRead?.();
+      if(route.name==='csv'){
+        const file=database.transaction(()=>{
+          // 讀取之前重驗正式分頁證明，避免非同步驗證期間的撤銷／到期。
+          const currentSubject=ports.identity?ports.identity.principal(ports.identity.proof(request)):requirePrincipal(subject,now());
+          if(currentSubject.role!=='TEACHER')throw new AppError('FORBIDDEN');
+          const current=checkCurrent(route,currentSubject);
+          if(current?.state!=='ENDED')throw new AppError('STATE_CONFLICT');
+          const view=projectActivity(readProjection(current),currentSubject,now());
+          if(view.role!=='TEACHER'||view.phase!=='ENDED')throw new AppError('INTERNAL_ERROR');
+          return serializeSubmissionCsv(view);
+        })();
+        response.writeHead(200,{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':`attachment; filename="classroom-submissions-${route.activityId}.csv"`,'Cache-Control':'no-store'});
+        response.end(file);return true;
+      }
       // 同步取得目前活動與投影，避免在讀取中間 await 造成場次拼接。
       const data = database.transaction(() => {
         const current = checkCurrent(route, subject);

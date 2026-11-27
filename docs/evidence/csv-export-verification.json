@@ -1,0 +1,263 @@
+{
+  "Change": "add-submission-records-csv-export",
+  "時間UTC": "2026-11-26T22:15:58.325010+00:00",
+  "進度": {
+    "總數": 7,
+    "完成": 7,
+    "待完成": [],
+    "CLI狀態": "all_done，原Change仍84／85"
+  },
+  "規格": {
+    "需求": 8,
+    "情境": 16,
+    "StrictValidate": "通過1／1，無issues"
+  },
+  "測試": {
+    "單元與整合": {
+      "通過": 157,
+      "失敗": 0,
+      "日誌": "docs/evidence/csv-logs/unit-integration.log"
+    },
+    "CSV新增Chrome聚焦": {
+      "通過": 4,
+      "失敗": 0,
+      "日誌": "docs/evidence/csv-logs/browser-focused.log"
+    },
+    "完整Chrome回歸": {
+      "通過": 22,
+      "失敗": 0,
+      "exitCode": 0,
+      "日誌": "docs/evidence/csv-logs/browser-full.log",
+      "範圍": "零售Chrome headless功能回歸；不是42分頁固定效能驗收"
+    },
+    "型別檢查": "通過",
+    "正式啟動": {
+      "通過": 1,
+      "失敗": 0,
+      "exitCode": 0,
+      "日誌": "docs/evidence/csv-logs/startup.log"
+    }
+  },
+  "Excel驗證": {
+    "UTF8_BOM與八欄結構": "已由獨立CSV解析器及真Chrome下載檔核對",
+    "原生Excel開啟": "尚未實測，不以Chrome下載冒稱已驗證",
+    "限制": "CSV無儲存格型別；Excel地區分隔設定及純數字前導零可能影響呈現；公式型文字有匯出安全前綴"
+  },
+  "正式服務": {
+    "位址": "http://127.0.0.1:3000",
+    "狀態": "已正常重啟載入CSV API",
+    "資料保存": "docs/evidence/csv-production-preservation.json",
+    "業務表內容相同": true,
+    "資料庫版本": 3,
+    "新增migration": false,
+    "新增套件": [],
+    "新API載入核對": "匿名下載路由回401，未讀出正式答案"
+  },
+  "原案保留": {
+    "進度": "84／85",
+    "13.3": "仍未完成；本次CSV不替代42頁同版60輪效能驗收",
+    "原需求／原Change／package-lock": "與HEAD逐位元組一致",
+    "SHA256": {
+      "docs/requirements.md": "498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413",
+      "package-lock.json": "d6a43ff065ac4d651c78ba39e751ffcdf88c518febb20163280e15e201e18d3b",
+      "openspec/changes/build-local-classroom-response-system/tasks.md": "d65c1c1e110a162f65f2e900f11359da17fee408b5125adf373aaa4633589009",
+      "openspec/changes/build-local-classroom-response-system/design.md": "52d6f2704ac7d2d72dea11313c009caabc2f23ce1bd4e83a4189b2b1f5713d3d",
+      "openspec/changes/build-local-classroom-response-system/proposal.md": "b4084a1420abf6a28471d08e0e8395e2b9bde87c87a71e8fddfbe7d3a6667646",
+      "openspec/changes/build-local-classroom-response-system/specs/teacher-console/spec.md": "d341472f9a1d5d0532f0824b10c7f9fbc25a5bef92d0ecc8e5d3c83e7f89a86c",
+      "openspec/changes/build-local-classroom-response-system/specs/persistence-security/spec.md": "c0b107359fc5ffe996e163c3b644e90d5aee705feb7aee931ecfbe227cfcbbae",
+      "openspec/changes/build-local-classroom-response-system/specs/guided-notes-export/spec.md": "588d4e02d091cec7f651f04703a3e2837ddc444828cebed506bbaeb1c67dc416",
+      "openspec/changes/build-local-classroom-response-system/specs/guided-notes-import/spec.md": "0560e630233b128a0a8e5ac18a737ecbd59db0172589a91abce6948ca421f13c",
+      "openspec/changes/build-local-classroom-response-system/specs/activity-lifecycle/spec.md": "094d8565f9adc0f524283f85c53cd6650b4a6988a97ff520dc0e6e7268a341b6",
+      "openspec/changes/build-local-classroom-response-system/specs/submission-ranking/spec.md": "9ee9c5cd099c2c45d71b935eae3945ee454279d17583fe46b145b37b8661eaae",
+      "openspec/changes/build-local-classroom-response-system/specs/identity-access/spec.md": "4d96e9b5ed4bd1134e3b596c92ab6568eb70944f54da9c8d61c0bbbd69b76bfc",
+      "openspec/changes/build-local-classroom-response-system/specs/realtime-recovery/spec.md": "6a1bfb7b710abce43f0947c79b5140cdada4e538b183bebd73cc73464afb3220",
+      "openspec/changes/build-local-classroom-response-system/specs/student-participation/spec.md": "d6e8efc179e7bbab07ed658b57b8fc3903ca6d41d82a410e32cd736eda527792",
+      "openspec/changes/build-local-classroom-response-system/specs/activity-results/spec.md": "5f73af6dc2c977f701bedad0c8e449a133a87eb00d42dc44d0ed1164772f776f"
+    }
+  },
+  "驗收情境": [
+    {
+      "需求": "CSV01",
+      "情境": "已結束且未連結 Google",
+      "驗收敘述": "- **GIVEN** 有效老師查看已結束活動，Google 未連結、失效或尚未設定\n- **WHEN** 查看匯入區塊下方並點擊 CSV 下載\n- **THEN** 下載本機提交紀錄，不啟動 OAuth 或要求 Google 授權，不呼叫 Google API",
+      "證據": [
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV01",
+      "情境": "尚未結束",
+      "驗收敘述": "- **GIVEN** 老師查看尚未匯入、待開始或搶答進行中的系統\n- **WHEN** 查看 CSV 區塊或直接要求下載\n- **THEN** 介面說明活動結束後才能下載且不啟用按鈕；伺服器亦拒絕，不能只靠前端限制",
+      "證據": [
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV02",
+      "情境": "多組先後提交及重送",
+      "驗收敘述": "- **GIVEN** 三組依序提交同題，其中一組重送相同已受理請求，另一同組請求被拒\n- **WHEN** 結束活動並下載\n- **THEN** 三筆組別提交皆輸出，各答案僅一列，重送及被拒請求不新增紀錄",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV02",
+      "情境": "無人作答",
+      "驗收敘述": "- **GIVEN** 活動已結束但沒有任何已受理提交\n- **WHEN** 老師下載 CSV\n- **THEN** 仍取得合法 CSV，只有固定表頭，不虛構姓名、答案、順位或未作答資料列",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV03",
+      "情境": "單題與多子題",
+      "驗收敘述": "- **GIVEN** 一筆單題提交及一筆四子題提交\n- **WHEN** 下載 CSV\n- **THEN** 除表頭外共五列；單題子題欄為空，題組各列包含原子題標記與對應答案，四列共用該提交的組別、姓名、順位、時間與成功值",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV03",
+      "情境": "暱稱相同及原送出者離線",
+      "驗收敘述": "- **GIVEN** 不同組送出者暱稱相同，或送出者之後離線／失效\n- **WHEN** 老師下載\n- **THEN** 依組別分列，姓名保留原提交暱稱，不改成現有組員名單、老師姓名或憑證識別碼",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV04",
+      "情境": "同毫秒與不同內容",
+      "驗收敘述": "- **GIVEN** 同題兩組顯示時間相同，保存順位分別為 1、2，第一組內容與來源答案不同\n- **WHEN** 匯出\n- **THEN** 順位仍為 1、2，成功欄依序為「是」、「否」，不比對標準答案或並列名次",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV04",
+      "情境": "重啟與重複下載",
+      "驗收敘述": "- **GIVEN** 已結束活動的提交、答案、時間與順位已保存\n- **WHEN** 重啟後重新授權原有效老師分頁並多次下載\n- **THEN** CSV 資料內容及列順序一致，原提交時間與順位不變",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/integration/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV05",
+      "情境": "中文與特殊字元",
+      "驗收敘述": "- **GIVEN** 暱稱、子題或答案含中文、emoji、逗號、雙引號及多行文字\n- **WHEN** 下載並以支援 UTF-8 BOM 的 Excel 開啟或以 CSV 解析器讀取\n- **THEN** 表頭及中文可辨識，仍為八欄，多行答案留在同一儲存格，不拆成錯誤資料列",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV05",
+      "情境": "公式型輸入",
+      "驗收敘述": "- **GIVEN** 外部文字以等號、加號、減號、@ 開頭，或前置空白／控制字元後接公式型前綴\n- **WHEN** 匯出 CSV\n- **THEN** 該儲存格以文字安全形式輸出，不直接作為公式執行；原本保存的答案及暱稱不變",
+      "證據": [
+        "tests/unit/submission-csv.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV06",
+      "情境": "越權下載",
+      "驗收敘述": "- **GIVEN** 匿名或學生嘗試下載全部組別 CSV，或偽造老師角色、使用錯誤分頁證明\n- **WHEN** 直接呼叫下載入口\n- **THEN** 伺服器拒絕且不回傳 CSV 或任何其他組別答案、姓名、排名及時間",
+      "證據": [
+        "tests/integration/submission-csv.test.ts",
+        "tests/unit/session-download.test.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV06",
+      "情境": "失效與舊活動",
+      "驗收敘述": "- **GIVEN** 老師身分已到期／撤銷，或所要求的活動已被成功替換\n- **WHEN** 使用原下載請求或任意查詢參數要求資料\n- **THEN** 依現有錯誤契約拒絕，不能藉參數查詢舊場或指定他組取得資料",
+      "證據": [
+        "tests/integration/submission-csv.test.ts",
+        "tests/unit/session-download.test.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV07",
+      "情境": "換場與下載競爭",
+      "驗收敘述": "- **GIVEN** 下載與老師建立新活動交錯執行\n- **WHEN** 伺服器讀取 CSV 所需資料\n- **THEN** 僅可從同一已結束場次快照產生檔案，若讀取前已換場則拒絕舊活動，不拼接新舊題目或提交",
+      "證據": [
+        "tests/integration/submission-csv.test.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV07",
+      "情境": "Sheets 匯出結果待確認",
+      "驗收敘述": "- **GIVEN** 已結束活動的 Sheets 匯出待確認或其範圍受保護\n- **WHEN** 有效老師下載 CSV\n- **THEN** 本機紀錄仍可下載，原 Sheets 匯出狀態及範圍保護不變，不進行外部讀寫",
+      "證據": [
+        "tests/integration/submission-csv.test.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV08",
+      "情境": "服務中斷與重試",
+      "驗收敘述": "- **GIVEN** 老師點擊下載時網路中斷或伺服器回覆結構化錯誤\n- **WHEN** 前端處理下載結果\n- **THEN** 不產生錯誤內容檔案，顯示繁體中文訊息，保留既有資料且可於有效身分恢復後重試",
+      "證據": [
+        "tests/unit/session-download.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    },
+    {
+      "需求": "CSV08",
+      "情境": "過期回覆",
+      "驗收敘述": "- **GIVEN** 下載尚未完成，老師已登出或成功切換到新活動\n- **WHEN** 原回覆稍後到達\n- **THEN** 不以舊資料觸發新畫面的下載成功，相關下載資源可釋放",
+      "證據": [
+        "tests/unit/session-download.test.ts",
+        "tests/browser/submission-csv.spec.ts"
+      ],
+      "狀態": "已通過對應單元／HTTP／Chrome測試；Excel實機限制另列"
+    }
+  ],
+  "檔案": [
+    "src/server/submission-csv.ts",
+    "src/server/api.ts",
+    "src/client/submission-csv.tsx",
+    "src/client/session.ts",
+    "src/client/main.tsx",
+    "docs/submission-csv-export.md",
+    "docs/local-operation-guide.md"
+  ],
+  "Git": "CSV功能以codex/csv-submission-export獨立分支交付，待人工測試後再合併；未Sync、Verify或Archive",
+  "實作SHA256": {
+    "src/server/submission-csv.ts": "1d5fda6d44308776e04e32df49857bc64058a0e1f8db7535bdb17662720ce7e3",
+    "src/server/api.ts": "b04f5e36d6a1b2b6aeadd2001f03a490705b57cd96f49ee5291acc19b69f8b43",
+    "src/client/submission-csv.tsx": "07787fc634411e4d671e120ec97b9a988f0c554ccaa6b5010778918167f6e59e",
+    "src/client/session.ts": "21590184be2619a41dd3027f019afe295a854270ef5939d5831b70dff3c0653d",
+    "src/client/main.tsx": "8e5281f8ef83fc20c03d6e49dccc54ac203405be0ad5c24c582b16226bc0e168",
+    "docs/submission-csv-export.md": "34db6b3d0c8d01af688296693e01ed2f719aa0593f35ca41db6e50d426c089dd",
+    "docs/local-operation-guide.md": "2fae0352bf6be17cd51794e767d1511db2bc2c8b56c426ad7351b365c04a7ee0"
+  }
+}

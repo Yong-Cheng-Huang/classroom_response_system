@@ -39,24 +39,38 @@ export class TabSession {
     ...(this.credential?{Authorization:'Bearer '+this.credential.token}:{})};}
   private invalid(message:string){this.clearPrivateStorage();this.credential=null;this.update({status:'NEW',session:null,message});}
   private save(grant:SessionGrant){this.credential={token:grant.token,generation:grant.generation};sessionStorage.setItem(sessionKeys.credential,JSON.stringify(this.credential));this.update({status:'OWNED',session:grant.session,message:''});}
-  async request<T>(path:string,method='GET',body?:unknown,handleFailure=true,signal?:AbortSignal):Promise<T>{
+  private async response(path:string,method:string,body:unknown,signal?:AbortSignal){
     const requestToken=this.credential?.token;
-    let response:Response;
-    try{response=await fetch(path,{method,signal,headers:{...this.headers(),...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body)});}
+    try{return{requestToken,response:await fetch(path,{method,signal,headers:{...this.headers(),...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body)})};}
     catch{if(!signal?.aborted&&this.credential&&this.credential.token===requestToken)this.update({status:'DISCONNECTED',message:'連線中斷，正在嘗試恢復身分。'});throw new ApiFailure('NETWORK','暫時無法連接本機服務。');}
+  }
+  private async json(response:Response){
     let value;
-    try{value=await response.json();}
-    catch{throw new ApiFailure('INVALID_RESPONSE','服務回覆不完整，請稍候再試。');}
+    try{value=await response.json();}catch{throw new ApiFailure('INVALID_RESPONSE','服務回覆不完整，請稍候再試。');}
     if(!value||typeof value!=='object'||typeof value.ok!=='boolean')throw new ApiFailure('INVALID_RESPONSE','服務回覆不完整，請稍候再試。');
-    if(!response.ok||value.ok!==true){
-      const code=String(value.error?.code??'INTERNAL_ERROR'),message=String(value.error?.message??'暫時無法完成操作。');
-      if(handleFailure&&this.credential?.token===requestToken){
-        if(['SESSION_EXPIRED','SESSION_REVOKED','SESSION_ACTIVITY_CHANGED','SESSION_DISCONNECTED','SESSION_PASSWORD_CHANGED','UNAUTHORIZED','ACTIVITY_CHANGED'].includes(code))this.invalid(message);
-        else if(code==='RECOVERY_UNCERTAIN'&&this.credential)this.update({status:'DISCONNECTED',message});
-      }
-      throw new ApiFailure(code,message,Array.isArray(value.error?.fieldIds)?value.error.fieldIds.filter((id:unknown):id is string=>typeof id==='string'):[]);
+    return value;
+  }
+  private failure(value:any,requestToken:string|undefined,handleFailure:boolean):never{
+    const code=String(value.error?.code??'INTERNAL_ERROR'),message=String(value.error?.message??'暫時無法完成操作。');
+    if(handleFailure&&this.credential?.token===requestToken){
+      if(['SESSION_EXPIRED','SESSION_REVOKED','SESSION_ACTIVITY_CHANGED','SESSION_DISCONNECTED','SESSION_PASSWORD_CHANGED','UNAUTHORIZED','ACTIVITY_CHANGED'].includes(code))this.invalid(message);
+      else if(code==='RECOVERY_UNCERTAIN'&&this.credential)this.update({status:'DISCONNECTED',message});
     }
+    throw new ApiFailure(code,message,Array.isArray(value.error?.fieldIds)?value.error.fieldIds.filter((id:unknown):id is string=>typeof id==='string'):[]);
+  }
+  async request<T>(path:string,method='GET',body?:unknown,handleFailure=true,signal?:AbortSignal):Promise<T>{
+    const {response,requestToken}=await this.response(path,method,body,signal),value=await this.json(response);
+    if(!response.ok||value.ok!==true)this.failure(value,requestToken,handleFailure);
     return value.data as T;
+  }
+  async download(path:string,signal?:AbortSignal):Promise<Blob>{
+    const {response,requestToken}=await this.response(path,'GET',undefined,signal);
+    if(!response.ok){const value=await this.json(response);this.failure(value,requestToken,true);}
+    if(response.headers.get('content-type')?.split(';')[0]?.trim().toLowerCase()!=='text/csv')throw new ApiFailure('INVALID_RESPONSE','下載回覆不是 CSV，請稍候再試。');
+    let file:Blob;
+    try{file=await response.blob();}catch{if(!signal?.aborted&&this.credential?.token===requestToken)this.update({status:'DISCONNECTED',message:'連線中斷，正在嘗試恢復身分。'});throw new ApiFailure('NETWORK','檔案下載中斷，請恢復連線後重試。');}
+    if(signal?.aborted||!requestToken||this.credential?.token!==requestToken||this.state.status!=='OWNED')throw new ApiFailure('DOWNLOAD_CANCELLED','下載已取消，請確認目前身分後重試。');
+    return file;
   }
   initialize(){return this.initializing??=this.restore();}
   restore(){return this.resumePromise??=this.restoreOnce().finally(()=>{this.resumePromise=undefined;});}
