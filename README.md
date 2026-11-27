@@ -1,8 +1,35 @@
-> 服務帳戶改版已完成驗證：老師不再連結個人Google。全部匯入與Sheets寫回均使用服務帳戶，匯入不再選方式或依賴公開API key；CSV保留。請參考[新版設定指南](docs/google-service-account-setup.md)。下列OAuth敘述與原階段數字為歷史驗收，服務帳戶驗證進度另行記錄。
+> 現行版本只使用服務帳戶匯入與寫回Google Sheets，老師不需個人Google授權，也沒有匯入方式選單。首次使用請先完成下方「使用前配置」。後段各階段進度與舊驗收敘述保留為歷史紀錄。
 
 # 課堂搶答系統
 
 本機執行的 TypeScript／React／Node.js／SQLite 專案，目前完成基礎環境、資料庫、分頁身分、活動管理、單一服務帳戶匯入、即時同步／恢復、搶答提交、學生作答、老師管理及完整結果，累計85／85，依使用者確認D41完成紀錄型驗收；原1秒／5秒與完整60輪為後續改善目標，尚未全面達標。首頁支援老師登入、匯入、學生選組／離組、全部題目與題組作答、分頁草稿、同組提交鎖定、開始及確認結束與同步計時。老師可預覽完整題組並監看全部組別答案、名次與臺灣提交時間；學生結束後可查看成功答案、本組三種成績及成功題數；老師可於結束後使用三模式 Sheets 匯出、核對未知結果及確認放棄後換場。
+
+## 使用前配置
+
+每套本機安裝都需要由安裝者或管理者完成以下配置。老師使用已配置好的系統時，只需取得本機老師登入密碼，並將學習單共用給頁面顯示的服務帳戶Email，不必自己建立服務帳戶。
+
+| 項目 | 誰負責／何時需要 | 配置內容 |
+|---|---|---|
+| 執行環境 | 安裝者，首次安裝 | 安裝Node.js 24.22.3（含npm），執行`npm ci`安裝鎖定依賴；準備Chrome供本機多分頁操作。SQLite由專案套件提供，不需另建資料庫伺服器。 |
+| 本機設定 | 管理者，首次安裝 | 將`.env.example`複製為`.env`，設定非空的`TEACHER_PASSWORD`。已存在`.env`時直接編輯，不覆蓋原設定；程式沒有預設老師密碼。 |
+| Google服務帳戶 | 管理者，使用Sheets匯入／寫回前 | 在自己的Google Cloud專案啟用Google Sheets API，建立服務帳戶及JSON金鑰；這是服務帳戶JSON，不是OAuth client JSON或API key。正式使用建議與開發測試帳戶分開。 |
+| 憑證檔案 | 管理者，啟動前 | 將JSON放在`data/google-service-account.json`；其他路徑需設定`GOOGLE_SERVICE_ACCOUNT_FILE`。憑證只存後端安全目錄，不放src／dist／node_modules，不提交Git或分發給使用網站的老師。詳細限制見[設定指南](docs/google-service-account-setup.md)。 |
+| 學習單權限 | 老師，每份來源文件 | 登入後按「複製服務帳戶Email」，至原始試算表共用給該Email。只匯入給「檢視者」；需要寫回給「編輯者」，並確認目標範圍可寫。文件可以保持私有。 |
+| 學習單格式 | 老師，匯入前 | 使用既有單題／題組範本結構，提供原始`docs.google.com/spreadsheets/d/...`網址，設定2～20組；多工作表時選定要用的表。發布網頁或CSV輸出網址不能作匯入來源。 |
+| 資料與啟動 | 安裝者，首次安裝 | 資料目錄需可寫，執行`npm run db:migrate`後啟動；預設埠3000需可用。需要保留活動時請保存原`data/`並依[資料庫指南](docs/database.md)備份，勿刪庫重建。 |
+| 網路及匯出前提 | 管理者／老師，操作時 | Sheets操作需要連外至Google；寫回僅活動結束後開放，老師與協作者須從預檢到完成暫停編輯。系統不能強制鎖住外部協作者。CSV也僅結束後下載，但不需Google憑證。 |
+
+`.env`的最小設定示意（請自行替換老師密碼，不要將真實密碼貼到聊天或提交Git）：
+
+```dotenv
+TEACHER_PASSWORD=請替換成自己的老師登入密碼
+# 使用預設data/google-service-account.json時不必設定以下路徑
+# GOOGLE_SERVICE_ACCOUNT_FILE=/安全目錄/google-service-account.json
+```
+
+「複製服務帳戶Email」會取得**目前這套後端載入的JSON所屬帳戶**，不是固定內建帳戶。若沿用原測試JSON，就會複製原測試帳戶；GitHub不包含該私鑰，新安裝者需自行配置或由管理者提供安全的後端配置。更換JSON或`.env`後需正常重啟，確認頁面Email正確，再共用學習單。
+
+不需要個人Google登入、OAuth client、OAuth測試人員或`GOOGLE_SHEETS_API_KEY`。服務帳戶缺配置時不能匯入或寫回，但既有活動、搶答、結果及CSV仍可用。此版本只綁定`127.0.0.1`，目前供同一台電腦的多分頁使用；其他電腦不能直接連線，公開部署不屬於目前啟動方式。
 
 ## 環境與啟動
 
@@ -12,7 +39,9 @@
 nvm install
 nvm use
 npm ci
+# 僅首次建立；已有.env請直接編輯，勿覆蓋
 cp .env.example .env
+# 繼續前：設定.env的TEACHER_PASSWORD，並放好服務帳戶JSON
 npm run db:migrate
 npm run dev
 ```
@@ -36,13 +65,13 @@ npm start
 | `APP_DATA_DIR` | 專案根目錄下 `data/`，相對路徑不受啟動工作目錄影響 |
 | `TEACHER_PASSWORD` | 無預設值；未設定或全空白時老師登入停用，回傳繁體中文說明 |
 | `GOOGLE_SERVICE_ACCOUNT_FILE` | 可選；預設`APP_DATA_DIR/google-service-account.json`，所有匯入與Sheets寫回使用 |
-| `SHEETS_TEST_SPREADSHEET_ID` | 真實寫入測試使用的明確可寫副本；匯出探針另外建立私有隔離副本 |
+| `SHEETS_TEST_SPREADSHEET_ID` | 僅開發者真實寫入探針使用；一般操作不需設定，測試必須另備副本 |
 
 `.env`、資料庫、備份、測試產物與憑證不得提交版控。資料目錄不能置於 `src/`、`dist/` 或 `node_modules/`，避免被網頁服務讀取。在 `.env` 設定非空的 `TEACHER_PASSWORD`，重新啟動後即可使用「老師登入」。沒有預設密碼。老師登出只影響當前分頁；修改啟動密碼並重啟會撤銷全部舊老師身分。
 
 空資料庫會顯示「等待老師匯入活動」，不會自動建立種子活動。老師先將原表共用給頁面顯示的服務帳戶Email（匯入給檢視者，需要寫回給編輯者），再直接貼單題／題組範本網址、設定 2～20 組、選表並確認匯入。沒有方式選單，也不必將文件公開。舊公開API key不再供產品匯入使用。若舊 dev 服務仍在執行，須先停止再重新 `npm run dev`，才會載入新的後端。
 
-歷史版本的Google個人授權及兩份副本讀取曾完成驗證，包含正常重啟及單題實際匯入；第一次配置新環境仍須操作者自行在 Google 頁面同意。client JSON 路徑由 `GOOGLE_OAUTH_CLIENT_FILE` 設定，預設為 `APP_DATA_DIR/google-oauth-client.json`；token 只由後端加密保存在資料目錄，學生不取得憑證。
+舊版個人OAuth設定已退出；舊驗收保留於歷史文件，不作現行配置步驟。服務帳戶私鑰只由後端讀取，token只在後端記憶體快取，學生不取得Google憑證。
 
 ## 測試
 
@@ -73,7 +102,9 @@ npm run test:startup
 - [活動原子替換與故障驗證](docs/activity-replacement-storage.md)。
 - [正式身分實作、操作、測試與待確認依賴](docs/identity-implementation.md)。
 - [活動生命週期、換場服務與驗證](docs/activity-management.md)。
-- [Google OAuth 與可寫 Sheets 副本設定步驟](docs/google-oauth-setup.md)。
+- [歷史Google OAuth設定（現行版本已退出）](docs/google-oauth-setup.md)。
+- [服務帳戶設定與現行HTTP契約](docs/google-service-account-setup.md)。
+
 - [Google 授權實作與初期驗證紀錄](docs/google-integration-progress.md)。
 - [公開匯入歷史紀錄（功能已退出）](docs/public-guided-notes.md)。
 - [Guided Notes 匯入操作與完整階段驗證](docs/guided-notes-import.md)。
@@ -150,3 +181,7 @@ U02 已確認為 D39：真正凍結／丟棄／OS 休眠另列暫停，一般背
 CSV 的8項需求／16個情境已同步至 [主規格](openspec/specs/submission-records-export/spec.md)，7／7任務完成並經人工測試確認的 Change 已 [歸檔](openspec/changes/archive/2026-11-27-add-submission-records-csv-export/proposal.md)。原系統Change已依D41完成紀錄型驗收並歸檔，未把舊效能目標改稱達標。
 
 D41 的確認內容、18次歷史效能程序、缺失與後續目標見 [紀錄型驗收證據](docs/evidence/performance-acceptance-policy.json)及 [整合驗收報告](docs/integration-acceptance.md)。原始需求與原始量測數據保留，所有主規格位於 openspec/specs/。
+
+## OpenSpec同步與歸檔
+
+公開匯入、以服務帳戶取代OAuth、單一服務帳戶匯入三個已完成Change已依相依順序同步並歸檔。現行主規格位於`openspec/specs/`；歷史提案保留於`openspec/changes/archive/`，其中舊公開／OAuth流程不代表現行功能。詳見[同步歸檔紀錄](docs/openspec-service-account-archive.md)。
