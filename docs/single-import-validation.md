@@ -67,7 +67,11 @@ Change：`simplify-service-account-import`；日期：2026-11-27（臺灣）。�
 - 原始requirements SHA-256仍為`498bc69163997b0570963f4712d7196edd1f9e39590ec05d51e884aaa4e2f413`；主規格、原有Change、歸檔、migration與D41歷史證據均無差異。
 - `git diff --check`：通過。實際憑證及舊key不納入版控。
 
-合併及正式本機服務正常重啟另行核對；不將測試隔離資料庫當作正式資料保存證據。
+功能提交`7b6d583`已推送保留於`codex/single-service-account-import`，通過上述驗證後以`12dbf46`合併至原預設分支`codex/initial-functional-commits`並推送GitHub。
+
+合併後核實3000埠程序的命令與專案工作目錄，正常SIGTERM再以Node24啟動`npm run dev`。正式服務健康檢查、臨時老師登入、服務帳戶狀態、options僅服務帳戶及PUBLIC拒絕均通過；最後登出該臨時老師，不匯入／替換正式活動。重啟前後10張業務表的列數與逐值SHA-256完全相同，schemaVersion與SQLite user_version相同，receiveHighWater不倒退。身分／命令序號依既有重啟與登入規則可變動，不宣稱整個SQLite檔案位元相同。未刪除正式資料或憑證。
+
+全部5項Apply任務已依CLI提供的位置逐項勾選並重新確認完成；本輪沒有同步主規格或歸檔。
 
 ## OpenSpec後續
 
