@@ -1,0 +1,42 @@
+{
+  "items": [
+    {
+      "id": "build-local-classroom-response-system",
+      "type": "change",
+      "valid": true,
+      "issues": [],
+      "durationMs": 43
+    },
+    {
+      "id": "submission-records-export",
+      "type": "spec",
+      "valid": true,
+      "issues": [],
+      "durationMs": 8
+    }
+  ],
+  "summary": {
+    "totals": {
+      "items": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "spec": {
+        "items": 1,
+        "passed": 1,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "/Users/frank/Desktop/NCU/115-1/軟體工程/classroom_response_system",
+    "source": "nearest"
+  }
+}

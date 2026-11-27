@@ -140,3 +140,5 @@ U02 已確認為 D39：真正凍結／丟棄／OS 休眠另列暫停，一般背
 ## 全組提交紀錄 CSV
 
 老師可在「匯入 Guided Notes」下方下載本場所有組別的已受理提交，含未搶到紀錄。僅活動結束後開放，不需 Google 連結；題組每個子題一列，提供題號、子題、組別、姓名（送出者暱稱）、答案、搶答順位、送出時間及是否搶答成功。CSV 採 UTF-8 BOM 供 Excel 開啟；格式與限制見 [CSV 匯出說明](docs/submission-csv-export.md)，驗收見 [證據](docs/evidence/csv-export-verification.json)。此新增 Change 與原84／85進度分開，原13.3效能缺失仍保留。
+
+CSV 的8項需求／16個情境已同步至 [主規格](openspec/specs/submission-records-export/spec.md)，7／7任務完成並經人工測試確認的 Change 已 [歸檔](openspec/changes/archive/2026-11-27-add-submission-records-csv-export/proposal.md)。原系統 Change 仍開放，13.3效能驗收尚未完成。

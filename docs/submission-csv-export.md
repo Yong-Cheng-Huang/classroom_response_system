@@ -24,4 +24,10 @@ CSV 匯出本場所有已受理並保存的提交，包含未搶到的紀錄，�
 
 2026-11-27：本 Change 8 項需求、16 個情境均有測試對照，詳見 [驗收證據](evidence/csv-export-verification.json)。157 項單元／整合、22 項零售 Chrome headless 回歸及1項正式啟動通過，型別、建置、Strict Validate與原需求追蹤稽核通過。Chrome 真下載的 BOM、八欄與多行內容已由獨立解析器核對；尚未實際在 Excel 開啟，不以瀏覽器下載冒稱 Excel 呈現已驗證。CSV 型別與地區分隔設定限制仍適用。
 
-本機服務已正常重啟，十個業務表雜湊前後相同、序號不倒退。沒有新增套件或 migration；原 Change 的84／85與13.3缺失保持，CSV 功能由獨立分支 codex/csv-submission-export 保存供人工測試，待使用者確認後再合併；未Sync、Verify或Archive。
+本機服務已正常重啟，十個業務表雜湊前後相同、序號不倒退。沒有新增套件或 migration；原 Change 的84／85與13.3缺失保持，CSV 功能已經使用者測試確認並合併至預設分支，OpenSpec 主規格已同步、Change 已歸檔；未執行獨立 Verify 流程。
+
+## OpenSpec 同步與歸檔
+
+2026-11-27（Asia/Taipei）：使用者確認功能測試無問題並授權合併後，另指示同步與歸檔。已將8項需求／16個情境完整同步至 [主規格](../openspec/specs/submission-records-export/spec.md)，原 Purpose 及需求／情境內容保留；7／7任務完成的 Change 連同 metadata 原樣移至 [歸檔提案](../openspec/changes/archive/2026-11-27-add-submission-records-csv-export/proposal.md)。
+
+主規格 Strict Validate 1／1通過；同步歸檔後全案 Strict Validate 2／2通過（CSV主規格與仍開放的原系統Change）。原系統仍84／85，13.3效能缺失未完成，沒有同步或歸檔該原系統Change，也沒有修改原 requirements.md 或系統程式。
