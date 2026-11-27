@@ -7,7 +7,7 @@ import {ImportService} from '../../src/server/imports.js';
 import {ExportService} from '../../src/server/exports.js';
 import {SubmissionService} from '../../src/server/submissions.js';
 import {createSqliteAllocator} from '../../src/server/command-queue.js';
-import {PublicSheetsReader} from '../../src/server/public-sheets.js';
+import {PublicSheetsReader} from './helpers/public-sheets.js';
 import {readConfig} from '../../src/server/config.js';
 import {parseGuidedNotes,type Spreadsheet} from '../../src/server/guided-notes.js';
 import {readActivityModel} from '../../src/server/read-model.js';
@@ -47,7 +47,7 @@ try{
   // 空批次只確認Google的寫入授權，不更新任何儲存格。
   try{await google.batchUpdate(teacher,viewer,[]);}catch(error){if(error instanceof AppError&&error.code==='SERVICE_ACCOUNT_WRITE_FORBIDDEN')denied=true;else throw error;}assert.equal(denied,true,'檢視者副本必須拒絕寫入');report.檢視者可讀不可寫=true;
  }else{report.檢視者可讀不可寫='待提供僅查看權限副本';}
- const reader=new PublicSheetsReader(readConfig().googleSheetsApiKey),raw=await reader.spreadsheet(f1.sourceSpreadsheetId!,{fields:'spreadsheetId,sheets(properties,merges,data)'});parseGuidedNotes(raw as Spreadsheet,f1.sheetId,2);report.公開API仍可讀=true;
+ const reader=new PublicSheetsReader(process.env.GOOGLE_SHEETS_API_KEY),raw=await reader.spreadsheet(f1.sourceSpreadsheetId!,{fields:'spreadsheetId,sheets(properties,merges,data)'});parseGuidedNotes(raw as Spreadsheet,f1.sheetId,2);report.公開API仍可讀=true;
  assert.equal(db.prepare('SELECT * FROM google_connection').get(),undefined);report.狀態=viewer?'通過':'部分通過，尚缺檢視者驗收';if(!viewer)process.exitCode=1;
 }catch(error){report.狀態='未通過';report.安全錯誤代碼=error instanceof AppError?error.code:'VERIFICATION_FAILED';report.驗證行號=error instanceof Error?error.stack?.match(/service-account-live\.ts:(\d+):/u)?.[1]:undefined;process.exitCode=1;}
 finally{context?.close();save();console.log(JSON.stringify({狀態:report.狀態,安全錯誤代碼:report.安全錯誤代碼,驗證行號:report.驗證行號}));}

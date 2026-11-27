@@ -10,7 +10,7 @@ import { projectRoot } from '../../src/server/config.js';
 import { openDatabase } from '../../src/server/database.js';
 
 test('建置版可從其他目錄啟動，固定來源重啟並保留同一資料庫', { timeout: 20000 }, async t => {
-  for(const module of ['google','google-http','google-vault'])assert.equal(existsSync(join(projectRoot,'dist/server/'+module+'.js')),false,'建置不應留舊OAuth模組');
+  for(const module of ['google','google-http','google-vault','public-sheets'])assert.equal(existsSync(join(projectRoot,'dist/server/'+module+'.js')),false,'建置不應留舊OAuth模組');
   const directory = mkdtempSync(join(tmpdir(), 'classroom-startup-'));
   const probe = createServer();
   await new Promise<void>(done => probe.listen(0, '127.0.0.1', done));

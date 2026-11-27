@@ -1,3 +1,5 @@
+> 現行Google契約以 [服務帳戶設定指南的HTTP升級契約](google-service-account-setup.md#http升級契約) 為準：匯入省略accessMode即SERVICE_ACCOUNT，明確SERVICE_ACCOUNT相容，PUBLIC／OAUTH／null拒絕；options僅回serviceAccountConfigured，select／commit不接受方式欄位。寫回仍必填SERVICE_ACCOUNT。下列早期進度保留為歷史。
+
 # 後端 HTTP 契約與角色投影
 
 對應 OpenSpec 任務 2.1、2.5。這是後端入口及共用投影層；正式身分與各項業務服務仍依原任務完成。本文件不取代原規格。

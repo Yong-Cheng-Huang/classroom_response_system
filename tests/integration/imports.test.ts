@@ -89,9 +89,8 @@ test('6.6 重用已有答案文件：保留原格格式，但不建立提交或�
   }
 });
 
-test('公開金鑰失敗不影響服務帳戶；明確選服務帳戶才使用原reader',async t=>{
-  const {PublicSheetsReader}=await import('../../src/server/public-sheets.js');const f=await fixture(t);let oauthCalls=0;
-  const imports=new ImportService(f.database,f.identity,f.google,f.activities,f.now,async()=>{oauthCalls++;return sheetFixture(f1);},new PublicSheetsReader('KEY_CANARY',async()=>Response.json({error:{details:[{reason:'API_KEY_INVALID'}],message:'KEY_CANARY'}},{status:400})));
-  const account=f.google.accountId;await assert.rejects(imports.inspect(imports.begin(f.proof,url,2,undefined,'PUBLIC')),{code:'PUBLIC_SHEETS_KEY_INVALID'});assert.equal(f.google.accountId,account);assert.equal(f.identity.current(f.proof).role,'TEACHER');assert.equal(oauthCalls,0);
-  const original=await imports.inspect(imports.begin(f.proof,url,2,undefined,'SERVICE_ACCOUNT'));assert.equal(original.stage,'READY');assert.equal(oauthCalls,2);
+test('單一服務帳戶省略方式與明確方式相容，PUBLIC拒絕不讀取',async t=>{
+ const f=await fixture(t);let reads=0;const imports=new ImportService(f.database,f.identity,f.google,f.activities,f.now,async()=>{reads++;return sheetFixture(f1);});
+ assert.throws(()=>imports.begin(f.proof,url,2,undefined,'PUBLIC'),{code:'SHEETS_ACCESS_MODE_REQUIRED'});assert.equal(reads,0);
+ const first=await imports.inspect(imports.begin(f.proof,url,2)),explicit=await imports.inspect(imports.begin(f.proof,url,2,undefined,'SERVICE_ACCOUNT'));assert.equal(first.questionCount,explicit.questionCount);assert.equal(first.fieldCount,explicit.fieldCount);assert.equal(reads,4);
 });
